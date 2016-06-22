@@ -119,10 +119,10 @@ var LeftThumb = React.createClass({
               <Key type="tuning-a key" state={state.a_key} />
               <Key type="c♯ key" state={state["c♯"]} />
               <Key type="whisper key" state={state.whisper} />
-              <Key type="low-b♭ key" state={state["low_b♭"]} />
-              <Key type="low-b key" state={state.low_b} />
-              <Key type="low-c key" state={state.low_c} />
-              <Key type="low-d key" state={state.low_d} />
+              <Key type="low-b♭ key" state={state["bottom_b♭"]} />
+              <Key type="low-b key" state={state.bottom_b} />
+              <Key type="low-c key" state={state.bottom_c} />
+              <Key type="low-d key" state={state.bottom_d} />
             </div>;
     }
 });
@@ -155,7 +155,7 @@ var RightThumb = React.createClass({
         var state = this.props.state;
         return <div className="thumbs column">
               <Key type="b♭ key" state={state["thumb_b♭"]} />
-              <Key type="pancake key" state={state.pancake} />
+              <Key type="pancake key" state={state.pancake_key} />
               <Key type="f♯ key" state={state["thumb_f♯"]} />
               <Key type="thumb-a♭ key" state={state["thumb_a♭"]} />
             </div>;
@@ -169,7 +169,7 @@ var RightFingers = React.createClass({
             <Key type="hole4 hole" state={state.b_hole} />
             <Key type="hole5 hole" state={state.a_hole} />
             <Key type="g key" state={state.g_key} />
-            <Key type="f key" state={state.low_f} />
+            <Key type="f key" state={state.f_key} />
             <Key type="pinkie-f♯ key" state={state["pinkie_f♯"]} />
             <Key type="a♭ key" state={state["pinkie_a♭"]} />
             </div>;
@@ -298,6 +298,7 @@ var FingeringSite = React.createClass({
         var req = new XMLHttpRequest();
         var self = this;
         req.open('GET', 'moar-fingerings.json', true);
+        req.overrideMimeType('application/json');
         req.onload = function() {
             if (self.isMounted()) {
                 self.setState({fingerings: JSON.parse(req.responseText)});
