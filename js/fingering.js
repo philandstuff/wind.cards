@@ -2,8 +2,8 @@
 
 
 var fingerings = {
-    "a♭3": {
-        "c4": [
+    "56": {
+        "60": [
             {
                 "e_hole" : "x",
                 "d_hole" : "x",
@@ -14,7 +14,7 @@ var fingerings = {
                 "pinkie_a♭" : "tr",
             }
         ],
-        "b♭3": [
+        "58": [
             {
                 "a_hole" : "x",
                 "b_hole" : "x",
@@ -261,8 +261,8 @@ var theFingerings = fingerings;
 var FingeringSite = React.createClass({
     getInitialState: function() {
         return {
-            lowNote: "a♭3",
-            highNote: "b♭3",
+            lowNote: "56",
+            highNote: "58",
             fingerings: theFingerings,
             index: 0
         };
@@ -297,7 +297,7 @@ var FingeringSite = React.createClass({
     fetchJson: function() {
         var req = new XMLHttpRequest();
         var self = this;
-        req.open('GET', 'moar-fingerings.json', true);
+        req.open('GET', 'new-fingerings.json', true);
         req.overrideMimeType('application/json');
         req.onload = function() {
             if (self.isMounted()) {
