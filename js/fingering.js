@@ -276,7 +276,7 @@ var FingeringSite = React.createClass({
                        index: 0});
     },
     handlePreviousFingering: function() {
-        this.setState((prevState) => {
+        this.setState(function(prevState) {
             if (prevState.index > 0) {
                 return { index: prevState.index - 1 };
             }
@@ -284,7 +284,7 @@ var FingeringSite = React.createClass({
         });
     },
     handleNextFingering: function() {
-        this.setState(prevState => {
+        this.setState(function(prevState) {
             console.log("nextfingering: lownote " + prevState.lowNote + " highnote " + prevState.highNote);
             var numFingerings = prevState.fingerings[prevState.lowNote][prevState.highNote].length;
             console.log("nextfingering: numFingerings: " + numFingerings);
