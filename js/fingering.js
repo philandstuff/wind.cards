@@ -102,6 +102,20 @@ var stateFromSymbol = {
     "/": "half"
 };
 
+var degreeToSymbol = ['c', 'c♯',
+                      'd', 'e♭',
+                      'e',
+                      'f', 'f♯',
+                      'g', 'g♯',
+                      'a', 'b♭',
+                      'b'];
+
+function midi_to_display(midi_note) {
+    var octave_number = Math.floor(midi_note / 12) - 1;
+    var degree = midi_note % 12;
+    return degreeToSymbol[degree] + octave_number;
+}
+
 var Key = React.createClass({
     render: function() {
         var state = stateFromSymbol[this.props.state];
@@ -217,7 +231,7 @@ var LowNoteSelector = React.createClass({
             <h2>Choose low note</h2>
             <select ref="lowNoteInput" onChange={this.handleChange}>
             {Object.keys(this.props.fingerings).map(function(note){
-                return <option key={note} value={note}>{note}</option>;
+                return <option key={note} value={note}>{midi_to_display(note)}</option>;
             })}
         </select>
             </section>;
@@ -239,7 +253,7 @@ var HighNoteSelector = React.createClass({
                 function(note) {
                     return <button key={note} type="button"
                         onClick={that.handleClick(note)}
-                        >{note}</button>;
+                        >{midi_to_display(note)}</button>;
                 }
             )}
             </section>;
