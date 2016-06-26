@@ -174,17 +174,41 @@ var Fingering = React.createClass({
     }
 });
 
-var LowNoteSelector = React.createClass({
-    handleChange: function(event) {
-        this.props.onUserInput(event);
+var NoteSelector = React.createClass({
+    adjustLowNote: function(amount) {
+        var that = this;
+        return function() {
+            console.log(JSON.stringify(that.props.lowNote));
+            var newNoteVal = parseInt(that.props.lowNote) + amount;
+            that.props.setLowNote('' + newNoteVal);
+        };
     },
     render: function() {
+        var that = this;
+        var fingeringsForLowNote = {};
+        if (this.props.lowNote in this.props.fingerings) {
+            fingeringsForLowNote = this.props.fingerings[this.props.lowNote];
+        }
+        var selectedFingerings = [];
+        if (this.props.highNote in fingeringsForLowNote) {
+            selectedFingerings = fingeringsForLowNote[this.props.highNote];
+        }
         return <section>
-            <select ref="lowNoteInput" onChange={this.handleChange}>
-            {Object.keys(this.props.fingerings).map(function(note){
-                return <option key={note} value={note}>{midi_to_display(note)}</option>;
+            <section>
+            <button type="button" onClick={this.adjustLowNote(-12)}>← 𝄷</button>
+            <button type="button" onClick={this.adjustLowNote(-1)}>←</button>
+            <span>{midi_to_display(this.props.lowNote)}</span>
+            <button type="button" onClick={this.adjustLowNote(+1)}>→</button>
+            <button type="button" onClick={this.adjustLowNote(+12)}>→ 𝄶</button>
+            </section>
+            <section>
+            {Object.keys(fingeringsForLowNote).map(function(highNote) {
+                return <HighNoteSelector onUserInput={that.props.setHighNote} highNote={highNote} />;
             })}
-        </select>
+            </section>
+            <section>
+            <TrillSelector prevDisabled={this.props.index == 0} onPrev={this.props.onPrev} nextDisabled={this.props.index == selectedFingerings.length-1} onNext={this.props.onNext} />
+            </section>
             </section>;
     }
 });
@@ -194,19 +218,11 @@ var HighNoteSelector = React.createClass({
         that.props.onUserInput(note);
     }},
     render: function() {
-        var fingerings = this.props.state.fingerings;
-        var lowNote = this.props.state.lowNote;
-        var availableNotes = Object.keys(fingerings[lowNote]);
+        var note = this.props.highNote;
         var that=this;
-        return <section>
-            {availableNotes.map(
-                function(note) {
-                    return <button key={note} type="button"
+        return <button key={note} type="button"
                         onClick={that.handleClick(note)}
-                        >{midi_to_display(note)}</button>;
-                }
-            )}
-            </section>;
+            >{midi_to_display(note)}</button>;
     }
 });
 
@@ -233,6 +249,20 @@ var FingeringSite = React.createClass({
     // TODO: fix inconsistent interfaces here
     handleLowNoteUpdate: function(event) {
         this.setState({lowNote: event.target.value});
+    },
+    setLowNote: function(newLowNote) {
+        console.log('setting ' + JSON.stringify(newLowNote));
+        console.log(JSON.stringify(this.state.fingerings));
+        console.log(JSON.stringify(this.state.fingerings[newLowNote]));
+        var fingeringMapForNewLowNote = {};
+        if (newLowNote in this.state.fingerings) {
+            fingeringMapForNewLowNote = this.state.fingerings[newLowNote]
+        };
+        var highNoteStrs = Object.keys(fingeringMapForNewLowNote);
+        var highNotes = highNoteStrs.map(parseInt);
+        var lowestHighNote = Math.min.apply(null,highNotes);
+        this.setState({lowNote: newLowNote,
+                       highNote: lowestHighNote});
     },
     handleHighNoteUpdate: function(note) {
         this.setState({highNote: note,
@@ -273,12 +303,9 @@ var FingeringSite = React.createClass({
         this.fetchJson();
     },
     render: function() {
-        var numFingerings = this.state.fingerings[this.state.lowNote][this.state.highNote].length;
         return <section>
             <Fingering state={this.state} />
-            <LowNoteSelector fingerings={this.state.fingerings} onUserInput={this.handleLowNoteUpdate} />
-            <HighNoteSelector onUserInput={this.handleHighNoteUpdate} state={this.state} />
-            <TrillSelector prevDisabled={this.state.index == 0} onPrev={this.handlePreviousFingering} nextDisabled={this.state.index == numFingerings-1} onNext={this.handleNextFingering} />
+            <NoteSelector lowNote={this.state.lowNote} highNote={this.state.highNote} index={this.state.index} fingerings={this.state.fingerings} setLowNote={this.setLowNote} setHighNote={this.handleHighNoteUpdate} onPrev={this.handlePreviousFingering} onNext={this.handleNextFingering}/>
             </section>;
     }
 });
