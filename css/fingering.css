@@ -118,3 +118,7 @@ button {
 #fingeringNav {
     margin-top: 10px;
 }
+
+section {
+    clear:both;
+}
