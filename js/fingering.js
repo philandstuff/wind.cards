@@ -2,96 +2,48 @@
 
 
 var fingerings = {
-    "56": {
-        "60": [
-            {
-                "e_hole" : "x",
-                "d_hole" : "x",
-                "c_hole" : "x",
-                "b_hole" : "tr",
-                "a_hole" : "tr",
-                "g_key" : "tr",
-                "pinkie_a♭" : "tr",
-            }
-        ],
-        "58": [
-            {
-                "a_hole" : "x",
-                "b_hole" : "x",
-                "c_hole" : "x",
-                "c_key" : "x",
-                "d_hole" : "x",
-                "e_hole" : "x",
-                "f_key" : "tr",
-                "g_key" : "tr",
-                "low_e♭" : "x",
-                "pinkie_f♯" : "tr",
-                "thumb_b♭" : "x"
-            },
-            {
-                "a_hole" : "tr",
-                "b_hole" : "x",
-                "c_hole" : "x",
-                "d_hole" : "x",
-                "e_hole" : "x",
-                "g_key" : "x",
-                "pinkie_a♭" : "x"
-            },
-            {
-                "a_hole" : "x",
-                "b_hole" : "tr",
-                "c_hole" : "x",
-                "d_hole" : "x",
-                "e_hole" : "/",
-                "f_key" : "x",
-                "g_key" : "x",
-                "pinkie_f♯" : "x",
-                "thumb_a♭" : "x",
-                "whisper" : "x"
-            },
-            {
-                "a_hole" : "x",
-                "b_hole" : "tr",
-                "c_hole" : "x",
-                "d_hole" : "x",
-                "e_hole" : "x",
-                "g_key" : "x",
-                "pinkie_a♭" : "x"
-            },
-            {
-                "a_hole" : "tr",
-                "b_hole" : "x",
-                "c_hole" : "x",
-                "d_hole" : "x",
-                "e_hole" : "x",
-                "g_key" : "x",
-                "pinkie_a♭" : "x",
-                "thumb_b♭" : "x"
-            },
-            {
-                "a_hole" : "x",
-                "b_hole" : "x",
-                "c_hole" : "x",
-                "d_hole" : "x",
-                "e_hole" : "x",
-                "g_key" : "tr",
-                "thumb_b♭" : "x"
-            },
-            {
-                "a_hole" : "x",
-                "b_hole" : "x",
-                "bottom_b" : "x",
-                "bottom_c" : "x",
-                "c_hole" : "x",
-                "d_hole" : "x",
-                "e_hole" : "x",
-                "f_key" : "tr",
-                "g_key" : "tr",
-                "low_e♭" : "x",
-                "pinkie_f♯" : "tr"
-            }
-        ]
-    }
+  "56": {
+    "57": [
+        {
+            "a_hole": "x",
+            "b_hole": "x",
+            "c_hole": "x",
+            "d_hole": "x",
+            "e_hole": "x",
+            "g_key": "x",
+            "pinkie_a\u266d": "x",
+            "thumb_b\u266d": "tr"
+        },
+        {
+            "a_hole": "x",
+            "b_hole": "x",
+            "c_hole": "tr",
+            "d_hole": "x",
+            "e_hole": "/",
+            "g_key": "x",
+            "pinkie_a\u266d": "x",
+            "whisper": "x"
+        },
+        {
+            "a_hole": "x",
+            "b_hole": "x",
+            "c_hole": "x",
+            "d_hole": "x",
+            "e_hole": "x",
+            "g_key": "tr",
+            "pinkie_a\u266d": "x"
+        },
+        {
+            "a_hole": "x",
+            "b_hole": "x",
+            "c_hole": "x",
+            "d_hole": "x",
+            "e_hole": "x",
+            "g_key": "tr",
+            "pinkie_a\u266d": "tr"
+        }
+    ]
+}
 };
 
 
@@ -228,7 +180,6 @@ var LowNoteSelector = React.createClass({
     },
     render: function() {
         return <section>
-            <h2>Choose low note</h2>
             <select ref="lowNoteInput" onChange={this.handleChange}>
             {Object.keys(this.props.fingerings).map(function(note){
                 return <option key={note} value={note}>{midi_to_display(note)}</option>;
@@ -248,7 +199,6 @@ var HighNoteSelector = React.createClass({
         var availableNotes = Object.keys(fingerings[lowNote]);
         var that=this;
         return <section>
-            <h2>Choose high note</h2>
             {availableNotes.map(
                 function(note) {
                     return <button key={note} type="button"
@@ -263,9 +213,8 @@ var HighNoteSelector = React.createClass({
 var TrillSelector = React.createClass({
     render: function () {
         return <section id="fingeringNav">
-            <h2>Cycle through fingerings</h2>
-            <button type="button" onClick={this.props.onPrev}>prev</button>
-            <button type="button" onClick={this.props.onNext}>next</button>
+            <button type="button" disabled={this.props.prevDisabled} onClick={this.props.onPrev}>←</button>
+            <button type="button" disabled={this.props.nextDisabled} onClick={this.props.onNext}>→</button>
             </section>;
     }
 });
@@ -276,7 +225,7 @@ var FingeringSite = React.createClass({
     getInitialState: function() {
         return {
             lowNote: "56",
-            highNote: "58",
+            highNote: "57",
             fingerings: theFingerings,
             index: 0
         };
@@ -324,11 +273,12 @@ var FingeringSite = React.createClass({
         this.fetchJson();
     },
     render: function() {
+        var numFingerings = this.state.fingerings[this.state.lowNote][this.state.highNote].length;
         return <section>
             <Fingering state={this.state} />
             <LowNoteSelector fingerings={this.state.fingerings} onUserInput={this.handleLowNoteUpdate} />
             <HighNoteSelector onUserInput={this.handleHighNoteUpdate} state={this.state} />
-            <TrillSelector onPrev={this.handlePreviousFingering} onNext={this.handleNextFingering} />
+            <TrillSelector prevDisabled={this.state.index == 0} onPrev={this.handlePreviousFingering} nextDisabled={this.state.index == numFingerings-1} onNext={this.handleNextFingering} />
             </section>;
     }
 });
