@@ -17,23 +17,29 @@ main {
     flex-direction: column;
 }
 
-nav {
+.row {
     display: flex;
     flex-direction: row;
 }
 
 #note {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    display: inline;
+    width: 80%;
+    padding: 10px;
 }
 
 button {
-    width: 25%;
+    width: 100%;
 }
 
-object {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+.full-button {
+    height: 100%;
 }
+
+.half-button {
+    height: 50%;
+}
+
+nav { width: 10%; display: inline; }
+
+

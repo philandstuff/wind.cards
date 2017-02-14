@@ -9,14 +9,24 @@
   <body>
     <header>wind.cards</header>
     <main>
-      <object id="fingering" data="bassoon.svg" type="image/svg+xml"></object>
-      <div id="note"></div>
-      <nav>
-        <button id="prevNote">previous note</button>
-        <button id="nextNote">next note</button>
-        <button id="prevFingering">previous fingering</button>
-        <button id="nextFingering">next fingering</button>
-      </nav>
+      <div class="row">
+        <nav>
+          <button class="full-button" id="prevFingering">←</button>
+        </nav>
+        <object id="fingering" data="bassoon.svg" type="image/svg+xml"></object>
+        <nav>
+          <button class="full-button" id="nextFingering">→</button>
+        </nav>
+      </div>
+      <div class="row">
+        <nav>
+          <button class="half-button" id="nextNote">↑</button>
+          <button class="half-button" id="prevNote">↓</button>
+        </nav>
+        <div id="note"></div>
+        <nav>
+        </nav>
+      </div>
     </main>
     <script src="https://unpkg.com/vexflow/releases/vexflow-min.js"></script>
     <script src="js/redo.js"></script>
