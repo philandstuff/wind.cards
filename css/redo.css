@@ -22,6 +22,10 @@ main {
     flex-direction: row;
 }
 
+#fingering {
+    width: 80%;
+}
+
 #note {
     display: inline;
     width: 80%;

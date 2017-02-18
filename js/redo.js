@@ -3,6 +3,18 @@
 var degreeTable = ['c','c','d','e','e','f','f','g','g','a','b','b'];
 var accidentalTable = [null, '#', null, 'b', null, null, '#', null, '#', null, 'b', null];
 
+function clefFor(midi_num) {
+    if (midi_num < 57) {
+        return "bass";
+    }
+    else if (midi_num < 72) {
+        return "tenor";
+    }
+    else {
+        return "treble";
+    }
+}
+
 function noteFor(clef, midi_num) {
     var VF = Vex.Flow;
     var octave = Math.floor(midi_num/12) - 1;
@@ -29,7 +41,7 @@ function drawNotes(lower, upper) {
     renderer.resize(200, 100);
     var context = renderer.getContext();
 
-    var clef = "tenor";
+    var clef = clefFor(lower);
 
     var stave = new VF.Stave(0, 0, 200);
     stave.addClef(clef).setContext(context).draw();
@@ -108,9 +120,15 @@ function renderFingering(fingering) {
 }
 
 function initialize(fingerings) {
+    var lowerNotes = Object.keys(fingerings).sort();
+
+    var upperNotes = function(lower) {
+        return Object.keys(fingerings[lower]);
+    };
+
     var state = {
-        lower: 64,
-        upper: 67,
+        lower: lowerNotes[0],
+        upper: upperNotes(lowerNotes[0])[0],
         index: 0
     };
     var render = function(newState, oldState) {
@@ -125,27 +143,58 @@ function initialize(fingerings) {
         state = newState;
     };
 
-    var tryNote = function(noteToTry) { return function() {
-        if (noteToTry(state) in fingerings) {
-            var newLower = noteToTry(state);
-            var newUpper = Math.min.apply(null, Object.keys(fingerings[newLower]));
+    var prevLowerNoteButton = document.getElementById('prevLowerNote');
+    prevLowerNoteButton.addEventListener('click', function() {
+        var i = lowerNotes.indexOf(state.lower);
+        var nextNote = lowerNotes[i-1];
+        if (nextNote) {
             var newState = {
-                lower: newLower,
-                upper: newUpper,
+                lower: nextNote,
+                upper: upperNotes(nextNote)[0],
                 index: 0
             };
             render(newState, state);
         }
-    }};
-
-    var prevNoteButton = document.getElementById('prevNote');
-    prevNoteButton.addEventListener('click', tryNote( function(state) {
-        return state.lower-1;
-    }));
-    var nextNoteButton = document.getElementById('nextNote');
-    nextNoteButton.addEventListener('click', tryNote( function(state) {
-        return state.lower+1;
-    }));
+    });
+    var nextLowerNoteButton = document.getElementById('nextLowerNote');
+    nextLowerNoteButton.addEventListener('click', function() {
+        var i = lowerNotes.indexOf(state.lower);
+        var nextNote = lowerNotes[i+1];
+        if (nextNote) {
+            var newState = {
+                lower: nextNote,
+                upper: upperNotes(nextNote)[0],
+                index: 0
+            };
+            render(newState, state);
+        }
+    });
+    var prevUpperNoteButton = document.getElementById('prevUpperNote');
+    prevUpperNoteButton.addEventListener('click', function() {
+        var i = upperNotes(state.lower).indexOf(state.upper);
+        var nextNote = upperNotes(state.lower)[i-1];
+        if (nextNote) {
+            var newState = {
+                lower: state.lower,
+                upper: nextNote,
+                index: 0
+            };
+            render(newState, state);
+        }
+    });
+    var nextUpperNoteButton = document.getElementById('nextUpperNote');
+    nextUpperNoteButton.addEventListener('click', function() {
+        var i = upperNotes(state.lower).indexOf(state.upper);
+        var nextNote = upperNotes(state.lower)[i+1];
+        if (nextNote) {
+            var newState = {
+                lower: state.lower,
+                upper: nextNote,
+                index: 0
+            };
+            render(newState, state);
+        }
+    });
     var prevFingeringButton = document.getElementById('prevFingering');
     prevFingeringButton.addEventListener('click', function() {
         if (state.index > 0) {
