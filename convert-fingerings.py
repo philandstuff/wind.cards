@@ -22,8 +22,10 @@ def midi_note(old_note):
     return note_value(note) + modifier_value(modifier) + 12 * int(octave)
 
 new_fingerings = {midi_note(note1):
-                  {midi_note(note2): val}
+                  {midi_note(note2): val
+                   for note2,val in inner.items()
+                  }
                   for note1,inner in fingerings.items()
-                  for note2,val in inner.items()}
+                  }
 
 json.dump(new_fingerings, open('new-fingerings.json','w'))
