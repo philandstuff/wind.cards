@@ -15,16 +15,25 @@ function clefFor(midi_num) {
     }
 }
 
-function noteFor(clef, midi_num) {
-    var VF = Vex.Flow;
+function midi2VF(midi_num) {
     var octave = Math.floor(midi_num/12) - 1;
     var degree_num = midi_num % 12;
     var degree = degreeTable[degree_num];
-    var note = new VF.StaveNote({clef: clef, keys: [degree+"/"+octave], duration: "q"});
 
-    var accidentalSymbol = accidentalTable[degree_num];
-    if (accidentalSymbol) {
-        note.addAccidental(0, new VF.Accidental(accidentalSymbol));
+    return {
+        note: degree+"/"+octave,
+        accidental: accidentalTable[degree_num]
+    };
+}
+
+function noteFor(clef, midi_num) {
+    var VF = Vex.Flow;
+
+    var vfNote = midi2VF(midi_num);
+    var note = new VF.StaveNote({clef: clef, keys: [vfNote.note], duration: "q"});
+
+    if (vfNote.accidental) {
+        note.addAccidental(0, new VF.Accidental(vfNote.accidental));
     }
     return note;
 }
