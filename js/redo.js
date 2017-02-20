@@ -38,7 +38,29 @@ function noteFor(clef, midi_num) {
     return note;
 }
 
-function drawNotes(lower, upper) {
+function notesFor(clef, midi_num, midi_nums) {
+    var VF = Vex.Flow;
+
+    var vfNotes = midi_nums.map(function(num) {
+        return midi2VF(num);
+    });
+    var degrees = vfNotes.map(function(vfNote) { return vfNote.note; });
+    var note = new VF.StaveNote({clef: clef, keys: degrees, duration: "q"});
+
+    for (var i=0; i<midi_nums.length; i++) {
+        var vfNote = vfNotes[i];
+        if (vfNote.accidental) {
+            note.addAccidental(i, new VF.Accidental(vfNote.accidental));
+        }
+        if (i != midi_nums.indexOf(midi_num)) {
+            note.setKeyStyle(i, {fillStyle: 'gray'});
+        }
+    }
+
+    return note;
+}
+
+function drawNotes(lower, upper, uppers) {
     var VF = Vex.Flow;
     var element = document.getElementById("note");
     // empty out the element first
@@ -56,7 +78,7 @@ function drawNotes(lower, upper) {
     stave.addClef(clef).setContext(context).draw();
 
     var voice = new VF.Voice({num_beats: 2,  beat_value: 4});
-    voice.addTickables([noteFor(clef, lower), noteFor(clef, upper)]);
+    voice.addTickables([noteFor(clef, lower), notesFor(clef, upper, uppers)]);
 
     var formatter = new VF.Formatter().joinVoices([voice]).format([voice], 200);
     voice.draw(context, stave);
@@ -144,7 +166,7 @@ function initialize(fingerings) {
         if (!oldState ||
             newState.lower !== oldState.lower ||
             newState.upper !== oldState.upper) {
-            drawNotes(newState.lower, newState.upper);
+            drawNotes(newState.lower, newState.upper, Object.keys(fingerings[newState.lower]).sort());
         }
         var fingering = fingerings[newState.lower][newState.upper][newState.index];
         renderFingering(fingering);
