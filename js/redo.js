@@ -1,8 +1,5 @@
 'use strict';
 
-var degreeTable = ['c','c','d','e','e','f','f','g','g','a','b','b'];
-var accidentalTable = [null, '#', null, 'b', null, null, '#', null, '#', null, 'b', null];
-
 function clefFor(midi_num) {
     if (midi_num < 57) {
         return "bass";
@@ -16,6 +13,9 @@ function clefFor(midi_num) {
 }
 
 function midi2VF(midi_num) {
+    var degreeTable = ['c','c','d','e','e','f','f','g','g','a','b','b'];
+    var accidentalTable = [null, '#', null, 'b', null, null, '#', null, '#', null, 'b', null];
+
     var octave = Math.floor(midi_num/12) - 1;
     var degree_num = midi_num % 12;
     var degree = degreeTable[degree_num];
