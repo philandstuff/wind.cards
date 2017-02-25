@@ -21,8 +21,13 @@ main {
     display: flex;
     flex-direction: row;
 }
+.column {
+    display: flex;
+    flex-direction: column;
+}
 
 #fingering {
+    display: flex;
     width: 80%;
 }
 
@@ -33,6 +38,8 @@ main {
 }
 
 button {
+    display: flex;
+    -webkit-appearance: none;
     width: 100%;
 }
 
@@ -44,6 +51,5 @@ button {
     height: 50%;
 }
 
-nav { width: 10%; display: inline; }
-
+nav { width: 10%; display: flex; }
 
