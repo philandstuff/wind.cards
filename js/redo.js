@@ -69,7 +69,7 @@ function drawNotes(lower, upper, uppers) {
     }
 
     var renderer = new VF.Renderer(element, VF.Renderer.Backends.SVG);
-    renderer.resize(200, 100);
+    renderer.resize(200, 140);
     var context = renderer.getContext();
 
     var clef = clefFor(lower);

@@ -43,12 +43,12 @@ button {
     width: 100%;
 }
 
-.full-button {
-    height: 100%;
+.fingering-button {
+    height: 431px;
 }
 
 .half-button {
-    height: 50%;
+    height: 70px;
 }
 
 nav { width: 10%; display: flex; }
