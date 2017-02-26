@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/redo.css">
+    <title>bassoon - wind.cards</title>
+  </head>
+  <body>
+    <header>wind.cards</header>
+    <main>
+      <div class="row">
+        <nav>
+          <button class="fingering-button" id="prevFingering">←</button>
+        </nav>
+        <object id="fingering" data="oboe.svg" type="image/svg+xml"></object>
+        <nav>
+          <button class="fingering-button" id="nextFingering">→</button>
+        </nav>
+      </div>
+      <div class="row">
+        <nav class="column">
+          <button class="half-button" id="nextNote">↑</button>
+          <button class="half-button" id="prevNote">↓</button>
+        </nav>
+        <div id="note"></div>
+      </div>
+    </main>
+    <script src="https://unpkg.com/vexflow/releases/vexflow-min.js"></script>
+    <script src="js/oboe.js"></script>
+  </body>
+</html>

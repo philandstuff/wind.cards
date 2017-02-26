@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.360123 182.39999">
+  <g transform="translate(-12.65 -26.45)" fill="none" stroke="#000" stroke-width="1.1">
+    <path d="M39.7 27c-4.42 0-8 3.58-8 8-.02 2.45 1.1 4.77 3 6.3-.2.55-.3 1.12-.3 1.7 0 2.93 2.37 5.3 5.3 5.3 2.93 0 5.3-2.37 5.3-5.3 0-.58-.1-1.15-.3-1.7 1.88-1.5 3-3.8 3-6.2 0-4.42-3.58-8.1-8-8.1z" class="hole1"/>
+    <circle cx="39.7" cy="35.1" r="5.3" class="half-hole1"/>
+    <ellipse cx="30.8" cy="47.3" rx="2.6" ry="5.3" class="spatula"/>
+    <circle cx="39.7" cy="64.2" r="8" class="hole2"/>
+    <circle cx="39.7" cy="93.3" r="8" class="hole3"/>
+    <ellipse ry="2.6" rx="6.6" cy="105.1" cx="4.6" transform="rotate(-29.752)" class="left-g♯"/>
+    <g class="left-pinkie">
+      <ellipse ry="2.6" rx="6.6" cy="115.4" cx="-17.5" transform="rotate(-40.69)" class="low-b"/>
+      <ellipse ry="2.6" rx="6.6" cy="123" cx="9" transform="rotate(-28.46)" class="low-b♭"/>
+      <ellipse cx="57.5" cy="111.2" rx="2.6" ry="6.6" class="left-f"/>
+      <circle cx="51.8" cy="101.8" r="4" class="left-e♭"/>
+    </g>
+    <ellipse cx="21.2" cy="129" rx="2.6" ry="11.9" class="right-g♯"/>
+    <circle cx="39.7" cy="127.7" r="8" class="hole4"/>
+    <circle cx="39.7" cy="156.8" r="8" class="hole5"/>
+    <path d="M45 168.7c0 2.2-2.4 2.7-5.3 2.7-3 0-5.3-.5-5.3-2.7s2.4-2 5.3-2c3 0 5.3-.2 5.3 2z" class="right-f"/>
+    <circle cx="39.7" cy="185.9" r="8" class="hole6"/>
+    <path d="M58.4 186c0 4.3-2.8 7.8-5.5 7.8-4.7 0 1-4 1-8.3 0-4.4-5.7-7.6-1-7.6 2.4 0 5.5 3.4 5.5 8.1z" class="banana"/>
+    <g class="right-pinkie">
+      <circle class="low-c" r="5.3" cy="192.5" cx="18.5"/>
+      <circle class="low-c♯" r="5.3" cy="198" cx="29"/>
+      <circle class="right-e♭" r="5.3" cy="203" cx="18.5"/>
+    </g>
+  </g>
+</svg>

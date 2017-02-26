@@ -29,6 +29,7 @@ main {
 #fingering {
     display: flex;
     width: 80%;
+    height: 431px;
 }
 
 #note {
