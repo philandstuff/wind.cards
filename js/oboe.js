@@ -67,6 +67,9 @@ function fetchJson() {
 }
 
 var allKeys = [
+    "first-octave",
+    "second-octave",
+    "thumb-plate",
     "half-hole1",
     "hole1",
     "spatula",
