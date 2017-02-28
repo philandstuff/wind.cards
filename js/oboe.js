@@ -105,6 +105,20 @@ function renderFingering(fingering) {
     });
 }
 
+function updateButtons(state, notes, fingerings) {
+    var prevNoteButton = document.getElementById('prevNote');
+    prevNoteButton.disabled = (state.note === notes[0])
+
+    var nextNoteButton = document.getElementById('nextNote');
+    nextNoteButton.disabled = (state.note === notes[notes.length-1])
+
+    var prevFingeringButton = document.getElementById('prevFingering');
+    prevFingeringButton.disabled = state.index === 0
+
+    var nextFingeringButton = document.getElementById('nextFingering');
+    nextFingeringButton.disabled = (state.index === fingerings[state.note].length-1)
+}
+
 function initialize(fingerings) {
     var notes = Object.keys(fingerings).sort();
 
@@ -119,6 +133,7 @@ function initialize(fingerings) {
         }
         var fingering = fingerings[newState.note][newState.index];
         renderFingering(fingering);
+        updateButtons(newState, notes, fingerings);
         console.log(fingering);
         state = newState;
     };

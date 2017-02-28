@@ -41,7 +41,14 @@ main {
 button {
     display: flex;
     -webkit-appearance: none;
+    -moz-appearance: none;
     width: 100%;
+    background: #88f;
+    color: #fff;
+}
+
+button:disabled {
+    background: #ddf;
 }
 
 .fingering-button {
