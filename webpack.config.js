@@ -11,6 +11,7 @@ const offline = new OfflinePlugin
 const extractText = new ExtractTextPlugin("./css/bassoon.css")
 
 module.exports = {
+  devtool: 'source-map',
   entry: './js/bassoon.js',
   module: {
     rules: [
