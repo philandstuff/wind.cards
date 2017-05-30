@@ -1,4 +1,8 @@
-'use strict';
+import '../css/bassoon.css'
+import Image from '../bassoon.svg'
+import fingeringData from '../new-fingerings.json'
+const Vex = require('vexflow')
+const VF = Vex.Flow
 
 function clefFor(midi_num) {
     if (midi_num < 57) {
@@ -27,8 +31,6 @@ function midi2VF(midi_num) {
 }
 
 function noteFor(clef, midi_num) {
-    var VF = Vex.Flow;
-
     var vfNote = midi2VF(midi_num);
     var note = new VF.StaveNote({clef: clef, keys: [vfNote.note], duration: "q"});
 
@@ -39,8 +41,6 @@ function noteFor(clef, midi_num) {
 }
 
 function notesFor(clef, midi_num, midi_nums) {
-    var VF = Vex.Flow;
-
     var vfNotes = midi_nums.map(function(num) {
         return midi2VF(num);
     });
@@ -61,7 +61,6 @@ function notesFor(clef, midi_num, midi_nums) {
 }
 
 function drawNotes(lower, upper, uppers) {
-    var VF = Vex.Flow;
     var element = document.getElementById("note");
     // empty out the element first
     while (element.hasChildNodes()) {
@@ -82,18 +81,6 @@ function drawNotes(lower, upper, uppers) {
 
     var formatter = new VF.Formatter().joinVoices([voice]).format([voice], 200);
     voice.draw(context, stave);
-}
-
-function fetchJson() {
-    return new Promise(function(resolve, reject) {
-        var req = new XMLHttpRequest();
-        req.open('GET', 'new-fingerings.json', true);
-        req.overrideMimeType('application/json');
-        req.onload = function() {
-            resolve(req.responseText);
-        };
-        req.send(null);
-    }).then(JSON.parse);
 }
 
 var fingeringMap = {
@@ -252,7 +239,7 @@ function initialize(fingerings) {
     render(state);
 }
 
-fetchJson()
+Promise.resolve(fingeringData)
     .then(initialize)
     .catch(function(error) {
         console.log('error');
