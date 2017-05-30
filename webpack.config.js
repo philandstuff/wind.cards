@@ -1,7 +1,8 @@
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const OfflinePlugin = require('offline-plugin')
-const path = require('path');
+const path = require('path')
+const webpack = require('webpack')
 
 const html = new HtmlWebpackPlugin({
   template: './bassoon.html',
@@ -9,6 +10,9 @@ const html = new HtmlWebpackPlugin({
 })
 const offline = new OfflinePlugin
 const extractText = new ExtractTextPlugin("./css/bassoon.css")
+const uglify = new webpack.optimize.UglifyJsPlugin({
+  sourceMap: true
+})
 
 module.exports = {
   devtool: 'source-map',
@@ -38,5 +42,5 @@ module.exports = {
     filename: '[name].[hash].js',
     path: path.resolve(__dirname, 'assets/'),
   },
-  plugins: [html, offline, extractText],
+  plugins: [html, offline, extractText, uglify ],
 }
