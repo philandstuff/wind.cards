@@ -1,9 +1,9 @@
 import '../css/bassoon.css'
 import Image from '../bassoon.svg'
 import fingeringData from '../new-fingerings.json'
-const offlinePluginRuntime = require('offline-plugin/runtime')
-offlinePluginRuntime.install()
-const Vex = require('vexflow')
+import * as OfflinePluginRuntime from 'offline-plugin/runtime'
+import * as Vex from 'vexflow'
+OfflinePluginRuntime.install()
 const VF = Vex.Flow
 
 function clefFor(midi_num) {
