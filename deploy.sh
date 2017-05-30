@@ -21,7 +21,8 @@ aws s3 sync assets $PREFIX --exclude '*' --include '*.css' --cache-control ${CAC
 # flag, to preserve older fingerprinted assets
 aws s3 sync assets $PREFIX --exclude '*' --include '*.svg' --cache-control ${CACHE_FOREVER} --content-type 'image/svg+xml'
 # need to exclude sw.js, not fingerprinted
-aws s3 sync assets $PREFIX --exclude '*' --include '*.js' --exclude 'sw.js' --cache-control ${CACHE_FOREVER} --content-type 'application/javascript'
+aws s3 sync assets $PREFIX --exclude '*' --include 'main.*.js' --cache-control ${CACHE_FOREVER} --content-type 'application/javascript'
+aws s3 sync assets $PREFIX --exclude '*' --include 'main.*.js.map' --cache-control ${CACHE_FOREVER}
 
 # appcache files
 aws s3 sync assets $PREFIX --exclude '*' --include 'sw.js' --cache-control ${CACHE_SHORT} --content-type 'application/javascript'
