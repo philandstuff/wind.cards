@@ -1,6 +1,6 @@
-import '../css/bassoon.css'
-import Image from '../bassoon.svg'
-import fingeringData from '../new-fingerings.json'
+import './bassoon.css'
+import './bassoon.svg'
+import fingeringData from './fingerings.json'
 import * as OfflinePluginRuntime from 'offline-plugin/runtime'
 import * as Vex from 'vexflow'
 OfflinePluginRuntime.install()
@@ -247,4 +247,3 @@ Promise.resolve(fingeringData)
         console.log('error');
         console.log(error);
     });
-

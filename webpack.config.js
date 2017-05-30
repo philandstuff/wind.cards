@@ -5,18 +5,18 @@ const path = require('path')
 const webpack = require('webpack')
 
 const html = new HtmlWebpackPlugin({
-  template: './bassoon.html',
+  template: 'bassoon/bassoon.html',
   filename: 'bassoon.html'
 })
 const offline = new OfflinePlugin
-const extractText = new ExtractTextPlugin("./css/bassoon.css")
+const extractText = new ExtractTextPlugin("./bassoon/bassoon.css")
 const uglify = new webpack.optimize.UglifyJsPlugin({
   sourceMap: true
 })
 
 module.exports = {
   devtool: 'source-map',
-  entry: './js/bassoon.js',
+  entry: './bassoon/bassoon.js',
   module: {
     rules: [
       {
