@@ -1,11 +1,13 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const OfflinePlugin = require('offline-plugin')
 const path = require('path');
 
 const html = new HtmlWebpackPlugin({
   template: './bassoon.html',
   filename: 'bassoon.html'
 })
+const offline = new OfflinePlugin
 const extractText = new ExtractTextPlugin("./css/bassoon.css")
 
 module.exports = {
@@ -35,5 +37,5 @@ module.exports = {
     filename: '[name].[hash].js',
     path: path.resolve(__dirname, 'assets/'),
   },
-  plugins: [html, extractText],
+  plugins: [html, offline, extractText],
 }

@@ -1,6 +1,8 @@
 import '../css/bassoon.css'
 import Image from '../bassoon.svg'
 import fingeringData from '../new-fingerings.json'
+const offlinePluginRuntime = require('offline-plugin/runtime')
+offlinePluginRuntime.install()
 const Vex = require('vexflow')
 const VF = Vex.Flow
 
