@@ -15,7 +15,7 @@ const uglify = new webpack.optimize.UglifyJsPlugin({
 })
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: 'cheap-eval-module-source-map',
   entry: './bassoon/bassoon.js',
   module: {
     rules: [
