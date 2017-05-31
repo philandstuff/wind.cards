@@ -3,8 +3,10 @@ import './bassoon.svg'
 import fingeringData from './fingerings.json'
 import * as OfflinePluginRuntime from 'offline-plugin/runtime'
 import * as Vex from 'vexflow'
-OfflinePluginRuntime.install()
+
 const VF = Vex.Flow
+
+OfflinePluginRuntime.install()
 
 function clefFor(midi_num) {
     if (midi_num < 57) {
@@ -19,12 +21,12 @@ function clefFor(midi_num) {
 }
 
 function midi2VF(midi_num) {
-    var degreeTable = ['c','c','d','e','e','f','f','g','g','a','b','b'];
-    var accidentalTable = [null, '#', null, 'b', null, null, '#', null, '#', null, 'b', null];
+    const degreeTable = ['c','c','d','e','e','f','f','g','g','a','b','b'];
+    const accidentalTable = [null, '#', null, 'b', null, null, '#', null, '#', null, 'b', null];
 
-    var octave = Math.floor(midi_num/12) - 1;
-    var degree_num = midi_num % 12;
-    var degree = degreeTable[degree_num];
+    let octave = Math.floor(midi_num/12) - 1;
+    let degree_num = midi_num % 12;
+    let degree = degreeTable[degree_num];
 
     return {
         note: degree+"/"+octave,
@@ -33,8 +35,8 @@ function midi2VF(midi_num) {
 }
 
 function noteFor(clef, midi_num) {
-    var vfNote = midi2VF(midi_num);
-    var note = new VF.StaveNote({clef: clef, keys: [vfNote.note], duration: "q"});
+    let vfNote = midi2VF(midi_num);
+    let note = new VF.StaveNote({clef: clef, keys: [vfNote.note], duration: "q"});
 
     if (vfNote.accidental) {
         note.addAccidental(0, new VF.Accidental(vfNote.accidental));
@@ -43,14 +45,14 @@ function noteFor(clef, midi_num) {
 }
 
 function notesFor(clef, midi_num, midi_nums) {
-    var vfNotes = midi_nums.map(function(num) {
+    let vfNotes = midi_nums.map(function(num) {
         return midi2VF(num);
     });
-    var degrees = vfNotes.map(function(vfNote) { return vfNote.note; });
-    var note = new VF.StaveNote({clef: clef, keys: degrees, duration: "q"});
+    let degrees = vfNotes.map(function(vfNote) { return vfNote.note; });
+    let note = new VF.StaveNote({clef: clef, keys: degrees, duration: "q"});
 
-    for (var i=0; i<midi_nums.length; i++) {
-        var vfNote = vfNotes[i];
+    for (let i=0; i<midi_nums.length; i++) {
+        let vfNote = vfNotes[i];
         if (vfNote.accidental) {
             note.addAccidental(i, new VF.Accidental(vfNote.accidental));
         }
@@ -63,29 +65,29 @@ function notesFor(clef, midi_num, midi_nums) {
 }
 
 function drawNotes(lower, upper, uppers) {
-    var element = document.getElementById("note");
+    let element = document.getElementById("note");
     // empty out the element first
     while (element.hasChildNodes()) {
         element.removeChild(element.firstChild);
     }
 
-    var renderer = new VF.Renderer(element, VF.Renderer.Backends.SVG);
+    let renderer = new VF.Renderer(element, VF.Renderer.Backends.SVG);
     renderer.resize(200, 140);
-    var context = renderer.getContext();
+    let context = renderer.getContext();
 
-    var clef = clefFor(lower);
+    let clef = clefFor(lower);
 
-    var stave = new VF.Stave(0, 0, 200);
+    let stave = new VF.Stave(0, 0, 200);
     stave.addClef(clef).setContext(context).draw();
 
-    var voice = new VF.Voice({num_beats: 2,  beat_value: 4});
+    let voice = new VF.Voice({num_beats: 2,  beat_value: 4});
     voice.addTickables([noteFor(clef, lower), notesFor(clef, upper, uppers)]);
 
-    var formatter = new VF.Formatter().joinVoices([voice]).format([voice], 200);
+    let formatter = new VF.Formatter().joinVoices([voice]).format([voice], 200);
     voice.draw(context, stave);
 }
 
-var fingeringMap = {
+const fingeringMap = {
     // left fingers
     'hole1':'e_hole',
     'top-e♭':'high_e♭',
@@ -119,11 +121,11 @@ var fingeringMap = {
 };
 
 function renderFingering(fingering) {
-    var fingeringElement = document.getElementById('fingering');
-    var svgDoc = fingeringElement.contentDocument;
-    for (var svgKeyClass in fingeringMap) {
-        var fingeringDataName = fingeringMap[svgKeyClass];
-        var keyElement = svgDoc.getElementsByClassName(svgKeyClass)[0];
+    let fingeringElement = document.getElementById('fingering');
+    let svgDoc = fingeringElement.contentDocument;
+    for (let svgKeyClass in fingeringMap) {
+        let fingeringDataName = fingeringMap[svgKeyClass];
+        let keyElement = svgDoc.getElementsByClassName(svgKeyClass)[0];
         if (fingering[fingeringDataName] === 'x') {
             keyElement.setAttribute('fill', 'black');
         }
@@ -140,35 +142,35 @@ function renderFingering(fingering) {
 }
 
 function initialize(fingerings) {
-    var lowerNotes = Object.keys(fingerings).sort();
+    let lowerNotes = Object.keys(fingerings).sort();
 
-    var upperNotes = function(lower) {
+    let upperNotes = function(lower) {
         return Object.keys(fingerings[lower]);
     };
 
-    var state = {
+    let state = {
         lower: lowerNotes[0],
         upper: upperNotes(lowerNotes[0])[0],
         index: 0
     };
-    var render = function(newState, oldState) {
+    let render = function(newState, oldState) {
         if (!oldState ||
             newState.lower !== oldState.lower ||
             newState.upper !== oldState.upper) {
             drawNotes(newState.lower, newState.upper, Object.keys(fingerings[newState.lower]).sort());
         }
-        var fingering = fingerings[newState.lower][newState.upper][newState.index];
+        let fingering = fingerings[newState.lower][newState.upper][newState.index];
         renderFingering(fingering);
         console.log(fingering);
         state = newState;
     };
 
-    var prevLowerNoteButton = document.getElementById('prevLowerNote');
+    let prevLowerNoteButton = document.getElementById('prevLowerNote');
     prevLowerNoteButton.addEventListener('click', function() {
-        var i = lowerNotes.indexOf(state.lower);
-        var nextNote = lowerNotes[i-1];
+        let i = lowerNotes.indexOf(state.lower);
+        let nextNote = lowerNotes[i-1];
         if (nextNote) {
-            var newState = {
+            let newState = {
                 lower: nextNote,
                 upper: upperNotes(nextNote)[0],
                 index: 0
@@ -176,12 +178,12 @@ function initialize(fingerings) {
             render(newState, state);
         }
     });
-    var nextLowerNoteButton = document.getElementById('nextLowerNote');
+    let nextLowerNoteButton = document.getElementById('nextLowerNote');
     nextLowerNoteButton.addEventListener('click', function() {
-        var i = lowerNotes.indexOf(state.lower);
-        var nextNote = lowerNotes[i+1];
+        let i = lowerNotes.indexOf(state.lower);
+        let nextNote = lowerNotes[i+1];
         if (nextNote) {
-            var newState = {
+            let newState = {
                 lower: nextNote,
                 upper: upperNotes(nextNote)[0],
                 index: 0
@@ -189,12 +191,12 @@ function initialize(fingerings) {
             render(newState, state);
         }
     });
-    var prevUpperNoteButton = document.getElementById('prevUpperNote');
+    let prevUpperNoteButton = document.getElementById('prevUpperNote');
     prevUpperNoteButton.addEventListener('click', function() {
-        var i = upperNotes(state.lower).indexOf(state.upper);
-        var nextNote = upperNotes(state.lower)[i-1];
+        let i = upperNotes(state.lower).indexOf(state.upper);
+        let nextNote = upperNotes(state.lower)[i-1];
         if (nextNote) {
-            var newState = {
+            let newState = {
                 lower: state.lower,
                 upper: nextNote,
                 index: 0
@@ -202,12 +204,12 @@ function initialize(fingerings) {
             render(newState, state);
         }
     });
-    var nextUpperNoteButton = document.getElementById('nextUpperNote');
+    let nextUpperNoteButton = document.getElementById('nextUpperNote');
     nextUpperNoteButton.addEventListener('click', function() {
-        var i = upperNotes(state.lower).indexOf(state.upper);
-        var nextNote = upperNotes(state.lower)[i+1];
+        let i = upperNotes(state.lower).indexOf(state.upper);
+        let nextNote = upperNotes(state.lower)[i+1];
         if (nextNote) {
-            var newState = {
+            let newState = {
                 lower: state.lower,
                 upper: nextNote,
                 index: 0
@@ -215,10 +217,10 @@ function initialize(fingerings) {
             render(newState, state);
         }
     });
-    var prevFingeringButton = document.getElementById('prevFingering');
+    let prevFingeringButton = document.getElementById('prevFingering');
     prevFingeringButton.addEventListener('click', function() {
         if (state.index > 0) {
-            var newState = {
+            let newState = {
                 lower: state.lower,
                 upper: state.upper,
                 index: state.index-1
@@ -226,11 +228,11 @@ function initialize(fingerings) {
             render(newState, state);
         }
     });
-    var nextFingeringButton = document.getElementById('nextFingering');
+    let nextFingeringButton = document.getElementById('nextFingering');
     nextFingeringButton.addEventListener('click', function() {
-        var currentTrillFingerings = fingerings[state.lower][state.upper];
+        let currentTrillFingerings = fingerings[state.lower][state.upper];
         if (state.index+1 < currentTrillFingerings.length) {
-            var newState = {
+            let newState = {
                 lower: state.lower,
                 upper: state.upper,
                 index: state.index+1
