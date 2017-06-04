@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "offline-plugin": "^4.6.1",
+    "sanctuary": "^0.13.1",
     "vexflow": "^1.2.83"
   },
   "devDependencies": {
