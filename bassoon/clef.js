@@ -1,6 +1,4 @@
-import * as Vex from 'vexflow';
-
-const VF = Vex.Flow;
+import { Accidental, Formatter, Renderer, Stave, StaveNote, Voice } from 'vexflow';
 
 function clefFor(midiNum) {
   if (midiNum < 57) {
@@ -27,10 +25,10 @@ function midi2VF(midiNum) {
 
 function noteFor(clef, midiNum) {
   const vfNote = midi2VF(midiNum);
-  const note = new VF.StaveNote({ clef, keys: [vfNote.note], duration: 'q' });
+  const note = new StaveNote({ clef, keys: [vfNote.note], duration: 'q' });
 
   if (vfNote.accidental) {
-    note.addAccidental(0, new VF.Accidental(vfNote.accidental));
+    note.addAccidental(0, new Accidental(vfNote.accidental));
   }
   return note;
 }
@@ -38,12 +36,12 @@ function noteFor(clef, midiNum) {
 function notesFor(clef, midiNum, midiNums) {
   const vfNotes = midiNums.map(num => midi2VF(num));
   const degrees = vfNotes.map(vfNote => vfNote.note);
-  const note = new VF.StaveNote({ clef, keys: degrees, duration: 'q' });
+  const note = new StaveNote({ clef, keys: degrees, duration: 'q' });
 
   for (let i = 0; i < midiNums.length; i += 1) {
     const vfNote = vfNotes[i];
     if (vfNote.accidental) {
-      note.addAccidental(i, new VF.Accidental(vfNote.accidental));
+      note.addAccidental(i, new Accidental(vfNote.accidental));
     }
     if (i !== midiNums.indexOf(midiNum)) {
       note.setKeyStyle(i, { fillStyle: 'gray' });
@@ -60,7 +58,7 @@ export default function drawNotes(lower, upper, uppers) {
     element.removeChild(element.firstChild);
   }
 
-  const renderer = new VF.Renderer(element, VF.Renderer.Backends.SVG);
+  const renderer = new Renderer(element, Renderer.Backends.SVG);
   const width = 200;
   renderer.resize(width, 140);
   const context = renderer.getContext();
@@ -68,12 +66,12 @@ export default function drawNotes(lower, upper, uppers) {
   const clef = clefFor(lower);
 
   // stave is width-1 to allow final barline to be visible
-  const stave = new VF.Stave(0, 0, width - 1);
+  const stave = new Stave(0, 0, width - 1);
   stave.addClef(clef).setContext(context).draw();
 
-  const voice = new VF.Voice({ num_beats: 2, beat_value: 4 });
+  const voice = new Voice({ num_beats: 2, beat_value: 4 });
   voice.addTickables([noteFor(clef, lower), notesFor(clef, upper, uppers)]);
 
-  new VF.Formatter().joinVoices([voice]).format([voice], width);
+  new Formatter().joinVoices([voice]).format([voice], width);
   voice.draw(context, stave);
 }
