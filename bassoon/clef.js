@@ -61,17 +61,19 @@ export default function drawNotes(lower, upper, uppers) {
   }
 
   const renderer = new VF.Renderer(element, VF.Renderer.Backends.SVG);
-  renderer.resize(200, 140);
+  const width = 200;
+  renderer.resize(width, 140);
   const context = renderer.getContext();
 
   const clef = clefFor(lower);
 
-  const stave = new VF.Stave(0, 0, 200);
+  // stave is width-1 to allow final barline to be visible
+  const stave = new VF.Stave(0, 0, width - 1);
   stave.addClef(clef).setContext(context).draw();
 
   const voice = new VF.Voice({ num_beats: 2, beat_value: 4 });
   voice.addTickables([noteFor(clef, lower), notesFor(clef, upper, uppers)]);
 
-  new VF.Formatter().joinVoices([voice]).format([voice], 200);
+  new VF.Formatter().joinVoices([voice]).format([voice], width);
   voice.draw(context, stave);
 }
