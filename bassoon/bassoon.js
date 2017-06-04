@@ -106,6 +106,8 @@ function initialize(fingerings) {
   render(state);
 }
 
-OfflinePluginRuntime.install();
+window.onload = () => {
+  OfflinePluginRuntime.install();
 
-initialize(fingeringData);
+  initialize(fingeringData);
+};
