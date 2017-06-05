@@ -1,12 +1,12 @@
 import * as OfflinePluginRuntime from 'offline-plugin/runtime';
-import { Just, Nothing, map } from 'sanctuary';
+import { Just, Nothing, map, sort } from 'sanctuary';
 import './bassoon.css';
 import './bassoon.svg';
 import fingeringData from './fingerings.json';
 import drawNotes from './clef';
 import renderFingering from './fingering';
 
-const lowerNotes = Object.keys(fingeringData).sort();
+const lowerNotes = sort(Object.keys(fingeringData));
 function upperNotes(fingerings, lower) {
   return Object.keys(fingerings[lower]);
 }
@@ -16,14 +16,13 @@ function upperNotes(fingerings, lower) {
 function prevLower(state) {
   const i = lowerNotes.indexOf(state.lower);
   const nextNote = lowerNotes[i - 1];
-  if (nextNote) {
-    return Just({
+  return nextNote ?
+    Just({
       lower: nextNote,
       upper: upperNotes(fingeringData, nextNote)[0],
       index: 0,
-    });
-  }
-  return Nothing;
+    })
+  : Nothing;
 }
 
 // state -> maybe state
@@ -31,14 +30,13 @@ function prevLower(state) {
 function nextLower(state) {
   const i = lowerNotes.indexOf(state.lower);
   const nextNote = lowerNotes[i + 1];
-  if (nextNote) {
-    return Just({
+  return nextNote ?
+    Just({
       lower: nextNote,
       upper: upperNotes(fingeringData, nextNote)[0],
       index: 0,
-    });
-  }
-  return Nothing;
+    })
+  : Nothing;
 }
 
 // state -> maybe state
@@ -46,50 +44,46 @@ function nextLower(state) {
 function prevUpper(state) {
   const i = upperNotes(fingeringData, state.lower).indexOf(state.upper);
   const nextNote = upperNotes(fingeringData, state.lower)[i - 1];
-  if (nextNote) {
-    return Just({
+  return nextNote ?
+    Just({
       lower: state.lower,
       upper: nextNote,
       index: 0,
-    });
-  }
-  return Nothing;
+    })
+  : Nothing;
 }
 
 function nextUpper(state) {
   const i = upperNotes(fingeringData, state.lower).indexOf(state.upper);
   const nextNote = upperNotes(fingeringData, state.lower)[i + 1];
-  if (nextNote) {
-    return Just({
+  return nextNote ?
+    Just({
       lower: state.lower,
       upper: nextNote,
       index: 0,
-    });
-  }
-  return Nothing;
+    })
+  : Nothing;
 }
 
 function prevFingering(state) {
-  if (state.index > 0) {
-    return Just({
+  return (state.index > 0) ?
+    Just({
       lower: state.lower,
       upper: state.upper,
       index: state.index - 1,
-    });
-  }
-  return Nothing;
+    })
+  : Nothing;
 }
 
 function nextFingering(state) {
   const currentTrillFingerings = fingeringData[state.lower][state.upper];
-  if (state.index + 1 < currentTrillFingerings.length) {
-    return Just({
+  return (state.index + 1 < currentTrillFingerings.length) ?
+    Just({
       lower: state.lower,
       upper: state.upper,
       index: state.index + 1,
-    });
-  }
-  return Nothing;
+    })
+  : Nothing;
 }
 
 function initialState() {
@@ -105,7 +99,7 @@ function render(newState, oldState) {
   if (!oldState ||
       newState.lower !== oldState.lower ||
       newState.upper !== oldState.upper) {
-    drawNotes(newState.lower, newState.upper, Object.keys(fingeringData[newState.lower]).sort());
+    drawNotes(newState.lower, newState.upper, sort(Object.keys(fingeringData[newState.lower])));
   }
   const fingering = fingeringData[newState.lower][newState.upper][newState.index];
   renderFingering(fingering);
