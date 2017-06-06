@@ -8,100 +8,83 @@ import renderFingering from './fingering';
 
 const lowerNotes = sort(Object.keys(fingeringData));
 function upperNotes(fingerings, lower) {
-  return Object.keys(fingerings[lower]);
+  return sort(Object.keys(fingerings[lower]));
 }
 
-// state -> maybe state
-// implicitly consumes fingeringData
+function setLower(state, note) {
+  return note === state.lower ? state
+    : note < 0 || note >= lowerNotes.length ? Nothing
+    : Just({
+      lower: note,
+      upper: 0,
+      index: 0,
+    });
+}
+
 function prevLower(state) {
-  const i = lowerNotes.indexOf(state.lower);
-  const nextNote = lowerNotes[i - 1];
-  return nextNote ?
-    Just({
-      lower: nextNote,
-      upper: upperNotes(fingeringData, nextNote)[0],
-      index: 0,
-    })
-  : Nothing;
+  return setLower(state, state.lower - 1);
 }
 
-// state -> maybe state
-// implicitly consumes fingeringData
 function nextLower(state) {
-  const i = lowerNotes.indexOf(state.lower);
-  const nextNote = lowerNotes[i + 1];
-  return nextNote ?
-    Just({
-      lower: nextNote,
-      upper: upperNotes(fingeringData, nextNote)[0],
-      index: 0,
-    })
-  : Nothing;
+  return setLower(state, state.lower + 1);
 }
 
-// state -> maybe state
-// implicitly consumes fingeringData
-function prevUpper(state) {
-  const i = upperNotes(fingeringData, state.lower).indexOf(state.upper);
-  const nextNote = upperNotes(fingeringData, state.lower)[i - 1];
-  return nextNote ?
-    Just({
+function setUpper(state, note) {
+  const uppers = upperNotes(fingeringData, lowerNotes[state.lower]);
+  return note === state.upper ? state
+    : note < 0 || note >= uppers.length ? Nothing
+    : Just({
       lower: state.lower,
-      upper: nextNote,
+      upper: note,
       index: 0,
-    })
-  : Nothing;
+    });
+}
+
+function prevUpper(state) {
+  return setUpper(state, state.upper - 1);
 }
 
 function nextUpper(state) {
-  const i = upperNotes(fingeringData, state.lower).indexOf(state.upper);
-  const nextNote = upperNotes(fingeringData, state.lower)[i + 1];
-  return nextNote ?
-    Just({
+  return setUpper(state, state.upper + 1);
+}
+
+function setFingering(state, i) {
+  const currentTrillFingerings = fingeringData[lowerNotes[state.lower]][upperNotes(fingeringData, lowerNotes[state.lower])[state.upper]];
+  return i === state.index ? state
+    : i < 0 || i >= currentTrillFingerings.length ? Nothing
+    : Just({
       lower: state.lower,
-      upper: nextNote,
-      index: 0,
-    })
-  : Nothing;
+      upper: state.upper,
+      index: i,
+    });
 }
 
 function prevFingering(state) {
-  return (state.index > 0) ?
-    Just({
-      lower: state.lower,
-      upper: state.upper,
-      index: state.index - 1,
-    })
-  : Nothing;
+  return setFingering(state, state.index - 1);
 }
 
 function nextFingering(state) {
-  const currentTrillFingerings = fingeringData[state.lower][state.upper];
-  return (state.index + 1 < currentTrillFingerings.length) ?
-    Just({
-      lower: state.lower,
-      upper: state.upper,
-      index: state.index + 1,
-    })
-  : Nothing;
+  return setFingering(state, state.index + 1);
 }
 
 function initialState() {
   return {
-    lower: lowerNotes[0],
-    upper: upperNotes(fingeringData, lowerNotes[0])[0],
+    lower: 0,
+    upper: 0,
     index: 0,
   };
 }
 
 
 function render(newState, oldState) {
+  const newLowerNote = lowerNotes[newState.lower];
+  const newUpperNotes = upperNotes(fingeringData, newLowerNote);
   if (!oldState ||
       newState.lower !== oldState.lower ||
       newState.upper !== oldState.upper) {
-    drawNotes(newState.lower, newState.upper, sort(Object.keys(fingeringData[newState.lower])));
+    drawNotes(newLowerNote, newUpperNotes[newState.upper], newUpperNotes);
   }
-  const fingering = fingeringData[newState.lower][newState.upper][newState.index];
+  const fingering = fingeringData[newLowerNote][newUpperNotes[newState.upper]][newState.index];
   renderFingering(fingering);
 }
 

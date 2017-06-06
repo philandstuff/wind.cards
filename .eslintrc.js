@@ -6,5 +6,8 @@ module.exports = {
   },
   "parserOptions": {
     "sourceType": "module",
+  },
+  "rules": {
+    "no-nested-ternary": "off",
   }
 };
