@@ -9,5 +9,6 @@ module.exports = {
   },
   "rules": {
     "no-nested-ternary": "off",
+    "arrow-parens": "off",
   }
 };

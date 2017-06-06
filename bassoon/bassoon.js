@@ -1,5 +1,5 @@
 import * as OfflinePluginRuntime from 'offline-plugin/runtime';
-import { Just, Nothing, I, map, maybe, sort } from 'sanctuary';
+import { Just, Nothing, I, chain, map, maybe, sort } from 'sanctuary';
 import './bassoon.css';
 import './bassoon.svg';
 import fingeringData from './fingerings.json';
@@ -113,37 +113,32 @@ function beginTouch(state, element, touchEvent) {
   const relY = relYpos(rect, touchEvent);
   const width = rect.right - rect.left;
   const lowerSidep = relX < width / 2;
-  return {
-    pressed: true,
+  return Just({
     pressedLowerSide: lowerSidep,
     startX: relX,
     startY: relY,
     startNote: lowerSidep ? state.lower : state.upper,
-  };
+  });
 }
 
 // (touchState, state) -> Maybe state
 function moveTouch(touchState, state, element, touchEvent) {
   const rect = element.getBoundingClientRect();
   const relY = relYpos(rect, touchEvent);
-  const ΔY = relY - touchState.startY;
-  return touchState.pressed ?
-    touchState.pressedLowerSide
-    ? setLower(state, touchState.startNote - roundToZero(ΔY / 10))
-    : setUpper(state, touchState.startNote - roundToZero(ΔY / 10))
-    : Nothing;
+  return chain(ts => {
+    const ΔY = relY - ts.startY;
+    return ts.pressedLowerSide
+      ? setLower(state, ts.startNote - roundToZero(ΔY / 10))
+      : setUpper(state, ts.startNote - roundToZero(ΔY / 10));
+  }, touchState);
 }
 
 function endTouch() {
-  return {
-    pressed: false,
-  };
+  return Nothing;
 }
 
 function initialTouchState() {
-  return {
-    pressed: false,
-  };
+  return Nothing;
 }
 
 
