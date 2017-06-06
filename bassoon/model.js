@@ -1,73 +1,77 @@
-import { Just, Nothing, chain, sort } from 'sanctuary';
+import $ from 'sanctuary-def';
 import fingeringData from './fingerings.json';
+import S, { Fingering, FingeringState, def } from './types';
 import { roundToZero } from './util';
 
-
 // fingering state functions //
-
-const lowerNotes = sort(Object.keys(fingeringData));
+const lowerNotes = S.sort(S.keys(fingeringData));
 function upperNotes(fingerings, lower) {
-  return sort(Object.keys(fingerings[lower]));
+  return S.sort(S.keys(fingerings[lower]));
 }
 
-export function setLower(state, note) {
-  // TODO: clamp value rather than ignoring out-of-bounds
-  return note === state.lower ? Just(state)
-    : note < 0 || note >= lowerNotes.length ? Nothing
-    : Just({
+export const setLower =
+def('setLower', {}, [FingeringState, $.Integer, S.MaybeType(FingeringState)],
+    (state, note) =>
+    // TODO: clamp value rather than ignoring out-of-bounds
+    note === state.lower ? S.Just(state)
+    : note < 0 || note >= lowerNotes.length ? S.Nothing
+    : S.Just({
       lower: note,
       upper: 0,
       index: 0,
-    });
-}
+    }));
 
-export function setUpper(state, note) {
-  // TODO: clamp value rather than ignoring out-of-bounds
-  const uppers = upperNotes(fingeringData, lowerNotes[state.lower]);
-  return note === state.upper ? Just(state)
-    : note < 0 || note >= uppers.length ? Nothing
-    : Just({
-      lower: state.lower,
-      upper: note,
+export const setUpper =
+def('setUpper', {}, [FingeringState, $.Integer, S.MaybeType(FingeringState)],
+    (state, note) => {
+      // TODO: clamp value rather than ignoring out-of-bounds
+      const uppers = upperNotes(fingeringData, lowerNotes[state.lower]);
+      return note === state.upper ? S.Just(state)
+        : note < 0 || note >= uppers.length ? S.Nothing
+        : S.Just({
+          lower: state.lower,
+          upper: note,
+          index: 0,
+        });
+    });
+
+export const setFingering =
+def('setFingering', {}, [FingeringState, $.Integer, S.MaybeType(FingeringState)],
+    (state, i) => {
+      // TODO: clamp value rather than ignoring out-of-bounds
+      const currentTrillFingerings = fingeringData[lowerNotes[state.lower]][upperNotes(fingeringData, lowerNotes[state.lower])[state.upper]];
+      return i === state.index ? S.Just(state)
+        : i < 0 || i >= currentTrillFingerings.length ? S.Nothing
+        : S.Just({
+          lower: state.lower,
+          upper: state.upper,
+          index: i,
+        });
+    });
+
+export const initialState =
+def('initialState', {}, [FingeringState],
+    () => ({
+      lower: 0,
+      upper: 0,
       index: 0,
-    });
-}
+    }));
 
-export function setFingering(state, i) {
-  // TODO: clamp value rather than ignoring out-of-bounds
-  const currentTrillFingerings = fingeringData[lowerNotes[state.lower]][upperNotes(fingeringData, lowerNotes[state.lower])[state.upper]];
-  return i === state.index ? Just(state)
-    : i < 0 || i >= currentTrillFingerings.length ? Nothing
-    : Just({
-      lower: state.lower,
-      upper: state.upper,
-      index: i,
-    });
-}
+export const lowerNote =
+def('lowerNote', {}, [FingeringState, $.String],
+    state => lowerNotes[state.lower]);
 
-export function initialState() {
-  return {
-    lower: 0,
-    upper: 0,
-    index: 0,
-  };
-}
+export const upperNoteChoices =
+def('upperNoteChoices', {}, [FingeringState, $.Array($.String)],
+    state => upperNotes(fingeringData, lowerNote(state)));
 
-export function lowerNote(state) {
-  return lowerNotes[state.lower];
-}
+export const upperNote =
+def('upperNote', {}, [FingeringState, $.String],
+    state => upperNoteChoices(state)[state.upper]);
 
-export function upperNoteChoices(state) {
-  return upperNotes(fingeringData, lowerNote(state));
-}
-
-export function upperNote(state) {
-  return upperNoteChoices(state)[state.upper];
-}
-
-export function fingering(state) {
-  return fingeringData[lowerNote(state)][upperNote(state)][state.index];
-}
+export const fingering =
+def('fingering', {}, [FingeringState, Fingering],
+    state => fingeringData[lowerNote(state)][upperNote(state)][state.index]);
 
 // touch state functions //
 
@@ -78,7 +82,7 @@ export function beginTouch(fingeringState, touchEvent) {
   const clientY = touchEvent.targetTouches[0].clientY;
   const rectMiddle = (rect.right + rect.left) / 2;
   const lowerSidep = clientX < rectMiddle;
-  return Just({
+  return S.Just({
     pressedLowerSide: lowerSidep,
     startY: clientY,
     startNote: lowerSidep ? fingeringState.lower : fingeringState.upper,
@@ -88,7 +92,7 @@ export function beginTouch(fingeringState, touchEvent) {
 // (touchState, fingeringState) -> Maybe fingeringState
 export function moveTouch(touchState, fingeringState, touchEvent) {
   const clientY = touchEvent.targetTouches[0].clientY;
-  return chain(ts => {
+  return S.chain(ts => {
     const ΔY = clientY - ts.startY;
     return ts.pressedLowerSide
       ? setLower(fingeringState, ts.startNote - roundToZero(ΔY / 10))
@@ -97,10 +101,9 @@ export function moveTouch(touchState, fingeringState, touchEvent) {
 }
 
 export function endTouch() {
-  return Nothing;
+  return S.Nothing;
 }
 
 export function initialTouchState() {
-  return Nothing;
+  return S.Nothing;
 }
-
