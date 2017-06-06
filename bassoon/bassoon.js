@@ -1,26 +1,11 @@
 import * as OfflinePluginRuntime from 'offline-plugin/runtime';
-import { Just, Nothing, I, chain, map, maybe, sort } from 'sanctuary';
+import { Just, Nothing, I, chain, map, maybe } from 'sanctuary';
 import './bassoon.css';
 import './bassoon.svg';
-import fingeringData from './fingerings.json';
 import drawNotes from './stave';
 import renderFingering from './fingering';
+import { fingering, setLower, setUpper, setFingering, lowerNote, upperNote, upperNoteChoices, initialState } from './model';
 
-const lowerNotes = sort(Object.keys(fingeringData));
-function upperNotes(fingerings, lower) {
-  return sort(Object.keys(fingerings[lower]));
-}
-
-function setLower(state, note) {
-  // TODO: clamp value rather than ignoring out-of-bounds
-  return note === state.lower ? Just(state)
-    : note < 0 || note >= lowerNotes.length ? Nothing
-    : Just({
-      lower: note,
-      upper: 0,
-      index: 0,
-    });
-}
 
 function prevLower(state) {
   return setLower(state, state.lower - 1);
@@ -28,18 +13,6 @@ function prevLower(state) {
 
 function nextLower(state) {
   return setLower(state, state.lower + 1);
-}
-
-function setUpper(state, note) {
-  // TODO: clamp value rather than ignoring out-of-bounds
-  const uppers = upperNotes(fingeringData, lowerNotes[state.lower]);
-  return note === state.upper ? Just(state)
-    : note < 0 || note >= uppers.length ? Nothing
-    : Just({
-      lower: state.lower,
-      upper: note,
-      index: 0,
-    });
 }
 
 function prevUpper(state) {
@@ -50,18 +23,6 @@ function nextUpper(state) {
   return setUpper(state, state.upper + 1);
 }
 
-function setFingering(state, i) {
-  // TODO: clamp value rather than ignoring out-of-bounds
-  const currentTrillFingerings = fingeringData[lowerNotes[state.lower]][upperNotes(fingeringData, lowerNotes[state.lower])[state.upper]];
-  return i === state.index ? Just(state)
-    : i < 0 || i >= currentTrillFingerings.length ? Nothing
-    : Just({
-      lower: state.lower,
-      upper: state.upper,
-      index: i,
-    });
-}
-
 function prevFingering(state) {
   return setFingering(state, state.index - 1);
 }
@@ -70,25 +31,17 @@ function nextFingering(state) {
   return setFingering(state, state.index + 1);
 }
 
-function initialState() {
-  return {
-    lower: 0,
-    upper: 0,
-    index: 0,
-  };
-}
-
 
 function render(newState, oldState) {
-  const newLowerNote = lowerNotes[newState.lower];
-  const newUpperNotes = upperNotes(fingeringData, newLowerNote);
+  const newLowerNote = lowerNote(newState);
+  const newUpperNote = upperNote(newState);
+  const newUpperNotes = upperNoteChoices(newState);
   if (!oldState ||
       newState.lower !== oldState.lower ||
       newState.upper !== oldState.upper) {
-    drawNotes(document.getElementById('notecanvas'), newLowerNote, newUpperNotes[newState.upper], newUpperNotes);
+    drawNotes(document.getElementById('notecanvas'), newLowerNote, newUpperNote, newUpperNotes);
   }
-  const fingering = fingeringData[newLowerNote][newUpperNotes[newState.upper]][newState.index];
-  renderFingering(fingering);
+  renderFingering(fingering(newState));
 }
 
 
