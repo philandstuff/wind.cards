@@ -3,7 +3,7 @@ import { Just, Nothing, I, chain, map, maybe, sort } from 'sanctuary';
 import './bassoon.css';
 import './bassoon.svg';
 import fingeringData from './fingerings.json';
-import drawNotes from './clef';
+import drawNotes from './stave';
 import renderFingering from './fingering';
 
 const lowerNotes = sort(Object.keys(fingeringData));
