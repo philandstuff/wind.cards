@@ -25,7 +25,12 @@ function midi2VF(midiNum) {
 
 function noteFor(clef, midiNum) {
   const vfNote = midi2VF(midiNum);
-  const note = new Flow.StaveNote({ clef, keys: [vfNote.note], duration: 'q' });
+  const note = new Flow.StaveNote({
+    clef,
+    keys: [vfNote.note],
+    duration: 'q',
+    auto_stem: true,
+  });
 
   if (vfNote.accidental) {
     note.addAccidental(0, new Flow.Accidental(vfNote.accidental));
@@ -36,7 +41,12 @@ function noteFor(clef, midiNum) {
 function notesFor(clef, midiNum, midiNums) {
   const vfNotes = midiNums.map(num => midi2VF(num));
   const degrees = vfNotes.map(vfNote => vfNote.note);
-  const note = new Flow.StaveNote({ clef, keys: degrees, duration: 'q' });
+  const note = new Flow.StaveNote({
+    clef,
+    keys: degrees,
+    duration: 'q',
+    auto_stem: true,
+});
 
   for (let i = 0; i < midiNums.length; i += 1) {
     const vfNote = vfNotes[i];
