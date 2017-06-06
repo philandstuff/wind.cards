@@ -85,7 +85,7 @@ function render(newState, oldState) {
   if (!oldState ||
       newState.lower !== oldState.lower ||
       newState.upper !== oldState.upper) {
-    drawNotes(document.getElementById('note'), newLowerNote, newUpperNotes[newState.upper], newUpperNotes);
+    drawNotes(document.getElementById('notecanvas'), newLowerNote, newUpperNotes[newState.upper], newUpperNotes);
   }
   const fingering = fingeringData[newLowerNote][newUpperNotes[newState.upper]][newState.index];
   renderFingering(fingering);
