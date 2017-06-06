@@ -51,8 +51,7 @@ function notesFor(clef, midiNum, midiNums) {
   return note;
 }
 
-export default function drawNotes(lower, upper, uppers) {
-  const element = document.getElementById('note');
+export default function drawNotes(element, lower, upper, uppers) {
   // empty out the element first
   while (element.hasChildNodes()) {
     element.removeChild(element.firstChild);
