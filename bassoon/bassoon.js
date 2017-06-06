@@ -92,6 +92,10 @@ function render(newState, oldState) {
 }
 
 
+function roundToZero(n) {
+  return n > 0 ? Math.floor(n) : Math.ceil(n);
+}
+
 function relYpos(rect, touchevent) {
   const clientY = touchevent.targetTouches[0].clientY;
   return clientY - rect.top;
@@ -109,7 +113,6 @@ function beginTouch(state, element, touchEvent) {
   const relY = relYpos(rect, touchEvent);
   const width = rect.right - rect.left;
   const lowerSidep = relX < width / 2;
-  console.log(`beginTouch: ${relX},${relY}, on ${lowerSidep ? 'lower' : 'upper'} side`);
   return {
     pressed: true,
     pressedLowerSide: lowerSidep,
@@ -124,9 +127,10 @@ function moveTouch(touchState, state, element, touchEvent) {
   const rect = element.getBoundingClientRect();
   const relY = relYpos(rect, touchEvent);
   const ΔY = relY - touchState.startY;
-  console.log(`moveTouch: travelled ${ΔY} from start`);
   return touchState.pressed ?
-    setLower(state, touchState.startNote - ((ΔY / 10) | 0))
+    touchState.pressedLowerSide
+    ? setLower(state, touchState.startNote - roundToZero(ΔY / 10))
+    : setUpper(state, touchState.startNote - roundToZero(ΔY / 10))
     : Nothing;
 }
 
