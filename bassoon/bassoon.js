@@ -1,5 +1,5 @@
 import * as OfflinePluginRuntime from 'offline-plugin/runtime';
-import { Just, Nothing, map, sort } from 'sanctuary';
+import { Just, Nothing, I, map, maybe, sort } from 'sanctuary';
 import './bassoon.css';
 import './bassoon.svg';
 import fingeringData from './fingerings.json';
@@ -12,7 +12,8 @@ function upperNotes(fingerings, lower) {
 }
 
 function setLower(state, note) {
-  return note === state.lower ? state
+  // TODO: clamp value rather than ignoring out-of-bounds
+  return note === state.lower ? Just(state)
     : note < 0 || note >= lowerNotes.length ? Nothing
     : Just({
       lower: note,
@@ -30,8 +31,9 @@ function nextLower(state) {
 }
 
 function setUpper(state, note) {
+  // TODO: clamp value rather than ignoring out-of-bounds
   const uppers = upperNotes(fingeringData, lowerNotes[state.lower]);
-  return note === state.upper ? state
+  return note === state.upper ? Just(state)
     : note < 0 || note >= uppers.length ? Nothing
     : Just({
       lower: state.lower,
@@ -49,8 +51,9 @@ function nextUpper(state) {
 }
 
 function setFingering(state, i) {
+  // TODO: clamp value rather than ignoring out-of-bounds
   const currentTrillFingerings = fingeringData[lowerNotes[state.lower]][upperNotes(fingeringData, lowerNotes[state.lower])[state.upper]];
-  return i === state.index ? state
+  return i === state.index ? Just(state)
     : i < 0 || i >= currentTrillFingerings.length ? Nothing
     : Just({
       lower: state.lower,
@@ -88,15 +91,69 @@ function render(newState, oldState) {
   renderFingering(fingering);
 }
 
+
+function relYpos(rect, touchevent) {
+  const clientY = touchevent.targetTouches[0].clientY;
+  return clientY - rect.top;
+}
+
+function relXpos(rect, touchevent) {
+  const clientX = touchevent.targetTouches[0].clientX;
+  return clientX - rect.left;
+}
+
+// touchState -> touchState
+function beginTouch(state, element, touchEvent) {
+  const rect = element.getBoundingClientRect();
+  const relX = relXpos(rect, touchEvent);
+  const relY = relYpos(rect, touchEvent);
+  const width = rect.right - rect.left;
+  const lowerSidep = relX < width / 2;
+  console.log(`beginTouch: ${relX},${relY}, on ${lowerSidep ? 'lower' : 'upper'} side`);
+  return {
+    pressed: true,
+    pressedLowerSide: lowerSidep,
+    startX: relX,
+    startY: relY,
+    startNote: lowerSidep ? state.lower : state.upper,
+  };
+}
+
+// (touchState, state) -> Maybe state
+function moveTouch(touchState, state, element, touchEvent) {
+  const rect = element.getBoundingClientRect();
+  const relY = relYpos(rect, touchEvent);
+  const ΔY = relY - touchState.startY;
+  console.log(`moveTouch: travelled ${ΔY} from start`);
+  return touchState.pressed ?
+    setLower(state, state.lower - ((ΔY / 10)|0))
+    : Nothing;
+}
+
+function endTouch() {
+  return {
+    pressed: false,
+  };
+}
+
+function initialTouchState() {
+  return {
+    pressed: false,
+  };
+}
+
+
 function initialize() {
   let state = initialState();
+  let touchState = initialTouchState();
   function eventHandler(stateUpdater) {
     return () => {
       const newState = stateUpdater(state);
       map(ns => render(ns, state), newState);
-      map((ns) => { state = ns; }, newState);
+      state = maybe(state, I, newState);
     };
   }
+
 
   document.getElementById('prevLowerNote').addEventListener('click', eventHandler(prevLower));
   document.getElementById('nextLowerNote').addEventListener('click', eventHandler(nextLower));
@@ -104,6 +161,33 @@ function initialize() {
   document.getElementById('nextUpperNote').addEventListener('click', eventHandler(nextUpper));
   document.getElementById('prevFingering').addEventListener('click', eventHandler(prevFingering));
   document.getElementById('nextFingering').addEventListener('click', eventHandler(nextFingering));
+
+  const noteDiv = document.getElementById('note');
+  function press(e) {
+    const newTouchState = beginTouch(touchState, noteDiv, e);
+    touchState = newTouchState;
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  }
+  function drag(e) {
+    const newState = moveTouch(touchState, state, noteDiv, e);
+    map(ns => render(ns, state), newState);
+    state = maybe(state, I, newState);
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  }
+  function release(e) {
+    const newTouchState = endTouch();
+    touchState = newTouchState;
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  }
+  noteDiv.addEventListener('touchstart', press);
+  noteDiv.addEventListener('touchmove', drag);
+  noteDiv.addEventListener('touchend', release);
   render(state);
 }
 
