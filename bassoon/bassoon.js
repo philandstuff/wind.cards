@@ -102,7 +102,7 @@ function relXpos(rect, touchevent) {
   return clientX - rect.left;
 }
 
-// touchState -> touchState
+// state -> touchState
 function beginTouch(state, element, touchEvent) {
   const rect = element.getBoundingClientRect();
   const relX = relXpos(rect, touchEvent);
@@ -126,7 +126,7 @@ function moveTouch(touchState, state, element, touchEvent) {
   const ΔY = relY - touchState.startY;
   console.log(`moveTouch: travelled ${ΔY} from start`);
   return touchState.pressed ?
-    setLower(state, state.lower - ((ΔY / 10)|0))
+    setLower(state, touchState.startNote - ((ΔY / 10) | 0))
     : Nothing;
 }
 
@@ -164,7 +164,7 @@ function initialize() {
 
   const noteDiv = document.getElementById('note');
   function press(e) {
-    const newTouchState = beginTouch(touchState, noteDiv, e);
+    const newTouchState = beginTouch(state, noteDiv, e);
     touchState = newTouchState;
     e.preventDefault();
     e.stopPropagation();
