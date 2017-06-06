@@ -5,6 +5,7 @@ import './bassoon.svg';
 import drawNotes from './stave';
 import renderFingering from './fingering';
 import { fingering, setLower, setUpper, setFingering, lowerNote, upperNote, upperNoteChoices, initialState } from './model';
+import { roundToZero } from './util';
 
 
 function prevLower(state) {
@@ -44,10 +45,6 @@ function render(newState, oldState) {
   renderFingering(fingering(newState));
 }
 
-
-function roundToZero(n) {
-  return n > 0 ? Math.floor(n) : Math.ceil(n);
-}
 
 function relYpos(rect, touchevent) {
   const clientY = touchevent.targetTouches[0].clientY;
