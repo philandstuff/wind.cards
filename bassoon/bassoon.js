@@ -46,37 +46,25 @@ function render(newState, oldState) {
 }
 
 
-function relYpos(rect, touchevent) {
-  const clientY = touchevent.targetTouches[0].clientY;
-  return clientY - rect.top;
-}
-
-function relXpos(rect, touchevent) {
-  const clientX = touchevent.targetTouches[0].clientX;
-  return clientX - rect.left;
-}
-
 // state -> touchState
 function beginTouch(state, element, touchEvent) {
   const rect = element.getBoundingClientRect();
-  const relX = relXpos(rect, touchEvent);
-  const relY = relYpos(rect, touchEvent);
-  const width = rect.right - rect.left;
-  const lowerSidep = relX < width / 2;
+  const clientX = touchEvent.targetTouches[0].clientX;
+  const clientY = touchEvent.targetTouches[0].clientY;
+  const rectMiddle = (rect.right + rect.left) / 2;
+  const lowerSidep = clientX < rectMiddle;
   return Just({
     pressedLowerSide: lowerSidep,
-    startX: relX,
-    startY: relY,
+    startY: clientY,
     startNote: lowerSidep ? state.lower : state.upper,
   });
 }
 
 // (touchState, state) -> Maybe state
 function moveTouch(touchState, state, element, touchEvent) {
-  const rect = element.getBoundingClientRect();
-  const relY = relYpos(rect, touchEvent);
+  const clientY = touchEvent.targetTouches[0].clientY;
   return chain(ts => {
-    const ΔY = relY - ts.startY;
+    const ΔY = clientY - ts.startY;
     return ts.pressedLowerSide
       ? setLower(state, ts.startNote - roundToZero(ΔY / 10))
       : setUpper(state, ts.startNote - roundToZero(ΔY / 10));
