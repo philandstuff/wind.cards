@@ -8,6 +8,7 @@ module.exports = {
     "sourceType": "module",
   },
   "rules": {
+    "no-confusing-arrow": "off",
     "no-nested-ternary": "off",
     "arrow-parens": "off",
   }

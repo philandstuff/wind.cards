@@ -41,8 +41,8 @@ function initialize() {
   document.getElementById('nextFingering').addEventListener('click', eventHandler(nextFingering));
 
   function press(e) {
-    const newTouchState = beginTouch(state.fingeringState, e);
-    state.touchState = newTouchState;
+    const newState = beginTouch(state, e);
+    state = newState;
     e.preventDefault();
     e.stopPropagation();
     return false;

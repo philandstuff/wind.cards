@@ -109,18 +109,21 @@ def('fingering', {}, [FingeringState, Fingering],
 // touch state functions //
 
 export const beginTouch =
-def('beginTouch', {}, [FingeringState, $.Object, TouchState],
-    (fingeringState, touchEvent) => {
+def('beginTouch', {}, [State, $.Object, State],
+    (state, touchEvent) => {
       const rect = touchEvent.currentTarget.getBoundingClientRect();
       const clientX = touchEvent.targetTouches[0].clientX;
       const clientY = touchEvent.targetTouches[0].clientY;
       const rectMiddle = (rect.right + rect.left) / 2;
       const lowerSidep = clientX < rectMiddle;
-      return S.Just({
-        pressedLowerSide: lowerSidep,
-        startY: clientY,
-        startNote: lowerSidep ? fingeringState.lower : fingeringState.upper,
-      });
+      return {
+        fingeringState: state.fingeringState,
+        touchState: S.Just({
+          pressedLowerSide: lowerSidep,
+          startY: clientY,
+          startNote: lowerSidep ? state.fingeringState.lower : state.fingeringState.upper,
+        }),
+      };
     });
 
 export const moveTouch =
