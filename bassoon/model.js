@@ -109,7 +109,7 @@ def('fingering', {}, [FingeringState, Fingering],
 // touch state functions //
 
 export const beginTouch =
-def('beginTouch', {}, [State, $.Object, State],
+def('beginTouch', {}, [State, $.Any, State],
     (state, touchEvent) => {
       const rect = touchEvent.currentTarget.getBoundingClientRect();
       const clientX = touchEvent.targetTouches[0].clientX;
@@ -126,17 +126,21 @@ def('beginTouch', {}, [State, $.Object, State],
       };
     });
 
+
+const setNote =
+      ts => ts.pressedLowerSide ? setLower : setUpper;
+
+
 export const moveTouch =
-def('moveTouch', {}, [State, $.Object, S.MaybeType(FingeringState)],
-    (state, touchEvent) => {
-      const clientY = touchEvent.targetTouches[0].clientY;
-      return S.chain(ts => {
-        const ΔY = clientY - ts.startY;
-        return ts.pressedLowerSide
-          ? setLower(state.fingeringState, ts.startNote - roundToZero(ΔY / 10))
-          : setUpper(state.fingeringState, ts.startNote - roundToZero(ΔY / 10));
-      }, state.touchState);
-    });
+def('moveTouch', {}, [State, $.Any, S.MaybeType(State)],
+    (state, touchEvent) =>
+    S.chain(ts => {
+      const ΔY = touchEvent.targetTouches[0].clientY - ts.startY;
+      return S.map(fs => ({
+        fingeringState: fs,
+        touchState: state.touchState,
+      }), setNote(ts)(state.fingeringState, ts.startNote - roundToZero(ΔY / 10)));
+    }, state.touchState));
 
 export const endTouch =
 def('endTouch', {}, [TouchState],

@@ -22,13 +22,13 @@ export const State = $.RecordType({
 });
 
 const S = create({
-  checkTypes: process.env.NODE_ENV === 'development',
+  checkTypes: true,
   env: env.concat([FingeringState]),
 });
 
 export default S;
 
 export const def = $.create({
-  checkTypes: process.env.NODE_ENV === 'development',
+  checkTypes: true,
   env: env.concat([FingeringState]),
 });

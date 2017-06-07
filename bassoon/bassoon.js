@@ -49,8 +49,8 @@ function initialize() {
   }
   function drag(e) {
     const newState = moveTouch(state, e);
-    map(ns => render(ns, state.fingeringState), newState);
-    state.fingeringState = maybe(state.fingeringState, I, newState);
+    map(ns => render(ns.fingeringState, state.fingeringState), newState);
+    state = maybe(state, I, newState);
     e.preventDefault();
     e.stopPropagation();
     return false;
