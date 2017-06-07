@@ -1,6 +1,9 @@
-import { Just, Nothing, sort } from 'sanctuary';
+import { Just, Nothing, chain, sort } from 'sanctuary';
 import fingeringData from './fingerings.json';
+import { roundToZero } from './util';
 
+
+// fingering state functions //
 
 const lowerNotes = sort(Object.keys(fingeringData));
 function upperNotes(fingerings, lower) {
@@ -65,3 +68,39 @@ export function upperNote(state) {
 export function fingering(state) {
   return fingeringData[lowerNote(state)][upperNote(state)][state.index];
 }
+
+// touch state functions //
+
+// fingeringState -> touchState
+export function beginTouch(fingeringState, element, touchEvent) {
+  const rect = element.getBoundingClientRect();
+  const clientX = touchEvent.targetTouches[0].clientX;
+  const clientY = touchEvent.targetTouches[0].clientY;
+  const rectMiddle = (rect.right + rect.left) / 2;
+  const lowerSidep = clientX < rectMiddle;
+  return Just({
+    pressedLowerSide: lowerSidep,
+    startY: clientY,
+    startNote: lowerSidep ? fingeringState.lower : fingeringState.upper,
+  });
+}
+
+// (touchState, fingeringState) -> Maybe fingeringState
+export function moveTouch(touchState, fingeringState, element, touchEvent) {
+  const clientY = touchEvent.targetTouches[0].clientY;
+  return chain(ts => {
+    const ΔY = clientY - ts.startY;
+    return ts.pressedLowerSide
+      ? setLower(fingeringState, ts.startNote - roundToZero(ΔY / 10))
+      : setUpper(fingeringState, ts.startNote - roundToZero(ΔY / 10));
+  }, touchState);
+}
+
+export function endTouch() {
+  return Nothing;
+}
+
+export function initialTouchState() {
+  return Nothing;
+}
+
