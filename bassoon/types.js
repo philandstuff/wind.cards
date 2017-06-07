@@ -21,6 +21,8 @@ export const State = $.RecordType({
   touchState: TouchState,
 });
 
+export const EventHandler = [State, $.Any, MaybeType(State)];
+
 const S = create({
   checkTypes: true,
   env: env.concat([FingeringState]),
