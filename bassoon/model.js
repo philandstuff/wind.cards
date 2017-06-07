@@ -1,6 +1,7 @@
 import $ from 'sanctuary-def';
+import { MaybeType } from 'sanctuary';
 import fingeringData from './fingerings.json';
-import S, { Fingering, FingeringState, def } from './types';
+import S, { Fingering, FingeringState, TouchState, def } from './types';
 import { roundToZero } from './util';
 
 // fingering state functions //
@@ -75,35 +76,37 @@ def('fingering', {}, [FingeringState, Fingering],
 
 // touch state functions //
 
-// fingeringState -> touchState
-export function beginTouch(fingeringState, touchEvent) {
-  const rect = touchEvent.currentTarget.getBoundingClientRect();
-  const clientX = touchEvent.targetTouches[0].clientX;
-  const clientY = touchEvent.targetTouches[0].clientY;
-  const rectMiddle = (rect.right + rect.left) / 2;
-  const lowerSidep = clientX < rectMiddle;
-  return S.Just({
-    pressedLowerSide: lowerSidep,
-    startY: clientY,
-    startNote: lowerSidep ? fingeringState.lower : fingeringState.upper,
-  });
-}
+export const beginTouch =
+def('beginTouch', {}, [FingeringState, $.Object, TouchState],
+    (fingeringState, touchEvent) => {
+      const rect = touchEvent.currentTarget.getBoundingClientRect();
+      const clientX = touchEvent.targetTouches[0].clientX;
+      const clientY = touchEvent.targetTouches[0].clientY;
+      const rectMiddle = (rect.right + rect.left) / 2;
+      const lowerSidep = clientX < rectMiddle;
+      return S.Just({
+        pressedLowerSide: lowerSidep,
+        startY: clientY,
+        startNote: lowerSidep ? fingeringState.lower : fingeringState.upper,
+      });
+    });
 
-// (touchState, fingeringState) -> Maybe fingeringState
-export function moveTouch(touchState, fingeringState, touchEvent) {
-  const clientY = touchEvent.targetTouches[0].clientY;
-  return S.chain(ts => {
-    const ΔY = clientY - ts.startY;
-    return ts.pressedLowerSide
-      ? setLower(fingeringState, ts.startNote - roundToZero(ΔY / 10))
-      : setUpper(fingeringState, ts.startNote - roundToZero(ΔY / 10));
-  }, touchState);
-}
+export const moveTouch =
+def('moveTouch', {}, [TouchState, FingeringState, $.Object, MaybeType(FingeringState)],
+    (touchState, fingeringState, touchEvent) => {
+      const clientY = touchEvent.targetTouches[0].clientY;
+      return S.chain(ts => {
+        const ΔY = clientY - ts.startY;
+        return ts.pressedLowerSide
+          ? setLower(fingeringState, ts.startNote - roundToZero(ΔY / 10))
+          : setUpper(fingeringState, ts.startNote - roundToZero(ΔY / 10));
+      }, touchState);
+    });
 
-export function endTouch() {
-  return S.Nothing;
-}
+export const endTouch =
+def('endTouch', {}, [TouchState],
+    () => S.Nothing);
 
-export function initialTouchState() {
-  return S.Nothing;
-}
+export const initialTouchState =
+def('initialTouchState', {}, [TouchState],
+    () => S.Nothing);

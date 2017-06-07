@@ -1,4 +1,4 @@
-import { create, env } from 'sanctuary';
+import { create, env, MaybeType } from 'sanctuary';
 import $ from 'sanctuary-def';
 
 export const FingeringState = $.RecordType({
@@ -9,6 +9,12 @@ export const FingeringState = $.RecordType({
 
 // we can tighten this later.
 export const Fingering = $.Object;
+
+export const TouchState = MaybeType($.RecordType({
+  pressedLowerSide: $.Boolean,
+  startY: $.Integer,
+  startNote: $.Integer,
+}));
 
 const S = create({
   checkTypes: process.env.NODE_ENV === 'development',
