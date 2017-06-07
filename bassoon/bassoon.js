@@ -2,27 +2,12 @@ import * as OfflinePluginRuntime from 'offline-plugin/runtime';
 import { I, map, maybe } from 'sanctuary';
 import './bassoon.css';
 import './bassoon.svg';
-import drawNotes from './stave';
-import renderFingering from './fingering';
-import { fingering, prevLower, nextLower, prevUpper, nextUpper, prevFingering, nextFingering, lowerNote, upperNote, upperNoteChoices, initialState, initialTouchState, beginTouch, moveTouch, endTouch } from './model';
-
-
-function render(newState, oldState) {
-  const newFingeringState = newState.fingeringState;
-  const newLowerNote = lowerNote(newFingeringState);
-  const newUpperNote = upperNote(newFingeringState);
-  const newUpperNotes = upperNoteChoices(newFingeringState);
-  if (!oldState ||
-      newFingeringState.lower !== oldState.fingeringState.lower ||
-      newFingeringState.upper !== oldState.fingeringState.upper) {
-    drawNotes(document.getElementById('notecanvas'), newLowerNote, newUpperNote, newUpperNotes);
-  }
-  renderFingering(fingering(newFingeringState));
-}
+import { prevLower, nextLower, prevUpper, nextUpper, prevFingering, nextFingering, initialState, beginTouch, moveTouch, endTouch } from './model';
+import render from './view';
 
 
 function initialize() {
-  let state = { fingeringState: initialState(), touchState: initialTouchState() };
+  let state = initialState;
   function eventHandler(stateUpdater) {
     return (e) => {
       const newState = stateUpdater(state, e);

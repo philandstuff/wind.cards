@@ -82,8 +82,8 @@ export const nextFingering =
               setFingering(fingeringState, fingeringState.index + 1));
 
 
-export const initialState =
-def('initialState', {}, [FingeringState],
+const initialFingeringState =
+def('initialFingeringState', {}, [FingeringState],
     () => ({
       lower: 0,
       upper: 0,
@@ -149,6 +149,13 @@ def('endTouch', {}, EventHandler,
       touchState: S.Nothing,
     }));
 
-export const initialTouchState =
+const initialTouchState =
 def('initialTouchState', {}, [TouchState],
     () => S.Nothing);
+
+export const initialState =
+def('initialState', {}, [State],
+    () => ({
+      fingeringState: initialFingeringState(),
+      touchState: initialTouchState,
+    }));
