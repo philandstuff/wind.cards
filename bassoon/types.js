@@ -16,6 +16,11 @@ export const TouchState = MaybeType($.RecordType({
   startNote: $.Integer,
 }));
 
+export const State = $.RecordType({
+  fingeringState: FingeringState,
+  touchState: TouchState,
+});
+
 const S = create({
   checkTypes: process.env.NODE_ENV === 'development',
   env: env.concat([FingeringState]),

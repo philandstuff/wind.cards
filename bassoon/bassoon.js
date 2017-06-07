@@ -4,26 +4,7 @@ import './bassoon.css';
 import './bassoon.svg';
 import drawNotes from './stave';
 import renderFingering from './fingering';
-import { fingering, setLower, setUpper, setFingering, lowerNote, upperNote, upperNoteChoices, initialState, initialTouchState, beginTouch, moveTouch, endTouch } from './model';
-
-
-const prevLower = fingeringState =>
-      setLower(fingeringState, fingeringState.lower - 1);
-
-const nextLower = fingeringState =>
-      setLower(fingeringState, fingeringState.lower + 1);
-
-const prevUpper = fingeringState =>
-      setUpper(fingeringState, fingeringState.upper - 1);
-
-const nextUpper = fingeringState =>
-      setUpper(fingeringState, fingeringState.upper + 1);
-
-const prevFingering = fingeringState =>
-      setFingering(fingeringState, fingeringState.index - 1);
-
-const nextFingering = fingeringState =>
-      setFingering(fingeringState, fingeringState.index + 1);
+import { fingering, prevLower, nextLower, prevUpper, nextUpper, prevFingering, nextFingering, lowerNote, upperNote, upperNoteChoices, initialState, initialTouchState, beginTouch, moveTouch, endTouch } from './model';
 
 
 function render(newState, oldState) {
@@ -42,11 +23,14 @@ function render(newState, oldState) {
 function initialize() {
   let fingeringState = initialState();
   let touchState = initialTouchState();
+  let state = { fingeringState, touchState };
   function eventHandler(stateUpdater) {
     return () => {
-      const newState = stateUpdater(fingeringState);
-      map(ns => render(ns, fingeringState), newState);
-      fingeringState = maybe(fingeringState, I, newState);
+      const newFingeringState = stateUpdater(state.fingeringState);
+      map(ns => render(ns, state.fingeringState), newFingeringState);
+      state = maybe(state,
+                    fs => ({ fingeringState: fs, touchState: state.touchState }),
+                    newFingeringState);
     };
   }
 

@@ -10,7 +10,7 @@ function upperNotes(fingerings, lower) {
   return S.sort(S.keys(fingerings[lower]));
 }
 
-export const setLower =
+const setLower =
 def('setLower', {}, [FingeringState, $.Integer, S.MaybeType(FingeringState)],
     (state, note) =>
     // TODO: clamp value rather than ignoring out-of-bounds
@@ -22,7 +22,7 @@ def('setLower', {}, [FingeringState, $.Integer, S.MaybeType(FingeringState)],
       index: 0,
     }));
 
-export const setUpper =
+const setUpper =
 def('setUpper', {}, [FingeringState, $.Integer, S.MaybeType(FingeringState)],
     (state, note) => {
       // TODO: clamp value rather than ignoring out-of-bounds
@@ -36,7 +36,7 @@ def('setUpper', {}, [FingeringState, $.Integer, S.MaybeType(FingeringState)],
         });
     });
 
-export const setFingering =
+const setFingering =
 def('setFingering', {}, [FingeringState, $.Integer, S.MaybeType(FingeringState)],
     (state, i) => {
       // TODO: clamp value rather than ignoring out-of-bounds
@@ -49,6 +49,25 @@ def('setFingering', {}, [FingeringState, $.Integer, S.MaybeType(FingeringState)]
           index: i,
         });
     });
+
+export const prevLower = fingeringState =>
+  setLower(fingeringState, fingeringState.lower - 1);
+
+export const nextLower = fingeringState =>
+  setLower(fingeringState, fingeringState.lower + 1);
+
+export const prevUpper = fingeringState =>
+  setUpper(fingeringState, fingeringState.upper - 1);
+
+export const nextUpper = fingeringState =>
+  setUpper(fingeringState, fingeringState.upper + 1);
+
+export const prevFingering = fingeringState =>
+  setFingering(fingeringState, fingeringState.index - 1);
+
+export const nextFingering = fingeringState =>
+  setFingering(fingeringState, fingeringState.index + 1);
+
 
 export const initialState =
 def('initialState', {}, [FingeringState],
