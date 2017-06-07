@@ -8,15 +8,16 @@ import { fingering, prevLower, nextLower, prevUpper, nextUpper, prevFingering, n
 
 
 function render(newState, oldState) {
-  const newLowerNote = lowerNote(newState);
-  const newUpperNote = upperNote(newState);
-  const newUpperNotes = upperNoteChoices(newState);
+  const newFingeringState = newState.fingeringState;
+  const newLowerNote = lowerNote(newFingeringState);
+  const newUpperNote = upperNote(newFingeringState);
+  const newUpperNotes = upperNoteChoices(newFingeringState);
   if (!oldState ||
-      newState.lower !== oldState.lower ||
-      newState.upper !== oldState.upper) {
+      newFingeringState.lower !== oldState.fingeringState.lower ||
+      newFingeringState.upper !== oldState.fingeringState.upper) {
     drawNotes(document.getElementById('notecanvas'), newLowerNote, newUpperNote, newUpperNotes);
   }
-  renderFingering(fingering(newState));
+  renderFingering(fingering(newFingeringState));
 }
 
 
@@ -25,7 +26,7 @@ function initialize() {
   function eventHandler(stateUpdater) {
     return (e) => {
       const newState = stateUpdater(state, e);
-      map(ns => render(ns.fingeringState, state.fingeringState), newState);
+      map(ns => render(ns, state), newState);
       state = maybe(state,
                     I,
                     newState);
@@ -47,7 +48,7 @@ function initialize() {
   noteDiv.addEventListener('touchstart', eventHandler(beginTouch));
   noteDiv.addEventListener('touchmove', eventHandler(moveTouch));
   noteDiv.addEventListener('touchend', eventHandler(endTouch));
-  render(state.fingeringState);
+  render(state);
 }
 
 window.onload = () => {
