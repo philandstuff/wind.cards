@@ -1,5 +1,4 @@
 import $ from 'sanctuary-def';
-import { MaybeType } from 'sanctuary';
 import fingeringData from './fingerings.json';
 import S, { Fingering, FingeringState, TouchState, State, def } from './types';
 import { roundToZero } from './util';
@@ -50,23 +49,37 @@ def('setFingering', {}, [FingeringState, $.Integer, S.MaybeType(FingeringState)]
         });
     });
 
-export const prevLower = fingeringState =>
-  setLower(fingeringState, fingeringState.lower - 1);
 
-export const nextLower = fingeringState =>
-  setLower(fingeringState, fingeringState.lower + 1);
+const onFingering =
+def('onFingering', {}, [$.Function([FingeringState, S.MaybeType(FingeringState)]),
+                        State, S.MaybeType(State)],
+    (f, state) =>
+    S.map(fs => ({ fingeringState: fs, touchState: state.touchState }),
+        f(state.fingeringState)));
 
-export const prevUpper = fingeringState =>
-  setUpper(fingeringState, fingeringState.upper - 1);
+export const prevLower =
+  onFingering(fingeringState =>
+              setLower(fingeringState, fingeringState.lower - 1));
 
-export const nextUpper = fingeringState =>
-  setUpper(fingeringState, fingeringState.upper + 1);
+export const nextLower =
+  onFingering(fingeringState =>
+              setLower(fingeringState, fingeringState.lower + 1));
 
-export const prevFingering = fingeringState =>
-  setFingering(fingeringState, fingeringState.index - 1);
+export const prevUpper =
+  onFingering(fingeringState =>
+              setUpper(fingeringState, fingeringState.upper - 1));
 
-export const nextFingering = fingeringState =>
-  setFingering(fingeringState, fingeringState.index + 1);
+export const nextUpper =
+  onFingering(fingeringState =>
+              setUpper(fingeringState, fingeringState.upper + 1));
+
+export const prevFingering =
+  onFingering(fingeringState =>
+              setFingering(fingeringState, fingeringState.index - 1));
+
+export const nextFingering =
+  onFingering(fingeringState =>
+              setFingering(fingeringState, fingeringState.index + 1));
 
 
 export const initialState =
@@ -111,7 +124,7 @@ def('beginTouch', {}, [FingeringState, $.Object, TouchState],
     });
 
 export const moveTouch =
-def('moveTouch', {}, [State, $.Object, MaybeType(FingeringState)],
+def('moveTouch', {}, [State, $.Object, S.MaybeType(FingeringState)],
     (state, touchEvent) => {
       const clientY = touchEvent.targetTouches[0].clientY;
       return S.chain(ts => {

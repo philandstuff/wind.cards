@@ -24,11 +24,11 @@ function initialize() {
   let state = { fingeringState: initialState(), touchState: initialTouchState() };
   function eventHandler(stateUpdater) {
     return () => {
-      const newFingeringState = stateUpdater(state.fingeringState);
-      map(ns => render(ns, state.fingeringState), newFingeringState);
+      const newState = stateUpdater(state);
+      map(ns => render(ns.fingeringState, state.fingeringState), newState);
       state = maybe(state,
-                    fs => ({ fingeringState: fs, touchState: state.touchState }),
-                    newFingeringState);
+                    I,
+                    newState);
     };
   }
 
