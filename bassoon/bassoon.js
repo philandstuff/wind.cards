@@ -21,9 +21,7 @@ function render(newState, oldState) {
 
 
 function initialize() {
-  let fingeringState = initialState();
-  let touchState = initialTouchState();
-  let state = { fingeringState, touchState };
+  let state = { fingeringState: initialState(), touchState: initialTouchState() };
   function eventHandler(stateUpdater) {
     return () => {
       const newFingeringState = stateUpdater(state.fingeringState);
@@ -43,23 +41,23 @@ function initialize() {
   document.getElementById('nextFingering').addEventListener('click', eventHandler(nextFingering));
 
   function press(e) {
-    const newTouchState = beginTouch(fingeringState, e);
-    touchState = newTouchState;
+    const newTouchState = beginTouch(state.fingeringState, e);
+    state.touchState = newTouchState;
     e.preventDefault();
     e.stopPropagation();
     return false;
   }
   function drag(e) {
-    const newState = moveTouch(touchState, fingeringState, e);
-    map(ns => render(ns, fingeringState), newState);
-    fingeringState = maybe(fingeringState, I, newState);
+    const newState = moveTouch(state, e);
+    map(ns => render(ns, state.fingeringState), newState);
+    state.fingeringState = maybe(state.fingeringState, I, newState);
     e.preventDefault();
     e.stopPropagation();
     return false;
   }
   function release(e) {
     const newTouchState = endTouch();
-    touchState = newTouchState;
+    state.touchState = newTouchState;
     e.preventDefault();
     e.stopPropagation();
     return false;
@@ -68,7 +66,7 @@ function initialize() {
   noteDiv.addEventListener('touchstart', press);
   noteDiv.addEventListener('touchmove', drag);
   noteDiv.addEventListener('touchend', release);
-  render(fingeringState);
+  render(state.fingeringState);
 }
 
 window.onload = () => {

@@ -1,7 +1,7 @@
 import $ from 'sanctuary-def';
 import { MaybeType } from 'sanctuary';
 import fingeringData from './fingerings.json';
-import S, { Fingering, FingeringState, TouchState, def } from './types';
+import S, { Fingering, FingeringState, TouchState, State, def } from './types';
 import { roundToZero } from './util';
 
 // fingering state functions //
@@ -111,15 +111,15 @@ def('beginTouch', {}, [FingeringState, $.Object, TouchState],
     });
 
 export const moveTouch =
-def('moveTouch', {}, [TouchState, FingeringState, $.Object, MaybeType(FingeringState)],
-    (touchState, fingeringState, touchEvent) => {
+def('moveTouch', {}, [State, $.Object, MaybeType(FingeringState)],
+    (state, touchEvent) => {
       const clientY = touchEvent.targetTouches[0].clientY;
       return S.chain(ts => {
         const ΔY = clientY - ts.startY;
         return ts.pressedLowerSide
-          ? setLower(fingeringState, ts.startNote - roundToZero(ΔY / 10))
-          : setUpper(fingeringState, ts.startNote - roundToZero(ΔY / 10));
-      }, touchState);
+          ? setLower(state.fingeringState, ts.startNote - roundToZero(ΔY / 10))
+          : setUpper(state.fingeringState, ts.startNote - roundToZero(ΔY / 10));
+      }, state.touchState);
     });
 
 export const endTouch =
