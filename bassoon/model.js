@@ -72,8 +72,8 @@ export function fingering(state) {
 // touch state functions //
 
 // fingeringState -> touchState
-export function beginTouch(fingeringState, element, touchEvent) {
-  const rect = element.getBoundingClientRect();
+export function beginTouch(fingeringState, touchEvent) {
+  const rect = touchEvent.currentTarget.getBoundingClientRect();
   const clientX = touchEvent.targetTouches[0].clientX;
   const clientY = touchEvent.targetTouches[0].clientY;
   const rectMiddle = (rect.right + rect.left) / 2;
@@ -86,7 +86,7 @@ export function beginTouch(fingeringState, element, touchEvent) {
 }
 
 // (touchState, fingeringState) -> Maybe fingeringState
-export function moveTouch(touchState, fingeringState, element, touchEvent) {
+export function moveTouch(touchState, fingeringState, touchEvent) {
   const clientY = touchEvent.targetTouches[0].clientY;
   return chain(ts => {
     const ΔY = clientY - ts.startY;

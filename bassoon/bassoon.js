@@ -58,16 +58,15 @@ function initialize() {
   document.getElementById('prevFingering').addEventListener('click', eventHandler(prevFingering));
   document.getElementById('nextFingering').addEventListener('click', eventHandler(nextFingering));
 
-  const noteDiv = document.getElementById('note');
   function press(e) {
-    const newTouchState = beginTouch(fingeringState, noteDiv, e);
+    const newTouchState = beginTouch(fingeringState, e);
     touchState = newTouchState;
     e.preventDefault();
     e.stopPropagation();
     return false;
   }
   function drag(e) {
-    const newState = moveTouch(touchState, fingeringState, noteDiv, e);
+    const newState = moveTouch(touchState, fingeringState, e);
     map(ns => render(ns, fingeringState), newState);
     fingeringState = maybe(fingeringState, I, newState);
     e.preventDefault();
@@ -81,6 +80,7 @@ function initialize() {
     e.stopPropagation();
     return false;
   }
+  const noteDiv = document.getElementById('note');
   noteDiv.addEventListener('touchstart', press);
   noteDiv.addEventListener('touchmove', drag);
   noteDiv.addEventListener('touchend', release);
