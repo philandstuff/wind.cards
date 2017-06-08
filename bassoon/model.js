@@ -157,5 +157,5 @@ export const initialState =
 def('initialState', {}, [State],
     () => ({
       fingeringState: initialFingeringState(),
-      touchState: initialTouchState,
+      touchState: initialTouchState(),
     }));

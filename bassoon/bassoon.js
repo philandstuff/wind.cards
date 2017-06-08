@@ -7,7 +7,7 @@ import render from './view';
 
 
 function initialize() {
-  let state = initialState;
+  let state = initialState();
   function eventHandler(stateUpdater) {
     return (e) => {
       const newState = stateUpdater(state, e);
