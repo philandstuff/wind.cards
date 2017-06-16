@@ -13,11 +13,6 @@ header {
     font-size: 24px;
 }
 
-footer {
-    margin: 0;
-    padding: 10px;
-}
-
 main {
     padding: 0 20px;
 }
@@ -71,3 +66,14 @@ button:disabled {
 
 nav { width: 10%; display: flex; }
 
+footer {
+    margin: 0;
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.social {
+    width: 14px;
+    height: 14px;
+}
