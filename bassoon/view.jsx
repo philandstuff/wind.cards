@@ -1,5 +1,7 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { fingering, lowerNote, upperNote, upperNoteChoices } from './model';
-import renderFingering from './fingering';
+import Fingering from './fingering';
 import drawNotes from './stave';
 
 
@@ -13,5 +15,5 @@ export default function render(newState, oldState) {
       newFingeringState.upper !== oldState.fingeringState.upper) {
     drawNotes(document.getElementById('notecanvas'), newLowerNote, newUpperNote, newUpperNotes);
   }
-  renderFingering(fingering(newFingeringState));
+  ReactDOM.render(<Fingering fingering={fingering(newFingeringState)} />, document.getElementById('fingering'));
 }

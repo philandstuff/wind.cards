@@ -17,6 +17,9 @@ const uglify = new webpack.optimize.UglifyJsPlugin({
 module.exports = {
   devtool: 'module-source-map',
   entry: './bassoon/bassoon.js',
+  resolve: {
+    extensions: ['*', '.js', '.jsx'],
+  },
   module: {
     rules: [
       {
@@ -27,6 +30,14 @@ module.exports = {
           presets: [
             [ 'es2015', { modules: false } ]
           ]
+        }
+      },
+      {
+        test: /\.jsx$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: [['es2015', { modules: false }], 'react' ]
         }
       },
       {
