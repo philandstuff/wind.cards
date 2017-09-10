@@ -17,6 +17,7 @@ const fingeringMap = {
   'a♭': 'pinkie_a♭',
   // right thumb
   'b♭': 'thumb_b♭',
+  'b♭-alternate': 'trill_b♭',
   'pancake': 'pancake_key',
   'f♯': 'thumb_f♯',
   'thumb-a♭': 'thumb_a♭',
