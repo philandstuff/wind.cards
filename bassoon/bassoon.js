@@ -11,7 +11,8 @@ function initialize() {
   function eventHandler(stateUpdater) {
     return (e) => {
       const newState = stateUpdater(state, e);
-      map(ns => render(ns, state), newState);
+      map(ns => render(eventHandler(prevFingering), eventHandler(nextFingering), ns, state),
+          newState);
       state = maybe(state,
                     I,
                     newState);
@@ -26,14 +27,12 @@ function initialize() {
   document.getElementById('nextLowerNote').addEventListener('click', eventHandler(nextLower));
   document.getElementById('prevUpperNote').addEventListener('click', eventHandler(prevUpper));
   document.getElementById('nextUpperNote').addEventListener('click', eventHandler(nextUpper));
-  document.getElementById('prevFingering').addEventListener('click', eventHandler(prevFingering));
-  document.getElementById('nextFingering').addEventListener('click', eventHandler(nextFingering));
 
   const noteDiv = document.getElementById('note');
   noteDiv.addEventListener('touchstart', eventHandler(beginTouch));
   noteDiv.addEventListener('touchmove', eventHandler(moveTouch));
   noteDiv.addEventListener('touchend', eventHandler(endTouch));
-  render(state);
+  render(eventHandler(prevFingering), eventHandler(nextFingering), state);
 }
 
 window.onload = () => {
