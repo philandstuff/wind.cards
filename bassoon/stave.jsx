@@ -1,3 +1,4 @@
+import React from 'react';
 import { Flow } from 'vexflow';
 
 function clefFor(midiNum) {
@@ -46,7 +47,7 @@ function notesFor(clef, midiNum, midiNums) {
     keys: degrees,
     duration: 'q',
     auto_stem: true,
-});
+  });
 
   for (let i = 0; i < midiNums.length; i += 1) {
     const vfNote = vfNotes[i];
@@ -61,26 +62,49 @@ function notesFor(clef, midiNum, midiNums) {
   return note;
 }
 
-export default function drawNotes(element, lower, upper, uppers) {
-  // empty out the element first
-  while (element.hasChildNodes()) {
-    element.removeChild(element.firstChild);
+
+export default class VexFlow extends React.Component {
+  componentDidMount() { this.handleProps(); }
+  componentDidUpdate() { this.handleProps(); }
+
+  handleProps() {
+    this.clear();
+
+    const {
+      width = 200,
+      height = 140,
+      lower,
+      upper,
+      uppers,
+    } = this.props;
+
+    const renderer = new Flow.Renderer(
+      this.wrapper,
+      Flow.Renderer.Backends.SVG,
+    );
+
+    renderer.resize(width, height);
+    const context = renderer.getContext();
+
+    const clef = clefFor(lower);
+
+    // stave is width-1 to allow final barline to be visible
+    const stave = new Flow.Stave(0, 0, width - 1);
+    stave.addClef(clef).setContext(context).draw();
+
+    const voice = new Flow.Voice({ num_beats: 2, beat_value: 4 });
+    voice.addTickables([noteFor(clef, lower), notesFor(clef, upper, uppers)]);
+
+    new Flow.Formatter().joinVoices([voice]).format([voice], width);
+
+    voice.draw(context, stave);
   }
 
-  const renderer = new Flow.Renderer(element, Flow.Renderer.Backends.SVG);
-  const width = 200;
-  renderer.resize(width, 140);
-  const context = renderer.getContext();
+  clear() {
+    this.wrapper.innerHTML = '';
+  }
 
-  const clef = clefFor(lower);
-
-  // stave is width-1 to allow final barline to be visible
-  const stave = new Flow.Stave(0, 0, width - 1);
-  stave.addClef(clef).setContext(context).draw();
-
-  const voice = new Flow.Voice({ num_beats: 2, beat_value: 4 });
-  voice.addTickables([noteFor(clef, lower), notesFor(clef, upper, uppers)]);
-
-  new Flow.Formatter().joinVoices([voice]).format([voice], width);
-  voice.draw(context, stave);
+  render() {
+    return <div ref={(c) => { this.wrapper = c; }} />;
+  }
 }

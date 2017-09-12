@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { fingering, lowerNote, upperNote, upperNoteChoices } from './model';
 import Fingering from './fingering';
-import drawNotes from './stave';
+import VexFlow from './stave';
 
 
 function FingeringNav(props) {
@@ -18,21 +18,58 @@ function FingeringNav(props) {
 }
 
 
-export default function render(prevFingering, nextFingering, newState, oldState) {
+function NoteNav(props) {
+  return (
+    <div className="row">
+      <nav className="column">
+        <button className="half-button" onClick={props.onNextLower}>↑</button>
+        <button className="half-button" onClick={props.onPrevLower}>↓</button>
+      </nav>
+      <VexFlow
+        lower={lowerNote(props.fingeringState)}
+        upper={upperNote(props.fingeringState)}
+        uppers={upperNoteChoices(props.fingeringState)}
+      />
+      <nav className="column">
+        <button className="half-button" onClick={props.onNextUpper}>↑</button>
+        <button className="half-button" onClick={props.onPrevUpper}>↓</button>
+      </nav>
+    </div>
+  );
+}
+
+
+function Site(props) {
+  return (
+    <div>
+      <FingeringNav
+        onPrevFingering={props.onPrevFingering}
+        onNextFingering={props.onNextFingering}
+        fingering={fingering(props.fingeringState)}
+      />
+      <NoteNav
+        onPrevLower={props.onPrevLower}
+        onNextLower={props.onNextLower}
+        onPrevUpper={props.onPrevUpper}
+        onNextUpper={props.onNextUpper}
+        fingeringState={props.fingeringState}
+      />
+    </div>
+  );
+}
+
+
+export default function render(prevLower, nextLower, prevUpper, nextUpper, prevFingering, nextFingering, newState) {
   const newFingeringState = newState.fingeringState;
-  const newLowerNote = lowerNote(newFingeringState);
-  const newUpperNote = upperNote(newFingeringState);
-  const newUpperNotes = upperNoteChoices(newFingeringState);
-  if (!oldState ||
-      newFingeringState.lower !== oldState.fingeringState.lower ||
-      newFingeringState.upper !== oldState.fingeringState.upper) {
-    drawNotes(document.getElementById('notecanvas'), newLowerNote, newUpperNote, newUpperNotes);
-  }
   const toplevel = (
-    <FingeringNav
+    <Site
+      onPrevLower={prevLower}
+      onNextLower={nextLower}
+      onPrevUpper={prevUpper}
+      onNextUpper={nextUpper}
       onPrevFingering={prevFingering}
       onNextFingering={nextFingering}
-      fingering={fingering(newFingeringState)}
+      fingeringState={newFingeringState}
     />);
   ReactDOM.render(toplevel, document.getElementById('fingering'));
 }
