@@ -105,6 +105,6 @@ export default class VexFlow extends React.Component {
   }
 
   render() {
-    return <div ref={(c) => { this.wrapper = c; }} />;
+    return <div className="note" ref={(c) => { this.wrapper = c; }} />;
   }
 }

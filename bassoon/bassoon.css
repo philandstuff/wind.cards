@@ -26,21 +26,17 @@ main {
     flex-direction: column;
 }
 
-#fingering {
+.fingering {
     display: flex;
     width: 80%;
     height: 350px;
 }
 
-#note {
+.note {
     display: inline;
     width: 80%;
     height: 140px;
     padding: 0 10px;
-}
-
-#notecanvas {
-    height: 140px;
 }
 
 button {
