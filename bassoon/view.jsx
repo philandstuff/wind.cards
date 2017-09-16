@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { fingering, lowerNote, upperNote, upperNoteChoices } from './model';
+import { I, maybe } from 'sanctuary';
+import { initialState, prevLower, nextLower, prevUpper, nextUpper, prevFingering, nextFingering, fingering, lowerNote, upperNote, upperNoteChoices } from './model';
 import Fingering from './fingering';
 import VexFlow from './stave';
 
@@ -39,37 +40,68 @@ function NoteNav(props) {
 }
 
 
-function Site(props) {
-  return (
-    <div>
-      <FingeringNav
-        onPrevFingering={props.onPrevFingering}
-        onNextFingering={props.onNextFingering}
-        fingering={fingering(props.fingeringState)}
-      />
-      <NoteNav
-        onPrevLower={props.onPrevLower}
-        onNextLower={props.onNextLower}
-        onPrevUpper={props.onPrevUpper}
-        onNextUpper={props.onNextUpper}
-        fingeringState={props.fingeringState}
-      />
-    </div>
-  );
+class Site extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = initialState();
+    this.prevLower = this.prevLower.bind(this);
+    this.nextLower = this.nextLower.bind(this);
+    this.prevUpper = this.prevUpper.bind(this);
+    this.nextUpper = this.nextUpper.bind(this);
+    this.prevFingering = this.prevFingering.bind(this);
+    this.nextFingering = this.nextFingering.bind(this);
+  }
+
+  prevLower(e) {
+    e.preventDefault();
+    this.setState((state) => maybe(state, I, prevLower(state, null)));
+  }
+
+  nextLower(e) {
+    e.preventDefault();
+    this.setState((state) => maybe(state, I, nextLower(state, null)));
+  }
+
+  prevUpper(e) {
+    e.preventDefault();
+    this.setState((state) => maybe(state, I, prevUpper(state, null)));
+  }
+
+  nextUpper(e) {
+    e.preventDefault();
+    this.setState((state) => maybe(state, I, nextUpper(state, null)));
+  }
+
+  prevFingering(e) {
+    e.preventDefault();
+    this.setState((state) => maybe(state, I, prevFingering(state, null)));
+  }
+
+  nextFingering(e) {
+    e.preventDefault();
+    this.setState((state) => maybe(state, I, nextFingering(state, null)));
+  }
+
+  render() {
+    return (
+      <div>
+        <FingeringNav
+          onPrevFingering={this.prevFingering}
+          onNextFingering={this.nextFingering}
+          fingering={fingering(this.state.fingeringState)}
+        />
+        <NoteNav
+          onPrevLower={this.prevLower}
+          onNextLower={this.nextLower}
+          onPrevUpper={this.prevUpper}
+          onNextUpper={this.nextUpper}
+          fingeringState={this.state.fingeringState}
+        />
+      </div>
+    );
+  }
 }
 
-
-export default function render(prevLower, nextLower, prevUpper, nextUpper, prevFingering, nextFingering, newState) {
-  const newFingeringState = newState.fingeringState;
-  const toplevel = (
-    <Site
-      onPrevLower={prevLower}
-      onNextLower={nextLower}
-      onPrevUpper={prevUpper}
-      onNextUpper={nextUpper}
-      onPrevFingering={prevFingering}
-      onNextFingering={nextFingering}
-      fingeringState={newFingeringState}
-    />);
-  ReactDOM.render(toplevel, document.getElementById('fingering'));
+export default function render() {
+  ReactDOM.render(<Site />, document.getElementById('fingering'));
 }
