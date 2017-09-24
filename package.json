@@ -10,6 +10,7 @@
     "offline-plugin": "^4.6.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-swipeable": "^4.1.0",
     "sanctuary": "^0.13.1",
     "sanctuary-def": "^0.12.1",
     "vexflow": "^1.2.83"

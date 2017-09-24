@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { I, maybe } from 'sanctuary';
-import { initialState, prevLower, nextLower, prevUpper, nextUpper, prevFingering, nextFingering, fingering, lowerNote, upperNote, upperNoteChoices } from './model';
+import { lowerNotes, initialState, setLower, prevLower, nextLower, prevUpper, nextUpper, prevFingering, nextFingering, fingering, lowerNote, upperNote, upperNoteChoices } from './model';
 import Fingering from './fingering';
 import VexFlow from './stave';
 
@@ -27,9 +27,11 @@ function NoteNav(props) {
         <button className="half-button" onClick={props.onPrevLower}>↓</button>
       </nav>
       <VexFlow
-        lower={lowerNote(props.fingeringState)}
+        lowerIndex={props.fingeringState.lower}
+        lowers={props.lowerNotes}
         upper={upperNote(props.fingeringState)}
         uppers={upperNoteChoices(props.fingeringState)}
+        onNewLower={props.onNewLower}
       />
       <nav className="column">
         <button className="half-button" onClick={props.onNextUpper}>↑</button>
@@ -50,6 +52,7 @@ class Site extends React.Component {
     this.nextUpper = this.nextUpper.bind(this);
     this.prevFingering = this.prevFingering.bind(this);
     this.nextFingering = this.nextFingering.bind(this);
+    this.newLower = this.newLower.bind(this);
   }
 
   prevLower(e) {
@@ -82,6 +85,15 @@ class Site extends React.Component {
     this.setState((state) => maybe(state, I, nextFingering(state, null)));
   }
 
+  newLower(n) {
+    this.setState(state => {
+      const updated = setLower(state.fingeringState, n);
+      return {
+        fingeringState: maybe(state.fingeringState, I, updated),
+      };
+    });
+  }
+
   render() {
     return (
       <div>
@@ -91,10 +103,12 @@ class Site extends React.Component {
           fingering={fingering(this.state.fingeringState)}
         />
         <NoteNav
+          lowerNotes={lowerNotes}
           onPrevLower={this.prevLower}
           onNextLower={this.nextLower}
           onPrevUpper={this.prevUpper}
           onNextUpper={this.nextUpper}
+          onNewLower={this.newLower}
           fingeringState={this.state.fingeringState}
         />
       </div>

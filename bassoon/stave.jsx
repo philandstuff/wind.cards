@@ -1,4 +1,5 @@
 import React from 'react';
+import Swipeable from 'react-swipeable'
 import { Flow } from 'vexflow';
 
 function clefFor(midiNum) {
@@ -64,22 +65,48 @@ function notesFor(clef, midiNum, midiNums) {
 
 
 export default class VexFlow extends React.Component {
-  componentDidMount() { this.handleProps(); }
-  componentDidUpdate() { this.handleProps(); }
+  constructor(props) {
+    super(props);
+    this.onSwiped = this.onSwiped.bind(this);
+    this.onSwiping = this.onSwiping.bind(this);
+    this.state = {};
+  }
+  componentDidMount() { this.redrawStave(); }
+  componentDidUpdate() { this.redrawStave(); }
 
-  handleProps() {
+  onSwiped(e, x, y) {
+    this.props.onNewLower && this.props.onNewLower(this.state.newLower);
+    this.setState({ newLower: null });
+  }
+
+  onSwiping(e, δx, δy) {
+    const d = Math.floor(δy/10);
+    const rawNewNote = this.props.lowerIndex + d;
+    const clamped = rawNewNote < 0 ? 0
+                  : rawNewNote >= this.props.lowers.length ? this.props.lowers.length - 1
+                  : rawNewNote;
+    this.setState({ newLower: clamped });
+  }
+
+  clear() {
+    this.stave.innerHTML = '';
+  }
+
+  redrawStave() {
     this.clear();
 
     const {
       width = 200,
       height = 140,
-      lower,
+      lowerIndex,
+      lowers,
       upper,
       uppers,
     } = this.props;
+    const lower = this.state.newLower ? lowers[this.state.newLower] : lowers[lowerIndex];
 
     const renderer = new Flow.Renderer(
-      this.wrapper,
+      this.stave,
       Flow.Renderer.Backends.SVG,
     );
 
@@ -100,11 +127,37 @@ export default class VexFlow extends React.Component {
     voice.draw(context, stave);
   }
 
-  clear() {
-    this.wrapper.innerHTML = '';
-  }
-
   render() {
-    return <div className="note" ref={(c) => { this.wrapper = c; }} />;
+    return (
+      <div className="note" style={{ position: 'relative' }}>
+        <div
+          style={{
+            position: 'absolute',
+            height: 140, // TODO: get from props
+            width: 200,
+          }}
+          ref={c => { this.stave = c; }}
+        />
+        <Swipeable
+          style={{
+            position: 'absolute',
+            height: 140, // TODO: get from props
+            width: 200 / 2,
+          }}
+          onSwiped={this.onSwiped}
+          onSwiping={this.onSwiping}
+        />
+        <Swipeable
+          style={{
+            position: 'absolute',
+            height: 140, // TODO: get from props
+            width: 200 / 2,
+            left: 200 / 2,
+          }}
+          onSwiped={this.onSwiped}
+          onSwiping={this.onSwiping}
+        />
+      </div>
+    );
   }
 }
