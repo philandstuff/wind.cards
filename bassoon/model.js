@@ -20,7 +20,7 @@ def('setLower', {}, [State, $.Integer, S.MaybeType(State)],
       index: 0,
     }));
 
-const setUpper =
+export const setUpper =
 def('setUpper', {}, [State, $.Integer, S.MaybeType(State)],
     (state, note) => {
       // TODO: clamp value rather than ignoring out-of-bounds

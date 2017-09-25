@@ -67,25 +67,41 @@ function notesFor(clef, midiNum, midiNums) {
 export default class VexFlow extends React.Component {
   constructor(props) {
     super(props);
-    this.onSwiped = this.onSwiped.bind(this);
-    this.onSwiping = this.onSwiping.bind(this);
+    this.onSwipedLower = this.onSwipedLower.bind(this);
+    this.onSwipingLower = this.onSwipingLower.bind(this);
+    this.onSwipedUpper = this.onSwipedUpper.bind(this);
+    this.onSwipingUpper = this.onSwipingUpper.bind(this);
     this.state = {};
   }
   componentDidMount() { this.redrawStave(); }
   componentDidUpdate() { this.redrawStave(); }
 
-  onSwiped(e, x, y) {
+  onSwipedLower(e, x, y) {
     this.props.onNewLower && this.props.onNewLower(this.state.newLower);
     this.setState({ newLower: null });
   }
 
-  onSwiping(e, δx, δy) {
+  onSwipingLower(e, δx, δy) {
     const d = Math.floor(δy/10);
     const rawNewNote = this.props.lowerIndex + d;
     const clamped = rawNewNote < 0 ? 0
                   : rawNewNote >= this.props.lowers.length ? this.props.lowers.length - 1
                   : rawNewNote;
     this.setState({ newLower: clamped });
+  }
+
+  onSwipedUpper(e, x, y) {
+    this.props.onNewUpper && this.props.onNewUpper(this.state.newUpper);
+    this.setState({ newUpper: null });
+  }
+
+  onSwipingUpper(e, δx, δy) {
+    const d = Math.floor(δy/10);
+    const rawNewNote = this.props.upperIndex + d;
+    const clamped = rawNewNote < 0 ? 0
+                  : rawNewNote >= this.props.uppers.length ? this.props.uppers.length - 1
+                  : rawNewNote;
+    this.setState({ newUpper: clamped });
   }
 
   clear() {
@@ -100,10 +116,11 @@ export default class VexFlow extends React.Component {
       height = 140,
       lowerIndex,
       lowers,
-      upper,
+      upperIndex,
       uppers,
     } = this.props;
     const lower = this.state.newLower ? lowers[this.state.newLower] : lowers[lowerIndex];
+    const upper = this.state.newUpper ? uppers[this.state.newUpper] : uppers[upperIndex];
 
     const renderer = new Flow.Renderer(
       this.stave,
@@ -144,8 +161,8 @@ export default class VexFlow extends React.Component {
             height: 140, // TODO: get from props
             width: 200 / 2,
           }}
-          onSwiped={this.onSwiped}
-          onSwiping={this.onSwiping}
+          onSwiped={this.onSwipedLower}
+          onSwiping={this.onSwipingLower}
         />
         <Swipeable
           style={{
@@ -154,8 +171,8 @@ export default class VexFlow extends React.Component {
             width: 200 / 2,
             left: 200 / 2,
           }}
-          onSwiped={this.onSwiped}
-          onSwiping={this.onSwiping}
+          onSwiped={this.onSwipedUpper}
+          onSwiping={this.onSwipingUpper}
         />
       </div>
     );

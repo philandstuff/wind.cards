@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { I, maybe } from 'sanctuary';
-import { lowerNotes, initialState, setLower, prevLower, nextLower, prevUpper, nextUpper, prevFingering, nextFingering, fingering, lowerNote, upperNote, upperNoteChoices } from './model';
+import { lowerNotes, initialState, setLower, prevLower, nextLower, setUpper, prevUpper, nextUpper, prevFingering, nextFingering, fingering, upperNote, upperNoteChoices } from './model';
 import Fingering from './fingering';
 import VexFlow from './stave';
 
@@ -29,9 +29,10 @@ function NoteNav(props) {
       <VexFlow
         lowerIndex={props.fingeringState.lower}
         lowers={props.lowerNotes}
-        upper={upperNote(props.fingeringState)}
+        upperIndex={props.fingeringState.upper}
         uppers={upperNoteChoices(props.fingeringState)}
         onNewLower={props.onNewLower}
+        onNewUpper={props.onNewUpper}
       />
       <nav className="column">
         <button className="half-button" onClick={props.onNextUpper}>↑</button>
@@ -53,6 +54,7 @@ class Site extends React.Component {
     this.prevFingering = this.prevFingering.bind(this);
     this.nextFingering = this.nextFingering.bind(this);
     this.newLower = this.newLower.bind(this);
+    this.newUpper = this.newUpper.bind(this);
   }
 
   prevLower(e) {
@@ -92,6 +94,13 @@ class Site extends React.Component {
     });
   }
 
+  newUpper(n) {
+    this.setState(state => {
+      const updated = setUpper(state, n);
+      return maybe(state, I, updated);
+    });
+  }
+
   render() {
     return (
       <div>
@@ -107,6 +116,7 @@ class Site extends React.Component {
           onPrevUpper={this.prevUpper}
           onNextUpper={this.nextUpper}
           onNewLower={this.newLower}
+          onNewUpper={this.newUpper}
           fingeringState={this.state}
         />
       </div>
