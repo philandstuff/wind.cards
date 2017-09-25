@@ -149,7 +149,13 @@ export default class VexFlow extends React.Component {
 
   render() {
     return (
-      <div className="note" style={{ position: 'relative' }}>
+      <div
+        style={{
+          margin: '0 auto',
+          position: 'relative',
+          width: this.props.width,
+        }}
+      >
         <div
           style={{
             position: 'absolute',

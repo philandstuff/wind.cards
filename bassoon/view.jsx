@@ -26,14 +26,16 @@ function NoteNav(props) {
         <button className="half-button" onClick={props.onNextLower}>↑</button>
         <button className="half-button" onClick={props.onPrevLower}>↓</button>
       </nav>
-      <VexFlow
-        lowerIndex={props.fingeringState.lower}
-        lowers={props.lowerNotes}
-        upperIndex={props.fingeringState.upper}
-        uppers={upperNoteChoices(props.fingeringState)}
-        onNewLower={props.onNewLower}
-        onNewUpper={props.onNewUpper}
-      />
+      <div className="note">
+        <VexFlow
+          lowerIndex={props.fingeringState.lower}
+          lowers={props.lowerNotes}
+          upperIndex={props.fingeringState.upper}
+          uppers={upperNoteChoices(props.fingeringState)}
+          onNewLower={props.onNewLower}
+          onNewUpper={props.onNewUpper}
+        />
+      </div>
       <nav className="column">
         <button className="half-button" onClick={props.onNextUpper}>↑</button>
         <button className="half-button" onClick={props.onPrevUpper}>↓</button>
