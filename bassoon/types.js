@@ -1,7 +1,7 @@
 import { create, env } from 'sanctuary';
 import $ from 'sanctuary-def';
 
-export const FingeringState = $.RecordType({
+export const State = $.RecordType({
   lower: $.Integer,
   upper: $.Integer,
   index: $.Integer,
@@ -10,18 +10,14 @@ export const FingeringState = $.RecordType({
 // we can tighten this later.
 export const Fingering = $.Object;
 
-export const State = $.RecordType({
-  fingeringState: FingeringState,
-});
-
 const S = create({
   checkTypes: true,
-  env: env.concat([FingeringState]),
+  env: env.concat([State]),
 });
 
 export default S;
 
 export const def = $.create({
   checkTypes: true,
-  env: env.concat([FingeringState]),
+  env: env.concat([State]),
 });

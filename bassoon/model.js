@@ -1,6 +1,6 @@
 import $ from 'sanctuary-def';
 import fingeringData from './fingerings.json';
-import S, { Fingering, FingeringState, State, def } from './types';
+import S, { Fingering, State, def } from './types';
 
 // fingering state functions //
 export const lowerNotes = S.sort(S.keys(fingeringData));
@@ -9,7 +9,7 @@ function upperNotes(fingerings, lower) {
 }
 
 export const setLower =
-def('setLower', {}, [FingeringState, $.Integer, S.MaybeType(FingeringState)],
+def('setLower', {}, [State, $.Integer, S.MaybeType(State)],
     (state, note) =>
     // TODO: clamp value rather than ignoring out-of-bounds
     note === state.lower ? S.Just(state)
@@ -21,7 +21,7 @@ def('setLower', {}, [FingeringState, $.Integer, S.MaybeType(FingeringState)],
     }));
 
 const setUpper =
-def('setUpper', {}, [FingeringState, $.Integer, S.MaybeType(FingeringState)],
+def('setUpper', {}, [State, $.Integer, S.MaybeType(State)],
     (state, note) => {
       // TODO: clamp value rather than ignoring out-of-bounds
       const uppers = upperNotes(fingeringData, lowerNotes[state.lower]);
@@ -35,7 +35,7 @@ def('setUpper', {}, [FingeringState, $.Integer, S.MaybeType(FingeringState)],
     });
 
 const setFingering =
-def('setFingering', {}, [FingeringState, $.Integer, S.MaybeType(FingeringState)],
+def('setFingering', {}, [State, $.Integer, S.MaybeType(State)],
     (state, i) => {
       // TODO: clamp value rather than ignoring out-of-bounds
       const currentTrillFingerings = fingeringData[lowerNotes[state.lower]][upperNotes(fingeringData, lowerNotes[state.lower])[state.upper]];
@@ -49,40 +49,27 @@ def('setFingering', {}, [FingeringState, $.Integer, S.MaybeType(FingeringState)]
     });
 
 
-const fingeringHandler =
-def('fingeringHandler', {}, [$.Function([FingeringState, S.MaybeType(FingeringState)]),
-                             State, $.Any, S.MaybeType(State)],
-    (f, state) =>
-    S.map(fs => ({ fingeringState: fs, touchState: state.touchState }),
-        f(state.fingeringState)));
-
 export const prevLower =
-  fingeringHandler(fingeringState =>
-              setLower(fingeringState, fingeringState.lower - 1));
+  state => setLower(state, state.lower - 1);
 
 export const nextLower =
-  fingeringHandler(fingeringState =>
-              setLower(fingeringState, fingeringState.lower + 1));
+  state => setLower(state, state.lower + 1);
 
 export const prevUpper =
-  fingeringHandler(fingeringState =>
-              setUpper(fingeringState, fingeringState.upper - 1));
+  state => setUpper(state, state.upper - 1);
 
 export const nextUpper =
-  fingeringHandler(fingeringState =>
-              setUpper(fingeringState, fingeringState.upper + 1));
+  state => setUpper(state, state.upper + 1);
 
 export const prevFingering =
-  fingeringHandler(fingeringState =>
-              setFingering(fingeringState, fingeringState.index - 1));
+  state => setFingering(state, state.index - 1);
 
 export const nextFingering =
-  fingeringHandler(fingeringState =>
-              setFingering(fingeringState, fingeringState.index + 1));
+  state => setFingering(state, state.index + 1);
 
 
-const initialFingeringState =
-def('initialFingeringState', {}, [FingeringState],
+export const initialState =
+def('initialState', {}, [State],
     () => ({
       lower: 0,
       upper: 0,
@@ -90,23 +77,17 @@ def('initialFingeringState', {}, [FingeringState],
     }));
 
 export const lowerNote =
-def('lowerNote', {}, [FingeringState, $.String],
+def('lowerNote', {}, [State, $.String],
     state => lowerNotes[state.lower]);
 
 export const upperNoteChoices =
-def('upperNoteChoices', {}, [FingeringState, $.Array($.String)],
+def('upperNoteChoices', {}, [State, $.Array($.String)],
     state => upperNotes(fingeringData, lowerNote(state)));
 
 export const upperNote =
-def('upperNote', {}, [FingeringState, $.String],
+def('upperNote', {}, [State, $.String],
     state => upperNoteChoices(state)[state.upper]);
 
 export const fingering =
-def('fingering', {}, [FingeringState, Fingering],
+def('fingering', {}, [State, Fingering],
     state => fingeringData[lowerNote(state)][upperNote(state)][state.index]);
-
-export const initialState =
-def('initialState', {}, [State],
-    () => ({
-      fingeringState: initialFingeringState(),
-    }));

@@ -87,10 +87,8 @@ class Site extends React.Component {
 
   newLower(n) {
     this.setState(state => {
-      const updated = setLower(state.fingeringState, n);
-      return {
-        fingeringState: maybe(state.fingeringState, I, updated),
-      };
+      const updated = setLower(state, n);
+      return maybe(state, I, updated);
     });
   }
 
@@ -100,7 +98,7 @@ class Site extends React.Component {
         <FingeringNav
           onPrevFingering={this.prevFingering}
           onNextFingering={this.nextFingering}
-          fingering={fingering(this.state.fingeringState)}
+          fingering={fingering(this.state)}
         />
         <NoteNav
           lowerNotes={lowerNotes}
@@ -109,7 +107,7 @@ class Site extends React.Component {
           onPrevUpper={this.prevUpper}
           onNextUpper={this.nextUpper}
           onNewLower={this.newLower}
-          fingeringState={this.state.fingeringState}
+          fingeringState={this.state}
         />
       </div>
     );
