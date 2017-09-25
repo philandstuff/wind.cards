@@ -205,7 +205,7 @@ VexFlow.propTypes = {
 
 VexFlow.defaultProps = {
   width: 200,
-  height: 140,
+  height: 120,
   onNewLower: () => null,
   onNewUpper: () => null,
 };
