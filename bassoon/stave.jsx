@@ -1,5 +1,6 @@
 import React from 'react';
-import Swipeable from 'react-swipeable'
+import Swipeable from 'react-swipeable';
+import PropTypes from 'prop-types';
 import { Flow } from 'vexflow';
 
 function clefFor(midiNum) {
@@ -76,13 +77,13 @@ export default class VexFlow extends React.Component {
   componentDidMount() { this.redrawStave(); }
   componentDidUpdate() { this.redrawStave(); }
 
-  onSwipedLower(e, x, y) {
-    this.props.onNewLower && this.props.onNewLower(this.state.newLower);
+  onSwipedLower() {
+    this.props.onNewLower(this.state.newLower);
     this.setState({ newLower: null });
   }
 
   onSwipingLower(e, δx, δy) {
-    const d = Math.floor(δy/10);
+    const d = Math.floor(δy / 10);
     const rawNewNote = this.props.lowerIndex + d;
     const clamped = rawNewNote < 0 ? 0
                   : rawNewNote >= this.props.lowers.length ? this.props.lowers.length - 1
@@ -91,13 +92,13 @@ export default class VexFlow extends React.Component {
     e.preventDefault(); // disable scrolling (required for iOS, warns in chrome)
   }
 
-  onSwipedUpper(e, x, y) {
-    this.props.onNewUpper && this.props.onNewUpper(this.state.newUpper);
+  onSwipedUpper() {
+    this.props.onNewUpper(this.state.newUpper);
     this.setState({ newUpper: null });
   }
 
   onSwipingUpper(e, δx, δy) {
-    const d = Math.floor(δy/10);
+    const d = Math.floor(δy / 10);
     const rawNewNote = this.props.upperIndex + d;
     const clamped = rawNewNote < 0 ? 0
                   : rawNewNote >= this.props.uppers.length ? this.props.uppers.length - 1
@@ -114,8 +115,8 @@ export default class VexFlow extends React.Component {
     this.clear();
 
     const {
-      width = 200,
-      height = 140,
+      width,
+      height,
       lowerIndex,
       lowers,
       upperIndex,
@@ -152,16 +153,16 @@ export default class VexFlow extends React.Component {
         <div
           style={{
             position: 'absolute',
-            height: 140, // TODO: get from props
-            width: 200,
+            height: this.props.height,
+            width: this.props.width,
           }}
           ref={c => { this.stave = c; }}
         />
         <Swipeable
           style={{
             position: 'absolute',
-            height: 140, // TODO: get from props
-            width: 200 / 2,
+            height: this.props.height,
+            width: this.props.width / 2,
             touchAction: 'none', // disable scrolling (not in safari/iOS)
           }}
           onSwiped={this.onSwipedLower}
@@ -171,9 +172,9 @@ export default class VexFlow extends React.Component {
         <Swipeable
           style={{
             position: 'absolute',
-            height: 140, // TODO: get from props
-            width: 200 / 2,
-            left: 200 / 2,
+            height: this.props.height,
+            width: this.props.width / 2,
+            left: this.props.width / 2,
             touchAction: 'none', // disable scrolling (not in safari/iOS)
           }}
           onSwiped={this.onSwipedUpper}
@@ -184,3 +185,21 @@ export default class VexFlow extends React.Component {
     );
   }
 }
+
+VexFlow.propTypes = {
+  width: PropTypes.number,
+  height: PropTypes.number,
+  lowerIndex: PropTypes.number.isRequired,
+  lowers: PropTypes.number.isRequired,
+  upperIndex: PropTypes.number.isRequired,
+  uppers: PropTypes.number.isRequired,
+  onNewLower: PropTypes.func,
+  onNewUpper: PropTypes.func,
+};
+
+VexFlow.defaultProps = {
+  width: 200,
+  height: 140,
+  onNewLower: () => null,
+  onNewUpper: () => null,
+};
