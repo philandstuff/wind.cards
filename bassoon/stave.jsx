@@ -166,6 +166,7 @@ export default class VexFlow extends React.Component {
           }}
           onSwiped={this.onSwipedLower}
           onSwiping={this.onSwipingLower}
+          trackMouse
         />
         <Swipeable
           style={{
@@ -177,6 +178,7 @@ export default class VexFlow extends React.Component {
           }}
           onSwiped={this.onSwipedUpper}
           onSwiping={this.onSwipingUpper}
+          trackMouse
         />
       </div>
     );
