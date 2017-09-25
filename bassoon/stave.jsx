@@ -88,6 +88,7 @@ export default class VexFlow extends React.Component {
                   : rawNewNote >= this.props.lowers.length ? this.props.lowers.length - 1
                   : rawNewNote;
     this.setState({ newLower: clamped });
+    e.preventDefault(); // disable scrolling (required for iOS, warns in chrome)
   }
 
   onSwipedUpper(e, x, y) {
@@ -102,6 +103,7 @@ export default class VexFlow extends React.Component {
                   : rawNewNote >= this.props.uppers.length ? this.props.uppers.length - 1
                   : rawNewNote;
     this.setState({ newUpper: clamped });
+    e.preventDefault(); // disable scrolling (required for iOS, warns in chrome)
   }
 
   clear() {
@@ -160,6 +162,7 @@ export default class VexFlow extends React.Component {
             position: 'absolute',
             height: 140, // TODO: get from props
             width: 200 / 2,
+            touchAction: 'none', // disable scrolling (not in safari/iOS)
           }}
           onSwiped={this.onSwipedLower}
           onSwiping={this.onSwipingLower}
@@ -170,6 +173,7 @@ export default class VexFlow extends React.Component {
             height: 140, // TODO: get from props
             width: 200 / 2,
             left: 200 / 2,
+            touchAction: 'none', // disable scrolling (not in safari/iOS)
           }}
           onSwiped={this.onSwipedUpper}
           onSwiping={this.onSwipingUpper}
