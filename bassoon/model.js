@@ -79,3 +79,7 @@ def('upperNote', {}, [State, $.String],
 export const fingering =
 def('fingering', {}, [State, Fingering],
     state => fingeringData[lowerNote(state)][upperNote(state)][state.index]);
+
+export const fingeringsAvailable =
+def('fingering', {}, [State, $.Integer],
+    state => fingeringData[lowerNote(state)][upperNote(state)].length);

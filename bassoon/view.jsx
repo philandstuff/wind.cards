@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { I, maybe } from 'sanctuary';
-import { lowerNotes, initialState, setLower, setUpper, prevFingering, nextFingering, fingering, upperNoteChoices } from './model';
+import { lowerNotes, initialState, setLower, setUpper, prevFingering, nextFingering, fingering, upperNoteChoices, fingeringsAvailable } from './model';
 import Fingering from './fingering';
 import VexFlow from './stave';
 
@@ -9,11 +9,11 @@ import VexFlow from './stave';
 function FingeringNav(props) {
   return (<div className="row">
     <nav>
-      <button className="fingering-button" onClick={props.onPrevFingering}>←</button>
+      <button className="fingering-button" onClick={props.onPrevFingering} disabled={props.disablePrevFingering}>←</button>
     </nav>
     <Fingering fingering={props.fingering} />
     <nav>
-      <button className="fingering-button" onClick={props.onNextFingering}>→</button>
+      <button className="fingering-button" onClick={props.onNextFingering} disabled={props.disableNextFingering}>→</button>
     </nav>
   </div>);
 }
@@ -77,6 +77,8 @@ class Site extends React.Component {
         <FingeringNav
           onPrevFingering={this.prevFingering}
           onNextFingering={this.nextFingering}
+          disablePrevFingering={this.state.index === 0}
+          disableNextFingering={this.state.index === fingeringsAvailable(this.state) - 1 }
           fingering={fingering(this.state)}
         />
         <NoteNav
