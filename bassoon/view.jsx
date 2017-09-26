@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { I, maybe } from 'sanctuary';
-import { lowerNotes, initialState, setLower, prevLower, nextLower, setUpper, prevUpper, nextUpper, prevFingering, nextFingering, fingering, upperNote, upperNoteChoices } from './model';
+import { lowerNotes, initialState, setLower, setUpper, prevFingering, nextFingering, fingering, upperNoteChoices } from './model';
 import Fingering from './fingering';
 import VexFlow from './stave';
 
@@ -22,10 +22,6 @@ function FingeringNav(props) {
 function NoteNav(props) {
   return (
     <div className="row">
-      <nav className="column">
-        <button className="half-button" onClick={props.onNextLower}>↑</button>
-        <button className="half-button" onClick={props.onPrevLower}>↓</button>
-      </nav>
       <div className="note">
         <VexFlow
           lowerIndex={props.fingeringState.lower}
@@ -36,10 +32,6 @@ function NoteNav(props) {
           onNewUpper={props.onNewUpper}
         />
       </div>
-      <nav className="column">
-        <button className="half-button" onClick={props.onNextUpper}>↑</button>
-        <button className="half-button" onClick={props.onPrevUpper}>↓</button>
-      </nav>
     </div>
   );
 }
@@ -49,34 +41,10 @@ class Site extends React.Component {
   constructor(props) {
     super(props);
     this.state = initialState();
-    this.prevLower = this.prevLower.bind(this);
-    this.nextLower = this.nextLower.bind(this);
-    this.prevUpper = this.prevUpper.bind(this);
-    this.nextUpper = this.nextUpper.bind(this);
     this.prevFingering = this.prevFingering.bind(this);
     this.nextFingering = this.nextFingering.bind(this);
     this.newLower = this.newLower.bind(this);
     this.newUpper = this.newUpper.bind(this);
-  }
-
-  prevLower(e) {
-    e.preventDefault();
-    this.setState((state) => maybe(state, I, prevLower(state, null)));
-  }
-
-  nextLower(e) {
-    e.preventDefault();
-    this.setState((state) => maybe(state, I, nextLower(state, null)));
-  }
-
-  prevUpper(e) {
-    e.preventDefault();
-    this.setState((state) => maybe(state, I, prevUpper(state, null)));
-  }
-
-  nextUpper(e) {
-    e.preventDefault();
-    this.setState((state) => maybe(state, I, nextUpper(state, null)));
   }
 
   prevFingering(e) {
@@ -113,10 +81,6 @@ class Site extends React.Component {
         />
         <NoteNav
           lowerNotes={lowerNotes}
-          onPrevLower={this.prevLower}
-          onNextLower={this.nextLower}
-          onPrevUpper={this.prevUpper}
-          onNextUpper={this.nextUpper}
           onNewLower={this.newLower}
           onNewUpper={this.newUpper}
           fingeringState={this.state}

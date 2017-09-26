@@ -49,18 +49,6 @@ def('setFingering', {}, [State, $.Integer, S.MaybeType(State)],
     });
 
 
-export const prevLower =
-  state => setLower(state, state.lower - 1);
-
-export const nextLower =
-  state => setLower(state, state.lower + 1);
-
-export const prevUpper =
-  state => setUpper(state, state.upper - 1);
-
-export const nextUpper =
-  state => setUpper(state, state.upper + 1);
-
 export const prevFingering =
   state => setFingering(state, state.index - 1);
 
