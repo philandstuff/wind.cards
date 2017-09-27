@@ -9,11 +9,19 @@ import VexFlow from './stave';
 function FingeringNav(props) {
   return (<div className="row">
     <nav>
-      <button className="fingering-button" onClick={props.onPrevFingering} disabled={props.disablePrevFingering}>←</button>
+      <button
+        className="fingering-button"
+        onClick={props.onPrevFingering}
+        disabled={props.disablePrevFingering}
+      >←</button>
     </nav>
     <Fingering fingering={props.fingering} />
     <nav>
-      <button className="fingering-button" onClick={props.onNextFingering} disabled={props.disableNextFingering}>→</button>
+      <button
+        className="fingering-button"
+        onClick={props.onNextFingering}
+        disabled={props.disableNextFingering}
+      >→</button>
     </nav>
   </div>);
 }
