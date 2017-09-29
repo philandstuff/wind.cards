@@ -11,6 +11,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-modal": "^2.3.2",
     "react-swipeable": "^4.1.0",
     "sanctuary": "^0.13.1",
     "sanctuary-def": "^0.12.1",
