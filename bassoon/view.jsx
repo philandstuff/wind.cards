@@ -84,7 +84,7 @@ class FeedbackModal extends React.Component {
 
   render() {
     return (
-      <Modal isOpen={this.props.isOpen} >
+      <Modal isOpen={this.props.isOpen} onRequestClose={this.props.onRequestClose} >
         <h2>What is wrong?</h2>
         <form>
           <textarea id="feedback" ref={c => { this.feedbackTextarea = c; }} />
@@ -98,6 +98,7 @@ class FeedbackModal extends React.Component {
 FeedbackModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onSuccess: PropTypes.func.isRequired,
+  onRequestClose: PropTypes.func.isRequired,
   state: PropTypes.object.isRequired,
 };
 
@@ -178,6 +179,7 @@ class Site extends React.Component {
           <FeedbackModal
             isOpen={this.state.feedbackModalOpen}
             onSuccess={() => this.setState({ feedbackModalOpen: false })}
+            onRequestClose={() => this.setState({ feedbackModalOpen: false }) }
             state={this.state}
           />
         </main>
