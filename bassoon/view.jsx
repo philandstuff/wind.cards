@@ -160,7 +160,19 @@ class Site extends React.Component {
             onNewUpper={this.newUpper}
             fingeringState={this.state.fingering}
           />
-          <button type="button" onClick={() => this.setState({ feedbackModalOpen: true })} >
+          <button
+            type="button"
+            onClick={() => this.setState({ feedbackModalOpen: true })}
+            style={{
+              display: 'inline',
+              cursor: 'pointer',
+              fontSize: 12,
+              textAlign: 'center',
+              color: '#ccc',
+              background: 'none',
+              border: 'none',
+            }}
+          >
             not working?
           </button>
           <FeedbackModal
