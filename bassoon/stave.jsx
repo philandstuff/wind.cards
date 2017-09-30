@@ -196,9 +196,9 @@ VexFlow.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
   lowerIndex: PropTypes.number.isRequired,
-  lowers: PropTypes.arrayOf(PropTypes.number).isRequired,
+  lowers: PropTypes.arrayOf(PropTypes.string).isRequired, // TODO: should be number
   upperIndex: PropTypes.number.isRequired,
-  uppers: PropTypes.arrayOf(PropTypes.number).isRequired,
+  uppers: PropTypes.arrayOf(PropTypes.string).isRequired, // TODO: should be number
   onNewLower: PropTypes.func,
   onNewUpper: PropTypes.func,
 };
