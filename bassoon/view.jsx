@@ -6,6 +6,7 @@ import { I, maybe } from 'sanctuary';
 import { lowerNotes, initialState, setLower, setUpper, prevFingering, nextFingering, fingering, upperNoteChoices, fingeringsAvailable } from './model';
 import Fingering from './fingering';
 import VexFlow from './stave';
+import TwitterImage from '../twitter.svg';
 
 
 function FingeringNav(props) {
@@ -102,7 +103,7 @@ class Site extends React.Component {
     super(props);
     this.state = {
       fingering: initialState(),
-      feedbackModalOpen: true,
+      feedbackModalOpen: false,
     };
     this.prevFingering = this.prevFingering.bind(this);
     this.nextFingering = this.nextFingering.bind(this);
@@ -141,29 +142,38 @@ class Site extends React.Component {
   render() {
     return (
       <div>
-        <FingeringNav
-          onPrevFingering={this.prevFingering}
-          onNextFingering={this.nextFingering}
-          disablePrevFingering={this.state.fingering.index === 0}
-          disableNextFingering={this.state.fingering.index === fingeringsAvailable(this.state.fingering) - 1}
-          fingering={fingering(this.state.fingering)}
-        />
-        <NoteNav
-          lowerNotes={lowerNotes}
-          onNewLower={this.newLower}
-          onNewUpper={this.newUpper}
-          fingeringState={this.state.fingering}
-        />
-        <FeedbackModal
-          isOpen={this.state.feedbackModalOpen}
-          onSuccess={() => this.setState({ feedbackModalOpen: false })}
-          state={this.state}
-        />
+        <main>
+          <FingeringNav
+            onPrevFingering={this.prevFingering}
+            onNextFingering={this.nextFingering}
+            disablePrevFingering={this.state.fingering.index === 0}
+            disableNextFingering={this.state.fingering.index === fingeringsAvailable(this.state.fingering) - 1}
+            fingering={fingering(this.state.fingering)}
+          />
+          <NoteNav
+            lowerNotes={lowerNotes}
+            onNewLower={this.newLower}
+            onNewUpper={this.newUpper}
+            fingeringState={this.state.fingering}
+          />
+          <button type="button" onClick={() => this.setState({ feedbackModalOpen: true })} >
+            not working?
+          </button>
+          <FeedbackModal
+            isOpen={this.state.feedbackModalOpen}
+            onSuccess={() => this.setState({ feedbackModalOpen: false })}
+            state={this.state}
+          />
+        </main>
+        <footer>
+          wind.cards is built by <a href="http://www.philandstuff.com">Philip Potter</a>.
+          <a href="https://twitter.com/philandstuff"><img className="social" src={TwitterImage} /></a>
+        </footer>
       </div>
     );
   }
 }
 
 export default function render() {
-  ReactDOM.render(<Site />, document.getElementById('fingering'));
+  ReactDOM.render(<Site />, document.getElementById('site'));
 }
