@@ -10,18 +10,22 @@ import TwitterImage from '../twitter.svg';
 
 
 function FingeringNav(props) {
-  return (<div className="row">
-    <nav>
+  const navStyle = {
+    width: '10%',
+    display: 'flex',
+  };
+  return (<div style={{ display: 'flex' }}>
+    <nav style={navStyle}>
       <button
-        className="fingering-button"
+        style={{ height: 350 }}
         onClick={props.onPrevFingering}
         disabled={props.disablePrevFingering}
       >←</button>
     </nav>
     <Fingering fingering={props.fingering} />
-    <nav>
+    <nav style={navStyle}>
       <button
-        className="fingering-button"
+        style={{ height: 350 }}
         onClick={props.onNextFingering}
         disabled={props.disableNextFingering}
       >→</button>
@@ -32,7 +36,7 @@ function FingeringNav(props) {
 
 function NoteNav(props) {
   return (
-    <div className="row">
+    <div style={{ display: 'flex' }}>
       <div className="note">
         <VexFlow
           lowerIndex={props.fingeringState.lower}
@@ -165,9 +169,17 @@ class Site extends React.Component {
             state={this.state}
           />
         </main>
-        <footer>
+        <footer style={{
+          margin: 0,
+          padding: 10,
+          fontSize: 12,
+          textAlign: 'center',
+        }}
+        >
           wind.cards is built by <a href="http://www.philandstuff.com">Philip Potter</a>.
-          <a href="https://twitter.com/philandstuff"><img className="social" src={TwitterImage} /></a>
+          <a href="https://twitter.com/philandstuff">
+            <img alt="twitter profile" width="14" height="14" src={TwitterImage} />
+          </a>
         </footer>
       </div>
     );

@@ -9,11 +9,6 @@ main {
     padding: 0 20px;
 }
 
-.row {
-    display: flex;
-    flex-direction: row;
-}
-
 .fingering {
     display: flex;
     width: 80%;
@@ -37,22 +32,4 @@ button {
 
 button:disabled {
     background: #ddf;
-}
-
-.fingering-button {
-    height: 350px;
-}
-
-nav { width: 10%; display: flex; }
-
-footer {
-    margin: 0;
-    padding: 10px;
-    font-size: 12px;
-    text-align: center;
-}
-
-.social {
-    width: 14px;
-    height: 14px;
 }
