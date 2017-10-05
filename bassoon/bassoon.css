@@ -5,6 +5,14 @@ body {
     margin: 0;
 }
 
+@media (min-width: 500px) {
+    body {
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 main {
     padding: 0 20px;
 }
