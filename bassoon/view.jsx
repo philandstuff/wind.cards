@@ -84,7 +84,12 @@ class FeedbackModal extends React.Component {
 
   render() {
     return (
-      <Modal isOpen={this.props.isOpen} onRequestClose={this.props.onRequestClose} >
+      <Modal
+        isOpen={this.props.isOpen}
+        onRequestClose={this.props.onRequestClose}
+        overlayClassName="feedback-modal-overlay"
+        className="feedback-modal"
+      >
         <h2>Report a problem</h2>
         <form>
           <textarea id="feedback" ref={c => { this.feedbackTextarea = c; }} />

@@ -6,11 +6,44 @@ body {
 }
 
 @media (min-width: 500px) {
+    /* limit page to 500px */
     body {
         width: 500px;
         margin-left: auto;
         margin-right: auto;
     }
+}
+
+.feedback-modal-overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    backgroundColor: rgba(255, 255, 255, 0.75);
+}
+
+@media (min-width: 500px) {
+    /* limit modals to 500px */
+    .feedback-modal-overlay {
+        width: 500px;
+        margin: 0 auto;
+    }
+}
+
+.feedback-modal {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    border: 1px solid #ccc;
+    background: #fff;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
 }
 
 main {
