@@ -85,7 +85,7 @@ class FeedbackModal extends React.Component {
   render() {
     return (
       <Modal isOpen={this.props.isOpen} onRequestClose={this.props.onRequestClose} >
-        <h2>What is wrong?</h2>
+        <h2>Report a problem</h2>
         <form>
           <textarea id="feedback" ref={c => { this.feedbackTextarea = c; }} />
           <button type="button" onClick={this.sendFeedback}>Submit</button>
