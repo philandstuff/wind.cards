@@ -90,6 +90,27 @@ class FeedbackModal extends React.Component {
         overlayClassName="feedback-modal-overlay"
         className="feedback-modal"
       >
+        <svg
+          viewbox="0 0 40 40"
+          style={{
+            position: 'absolute',
+            width: 40,
+            right: 20,
+            top: 20,
+            cursor: 'pointer',
+          }}
+          onClick={this.props.onRequestClose}
+        >
+          <path
+            style={{
+              stroke: 'black',
+              fill: 'transparent',
+              strokeLinecap: 'round',
+              strokeWidth: 5,
+            }}
+            d="M 10,10 L 30,30 M 30,10 L 10,30"
+          />
+        </svg>
         <h2>Report a problem</h2>
         <form>
           <textarea id="feedback" ref={c => { this.feedbackTextarea = c; }} />
