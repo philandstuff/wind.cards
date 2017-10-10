@@ -2,16 +2,9 @@
 
 body {
     padding: 0;
-    margin: 0;
-}
-
-@media (min-width: 500px) {
+    margin: 0 auto;
     /* limit page to 500px */
-    body {
-        width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+    max-width: 500px;
 }
 
 .feedback-modal-overlay {
@@ -23,20 +16,14 @@ body {
     backgroundColor: rgba(255, 255, 255, 0.75);
 }
 
-@media (min-width: 500px) {
-    /* limit modals to 500px */
-    .feedback-modal-overlay {
-        width: 500px;
-        margin: 0 auto;
-    }
-}
-
 .feedback-modal {
     position: absolute;
     top: 40px;
+    bottom: 40px;
     left: 40px;
     right: 40px;
-    bottom: 40px;
+    max-width: 380px; /* 500px - 2*40px margin - 2*20px padding */
+    margin: 0 auto;
     border: 1px solid #ccc;
     background: #fff;
     overflow: auto;
@@ -44,10 +31,6 @@ body {
     border-radius: 4px;
     outline: none;
     padding: 20px;
-}
-
-main {
-    padding: 0 20px;
 }
 
 .fingering {
