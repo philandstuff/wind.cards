@@ -127,7 +127,7 @@ class Site extends React.Component {
           <FeedbackModal
             isOpen={this.state.feedbackModalOpen}
             onSuccess={() => this.setState({ feedbackModalOpen: false })}
-            onRequestClose={() => this.setState({ feedbackModalOpen: false }) }
+            onRequestClose={() => this.setState({ feedbackModalOpen: false })}
             state={this.state}
           />
         </main>

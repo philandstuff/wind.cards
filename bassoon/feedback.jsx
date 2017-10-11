@@ -14,9 +14,11 @@ export default class FeedbackModal extends React.Component {
   }
 
   sendFeedback() {
+    const fingering = this.props.state.fingering;
     const toSend = {
-      name: this.feedbackTextarea.value,
+      name: `${fingering.lower}-${fingering.upper}.${fingering.index}`,
       data: this.props.state,
+      message: this.feedbackTextarea.value,
     };
     fetch('https://feedback.wind.cards', {
       method: 'post',
