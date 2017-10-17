@@ -4,17 +4,16 @@ import Modal from 'react-modal';
 
 
 /* convert midi note to scientific notation */
-/* TODO: tests! */
-function midi2sci(midiNum) {
+export function midi2sci(midiNum) {
   const degreeTable = ['c', 'c', 'd', 'e', 'e', 'f', 'f', 'g', 'g', 'a', 'b', 'b'];
   const accidentalTable = [null, '♯', null, '♭', null, null, '♯', null, '♯', null, '♭', null];
 
   const octave = Math.floor(midiNum / 12) - 1;
   const degreeNum = midiNum % 12;
   const degree = degreeTable[degreeNum];
-  const accidental = accidentalTable[degreeNum];
+  const accidental = accidentalTable[degreeNum] || '';
 
-  return `${degree}${accidental}/${octave}`;
+  return `${degree}${accidental}${octave}`;
 }
 
 
