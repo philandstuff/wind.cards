@@ -8,7 +8,11 @@ const html = new HtmlWebpackPlugin({
   template: 'bassoon/bassoon.html',
   filename: 'bassoon.html'
 })
-const offline = new OfflinePlugin
+const offline = new OfflinePlugin({
+  publicPath: '/',
+  externals: ['/', 'bassoon'],
+  excludes: ['bassoon.html'],
+})
 const extractText = new ExtractTextPlugin("./bassoon/bassoon.css")
 const uglify = new webpack.optimize.UglifyJsPlugin({
   sourceMap: true
@@ -63,5 +67,5 @@ module.exports = {
     filename: '[name].[hash].js',
     path: path.resolve(__dirname, 'assets/'),
   },
-  plugins: [html, offline, extractText, uglify ],
+  plugins: [html, extractText, uglify, offline ], // apparently it's better if offline is last
 }
