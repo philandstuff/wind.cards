@@ -14,6 +14,7 @@ aws s3 cp assets/bassoon.html ${PREFIX}/bassoon --content-type 'text/html; chars
 # doesn't fingerprint the CSS URLs, so we have to use shorter caching
 
 aws s3 sync assets $PREFIX --exclude '*' --include '*.css' --cache-control ${CACHE_SHORT} --content-type 'text/css; charset=utf-8'
+aws s3 sync assets $PREFIX --exclude '*' --include '*.css.map' --cache-control ${CACHE_SHORT} --content-type 'text/css; charset=utf-8'
 
 # fingerprinted assets - svg and js
 # these can be far-future cached
