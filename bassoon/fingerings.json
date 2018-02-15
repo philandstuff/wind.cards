@@ -1,1 +1,2149 @@
-{"64": {"65": [{"g_key": "tr", "c_hole": "x", "a_hole": "x", "e_hole": "x", "low_e\u266d": "x", "d_hole": "o", "b_hole": "x"}], "66": [{"g_key": "tr", "c_hole": "x", "a_hole": "tr", "e_hole": "x", "low_e\u266d": "x", "d_hole": "o", "b_hole": "x"}, {"g_key": "tr", "c_hole": "x", "a_hole": "tr", "e_hole": "x", "d_hole": "o", "b_hole": "x"}], "67": [{"g_key": "o", "c_hole": "o", "high_e\u266d": "tr", "a_hole": "o", "e_hole": "x", "d_hole": "o", "b_hole": "o"}, {"g_key": "o", "c_hole": "o", "a_hole": "o", "thumb_b\u266d": "x", "e_hole": "tr", "d_hole": "tr", "b_hole": "o"}]}, "65": {"66": [{"g_key": "o", "c_hole": "x", "a_hole": "tr", "e_hole": "x", "low_e\u266d": "x", "d_hole": "o", "b_hole": "x"}, {"g_key": "o", "c_hole": "x", "a_hole": "x", "thumb_b\u266d": "tr", "e_hole": "o", "d_hole": "x", "b_hole": "x"}], "67": [{"g_key": "o", "c_hole": "x", "high_e\u266d": "tr", "a_hole": "x", "e_hole": "x", "d_hole": "o", "b_hole": "x"}, {"g_key": "o", "c_hole": "x", "a_hole": "tr", "pinkie_a\u266d": "x", "e_hole": "o", "low_e\u266d": "x", "d_hole": "x", "b_hole": "tr"}, {"g_key": "o", "c_hole": "o", "high_e\u266d": "tr", "a_hole": "x", "pinkie_a\u266d": "x", "e_hole": "x", "low_e\u266d": "x", "d_hole": "o", "b_hole": "x"}, {"g_key": "o", "c_hole": "o", "a_hole": "x", "pinkie_a\u266d": "x", "e_hole": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "x", "a_hole": "tr", "pinkie_a\u266d": "x", "e_hole": "/", "whisper": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "tr"}, {"g_key": "o", "c_hole": "x", "a_hole": "x", "a_key": "tr", "e_hole": "x", "low_e\u266d": "x", "d_hole": "o", "b_hole": "x"}, {"g_key": "o", "c_hole": "x", "high_e\u266d": "tr", "a_hole": "x", "e_hole": "x", "d_hole": "o", "b_hole": "x"}, {"g_key": "o", "c_hole": "x", "a_hole": "tr", "pinkie_a\u266d": "x", "e_hole": "o", "low_e\u266d": "x", "d_hole": "x", "b_hole": "tr"}], "68": [{"g_key": "x", "c_hole": "x", "a_hole": "x", "e_hole": "x", "c\u266f_key": "tr", "low_e\u266d": "x", "d_hole": "o", "b_hole": "x"}, {"g_key": "tr", "c_hole": "x", "a_hole": "x", "a_key": "tr", "e_hole": "x", "low_e\u266d": "x", "d_hole": "o", "b_hole": "x"}], "69": [{"pinkie_a\u266d": "tr", "g_key": "tr", "c_hole": "x", "a_hole": "x", "a_key": "tr", "e_hole": "x", "c\u266f_key": "tr", "d_hole": "tr", "b_hole": "x"}]}, "66": {"67": [{"g_key": "o", "c_hole": "x", "a_hole": "tr", "thumb_b\u266d": "x", "e_hole": "o", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "x", "f_key": "tr", "a_hole": "o", "e_hole": "/", "top_d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "x", "f_key": "x", "a_hole": "tr", "thumb_b\u266d": "x", "e_hole": "/", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "x", "f_key": "tr", "a_hole": "o", "e_hole": "o", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "x", "a_hole": "o", "e_hole": "o", "low_e\u266d": "x", "d_hole": "x", "b_hole": "tr"}, {"g_key": "o", "c_hole": "o", "f_key": "x", "a_hole": "tr", "e_hole": "o", "d_hole": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "x", "a_hole": "tr", "thumb_b\u266d": "x", "e_hole": "/", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "x", "c_hole": "x", "f_key": "x", "a_hole": "tr", "e_hole": "o", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}], "68": [{"g_key": "o", "c_hole": "x", "a_hole": "tr", "thumb_b\u266d": "x", "e_hole": "o", "low_e\u266d": "x", "d_hole": "x", "b_hole": "tr"}, {"g_key": "o", "c_hole": "x", "f_key": "tr", "a_hole": "tr", "thumb_b\u266d": "x", "e_hole": "o", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "x", "a_hole": "tr", "e_hole": "o", "low_e\u266d": "x", "d_hole": "x", "b_hole": "tr"}, {"g_key": "o", "c_hole": "x", "a_hole": "tr", "thumb_b\u266d": "x", "e_hole": "o", "low_e\u266d": "x", "d_hole": "x", "b_hole": "tr"}, {"g_key": "tr", "c_hole": "x", "f_key": "x", "a_hole": "tr", "e_hole": "o", "low_e\u266d": "x", "d_hole": "x", "b_hole": "tr"}]}, "67": {"68": [{"g_key": "o", "c_hole": "x", "f_key": "x", "a_hole": "o", "e_hole": "o", "low_e\u266d": "x", "d_hole": "x", "b_hole": "tr"}, {"g_key": "o", "c_hole": "x", "f_key": "x", "a_hole": "o", "thumb_f\u266f": "tr", "e_hole": "o", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "x", "f_key": "x", "a_hole": "o", "a_key": "tr", "e_hole": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "x", "f_key": "x", "a_hole": "o", "a_key": "tr", "e_hole": "x", "c\u266f_key": "tr", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}], "69": [{"g_key": "o", "c_hole": "x", "f_key": "x", "a_hole": "o", "a_key": "tr", "e_hole": "o", "c\u266f_key": "tr", "d_hole": "x", "b_hole": "x"}, {"e_hole": "o", "c_hole": "x", "f_key": "x", "a_hole": "o", "a_key": "tr", "g_key": "o", "c_key": "tr", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"pinkie_a\u266d": "x", "g_key": "tr", "c_hole": "x", "a_hole": "o", "a_key": "tr", "e_hole": "o", "d_hole": "x", "b_hole": "o"}, {"g_key": "tr", "c_hole": "x", "a_hole": "o", "thumb_a\u266d": "x", "e_hole": "o", "low_e\u266d": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "o", "c_hole": "x", "f_key": "x", "a_hole": "o", "a_key": "tr", "e_hole": "/", "c\u266f_key": "tr", "d_hole": "x", "b_hole": "x"}, {"g_key": "tr", "c_hole": "x", "a_hole": "o", "pinkie_a\u266d": "x", "trill_c\u266f": "tr", "e_hole": "/", "low_e\u266d": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "tr", "c_hole": "x", "a_hole": "o", "pinkie_a\u266d": "x", "e_hole": "/", "low_e\u266d": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "o", "c_hole": "x", "f_key": "x", "a_hole": "o", "thumb_b\u266d": "tr", "a_key": "tr", "e_hole": "/", "c\u266f_key": "tr", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "x", "c_hole": "tr", "a_hole": "o", "a_key": "x", "e_hole": "x", "c\u266f_key": "x", "low_e\u266d": "x", "d_hole": "tr", "b_hole": "o"}, {"g_key": "tr", "c_hole": "x", "a_hole": "o", "pinkie_a\u266d": "x", "trill_c\u266f": "tr", "e_hole": "/", "low_e\u266d": "x", "d_hole": "x", "b_hole": "o"}]}, "68": {"69": [{"g_key": "x", "c_hole": "x", "a_hole": "o", "a_key": "x", "e_hole": "/", "c\u266f_key": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "o", "c_hole": "x", "f_key": "x", "a_hole": "o", "a_key": "x", "e_hole": "/", "c\u266f_key": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "o", "c_hole": "x", "a_hole": "o", "pinkie_a\u266d": "tr", "e_hole": "/", "d_hole": "x", "b_hole": "o"}]}, "69": {"60": [{"e_hole": "x", "c_hole": "x", "a_hole": "o", "a_key": "x", "g_key": "o", "c_key": "tr", "c\u266f_key": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "o"}], "70": [{"g_key": "o", "c_hole": "x", "f_key": "x", "a_hole": "tr", "a_key": "x", "e_hole": "x", "c\u266f_key": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "o", "c_hole": "x", "f_key": "x", "a_hole": "tr", "a_key": "x", "e_hole": "x", "c\u266f_key": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "tr"}, {"g_key": "x", "c_hole": "tr", "a_hole": "o", "a_key": "x", "e_hole": "x", "c\u266f_key": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "x", "c_hole": "x", "f_key": "tr", "a_hole": "o", "a_key": "x", "e_hole": "x", "c\u266f_key": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "o"}], "71": [{"g_key": "x", "c_hole": "tr", "a_hole": "tr", "a_key": "x", "thumb_f\u266f": "x", "e_hole": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "tr", "c_hole": "tr", "f_key": "x", "a_hole": "o", "a_key": "x", "e_hole": "x", "d_hole": "x", "b_hole": "o"}, {"pinkie_a\u266d": "x", "g_key": "tr", "c_hole": "tr", "thumb_b\u266d": "x", "a_hole": "x", "a_key": "x", "e_hole": "x", "c\u266f_key": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "x", "a_hole": "o", "pinkie_a\u266d": "x", "e_hole": "/", "whisper": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "tr", "pancake_key": "x", "c_hole": "tr", "a_hole": "x", "e_hole": "x", "c_key": "x", "d_hole": "x", "b_hole": "o"}, {"e_hole": "x", "c_hole": "x", "f_key": "x", "a_hole": "tr", "a_key": "x", "g_key": "o", "c_key": "x", "c\u266f_key": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "x", "f_key": "x", "a_hole": "tr", "thumb_b\u266d": "x", "a_key": "x", "e_hole": "x", "c\u266f_key": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"pinkie_a\u266d": "x", "g_key": "x", "c_hole": "tr", "thumb_b\u266d": "x", "a_hole": "o", "a_key": "x", "e_hole": "x", "c\u266f_key": "x", "low_e\u266d": "x", "d_hole": "tr", "b_hole": "o"}, {"pinkie_a\u266d": "x", "g_key": "x", "c_hole": "o", "thumb_b\u266d": "x", "a_hole": "tr", "e_hole": "x", "c_key": "x", "low_e\u266d": "x", "d_hole": "o", "b_hole": "tr"}, {"g_key": "o", "c_hole": "x", "f_key": "x", "a_hole": "tr", "thumb_b\u266d": "x", "a_key": "x", "e_hole": "x", "c\u266f_key": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "o", "f_key": "x", "a_hole": "tr", "thumb_b\u266d": "x", "a_key": "x", "e_hole": "x", "c\u266f_key": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "x", "c_hole": "tr", "thumb_b\u266d": "x", "a_hole": "tr", "a_key": "x", "e_hole": "x", "c\u266f_key": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "o", "c_hole": "x", "f_key": "x", "a_hole": "tr", "thumb_b\u266d": "x", "a_key": "x", "e_hole": "x", "c\u266f_key": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "tr", "a_hole": "x", "a_key": "x", "e_hole": "x", "c\u266f_key": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "o", "c_hole": "x", "f_key": "x", "a_hole": "tr", "thumb_b\u266d": "x", "a_key": "x", "e_hole": "x", "c\u266f_key": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "tr", "pancake_key": "tr", "c_hole": "tr", "f_key": "x", "a_hole": "x", "a_key": "x", "e_hole": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "tr", "f_key": "x", "a_hole": "tr", "a_key": "x", "e_hole": "x", "c\u266f_key": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "tr"}, {"g_key": "o", "c_hole": "tr", "f_key": "x", "a_hole": "tr", "a_key": "x", "e_hole": "x", "c\u266f_key": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "o"}]}, "70": {"72": [{"g_key": "tr", "c_hole": "tr", "f_key": "x", "a_hole": "tr", "a_key": "x", "e_hole": "x", "c\u266f_key": "x", "low_e\u266d": "x", "d_hole": "tr", "b_hole": "tr"}]}, "71": {"72": [{"g_key": "o", "c_hole": "o", "f_key": "x", "a_hole": "o", "e_hole": "x", "c_key": "x", "d_hole": "tr", "b_hole": "x"}, {"g_key": "o", "c_hole": "o", "f_key": "x", "a_hole": "x", "e_hole": "x", "c_key": "x", "low_e\u266d": "x", "d_hole": "tr", "b_hole": "x"}, {"g_key": "o", "c_hole": "o", "a_hole": "o", "a_key": "x", "e_hole": "x", "c\u266f_key": "x", "d_hole": "tr", "b_hole": "o"}], "73": [{"g_key": "o", "c_hole": "o", "f_key": "x", "a_hole": "tr", "trill_b\u266d": "tr", "e_hole": "tr", "c_key": "x", "d_hole": "tr", "b_hole": "tr"}, {"g_key": "o", "c_hole": "o", "f_key": "x", "a_hole": "tr", "e_hole": "tr", "c_key": "x", "d_hole": "tr", "b_hole": "tr"}, {"g_key": "o", "c_hole": "o", "f_key": "x", "a_hole": "tr", "trill_b\u266d": "tr", "e_hole": "tr", "c_key": "x", "d_hole": "tr", "b_hole": "tr"}, {"g_key": "tr", "c_hole": "o", "f_key": "x", "a_hole": "x", "e_hole": "x", "c_key": "x", "d_hole": "tr", "b_hole": "x"}]}, "72": {"73": [{"g_key": "tr", "c_hole": "o", "a_hole": "o", "e_hole": "x", "c_key": "x", "low_e\u266d": "x", "d_hole": "o", "b_hole": "tr"}, {"g_key": "tr", "c_hole": "o", "a_hole": "o", "e_hole": "x", "c_key": "x", "low_e\u266d": "x", "d_hole": "o", "b_hole": "x"}, {"g_key": "x", "c_hole": "x", "thumb_b\u266d": "tr", "a_hole": "o", "e_hole": "x", "c_key": "x", "low_e\u266d": "x", "d_hole": "o", "b_hole": "x"}, {"g_key": "x", "c_hole": "x", "a_hole": "tr", "e_hole": "x", "c_key": "x", "low_e\u266d": "x", "d_hole": "tr", "b_hole": "x"}, {"g_key": "o", "c_hole": "o", "thumb_b\u266d": "tr", "a_hole": "o", "e_hole": "x", "c_key": "x", "low_e\u266d": "x", "d_hole": "o", "b_hole": "x"}, {"g_key": "tr", "c_hole": "tr", "a_hole": "o", "e_hole": "x", "c_key": "x", "low_e\u266d": "x", "d_hole": "o", "b_hole": "o"}]}, "73": {"74": [{"pinkie_a\u266d": "tr", "g_key": "x", "c_hole": "x", "a_hole": "o", "e_hole": "tr", "c_key": "x", "low_e\u266d": "x", "d_hole": "o", "b_hole": "x"}, {"g_key": "x", "c_hole": "o", "high_e\u266d": "tr", "a_hole": "o", "e_hole": "x", "c_key": "x", "low_e\u266d": "x", "d_hole": "o", "b_hole": "x"}, {"g_key": "x", "c_hole": "x", "a_hole": "o", "e_hole": "tr", "c_key": "x", "low_e\u266d": "x", "d_hole": "o", "b_hole": "tr"}], "75": [{"g_key": "x", "c_hole": "x", "high_e\u266d": "tr", "a_hole": "o", "pinkie_a\u266d": "tr", "trill_c\u266f": "tr", "e_hole": "x", "low_e\u266d": "x", "d_hole": "o", "b_hole": "o"}]}, "74": {"75": [{"pinkie_a\u266d": "x", "g_key": "x", "c_hole": "o", "high_e\u266d": "tr", "a_hole": "o", "e_hole": "o", "c_key": "x", "d_hole": "o", "b_hole": "o"}, {"g_key": "tr", "c_hole": "o", "a_hole": "tr", "pinkie_a\u266d": "x", "trill_c\u266f": "x", "e_hole": "o", "top_d": "x", "low_e\u266d": "x", "d_hole": "o", "b_hole": "o"}]}, "76": {"77": [{"g_key": "x", "c_hole": "tr", "a_hole": "x", "pinkie_a\u266d": "tr", "e_hole": "x", "c\u266f_key": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "x", "c_hole": "x", "a_hole": "x", "pinkie_a\u266d": "tr", "e_hole": "/", "c\u266f_key": "x", "d_hole": "x", "b_hole": "x"}]}, "34": {"48": [{"pancake_key": "x", "c_hole": "x", "f_key": "tr", "a_hole": "tr", "g_key": "tr", "bottom_d": "x", "d_hole": "x", "b_hole": "tr", "bottom_b": "x", "bottom_c": "x", "bottom_b\u266d": "x", "e_hole": "x"}], "43": [{"pancake_key": "x", "c_hole": "x", "f_key": "tr", "a_hole": "x", "g_key": "x", "bottom_d": "x", "d_hole": "x", "b_hole": "x", "bottom_b": "x", "bottom_c": "x", "bottom_b\u266d": "x", "e_hole": "x"}], "45": [{"pancake_key": "x", "c_hole": "x", "f_key": "tr", "a_hole": "x", "g_key": "tr", "bottom_d": "x", "d_hole": "x", "b_hole": "x", "bottom_b": "x", "bottom_c": "x", "bottom_b\u266d": "x", "e_hole": "x"}], "46": [{"pancake_key": "x", "c_hole": "x", "f_key": "tr", "a_hole": "tr", "g_key": "tr", "bottom_d": "x", "d_hole": "x", "b_hole": "x", "bottom_b": "x", "bottom_c": "x", "bottom_b\u266d": "x", "e_hole": "x"}]},  "38": {"45": [{"g_key": "tr", "pancake_key": "x", "c_hole": "x", "f_key": "x", "a_hole": "x", "e_hole": "x", "bottom_d": "x", "d_hole": "x", "b_hole": "x"}]}, "39": {"40": [{"g_key": "x", "pancake_key": "x", "c_hole": "x", "f_key": "x", "a_hole": "x", "e_hole": "x", "bottom_d": "tr", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}]}, "40": {"42": [{"g_key": "x", "c_hole": "x", "f_key": "x", "a_hole": "x", "thumb_f\u266f": "tr", "e_hole": "x", "bottom_d": "x", "d_hole": "x", "b_hole": "x"}]}, "41": {"44": [{"g_key": "x", "c_hole": "x", "f_key": "x", "a_hole": "x", "thumb_a\u266d": "tr", "thumb_f\u266f": "tr", "e_hole": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "x", "c_hole": "x", "f_key": "x", "a_hole": "x", "thumb_a\u266d": "tr", "e_hole": "x", "whisper": "x", "d_hole": "x", "b_hole": "x"}]}, "42": {"44": [{"g_key": "x", "c_hole": "x", "a_hole": "x", "pinkie_a\u266d": "tr", "thumb_f\u266f": "x", "e_hole": "x", "whisper": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "x", "c_hole": "x", "f_key": "x", "a_hole": "x", "thumb_a\u266d": "tr", "e_hole": "x", "pinkie_f\u266f": "x", "whisper": "x", "d_hole": "x", "b_hole": "x"}]}, "44": {"45": [{"g_key": "x", "c_hole": "x", "thumb_b\u266d": "tr", "a_hole": "x", "pinkie_a\u266d": "x", "e_hole": "x", "whisper": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "tr", "c_hole": "x", "a_hole": "x", "pinkie_a\u266d": "x", "e_hole": "x", "whisper": "x", "d_hole": "x", "b_hole": "x"}]}, "46": {"48": [{"g_key": "o", "c_hole": "x", "a_hole": "tr", "trill_b\u266d": "tr", "e_hole": "x", "whisper": "x", "d_hole": "x", "b_hole": "tr"}, {"g_key": "o", "c_hole": "x", "a_hole": "x", "e_hole": "x", "whisper": "x", "d_hole": "x", "b_hole": "tr"}], "49": [{"g_key": "o", "pancake_key": "x", "c_hole": "tr", "a_hole": "x", "thumb_b\u266d": "x", "e_hole": "x", "whisper": "x", "d_hole": "x", "b_hole": "x"}]}, "47": {"49": [{"g_key": "o", "pancake_key": "x", "c_hole": "tr", "a_hole": "o", "thumb_b\u266d": "x", "e_hole": "x", "whisper": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "o", "pancake_key": "x", "c_hole": "tr", "a_hole": "o", "e_hole": "x", "bottom_d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "tr", "a_hole": "o", "e_hole": "x", "bottom_d": "x", "whisper": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "x", "a_hole": "o", "thumb_b\u266d": "x", "trill_c\u266f": "tr", "e_hole": "x", "d_hole": "x", "b_hole": "x"}]}, "49": {"50": [{"g_key": "o", "c_hole": "tr", "a_hole": "o", "thumb_b\u266d": "x", "trill_c\u266f": "x", "e_hole": "x", "whisper": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "o", "c_hole": "tr", "f_key": "x", "a_hole": "o", "trill_c\u266f": "x", "e_hole": "x", "whisper": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "o", "c_hole": "tr", "a_hole": "o", "thumb_b\u266d": "x", "trill_c\u266f": "x", "e_hole": "x", "whisper": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "x", "c_hole": "tr", "a_hole": "o", "thumb_f\u266f": "x", "e_hole": "x", "whisper": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "o", "c_hole": "tr", "a_hole": "o", "trill_c\u266f": "x", "e_hole": "x", "whisper": "x", "d_hole": "x", "b_hole": "x"}], "51": [{"d_hole": "x", "c_hole": "x", "a_hole": "o", "g_key": "o", "e_hole": "tr", "c\u266f_key": "x", "whisper": "x", "bottom_d": "x", "b_hole": "o"}, {"d_hole": "x", "pancake_key": "x", "c_hole": "tr", "f_key": "x", "a_hole": "o", "g_key": "o", "e_hole": "x", "c\u266f_key": "x", "whisper": "x", "bottom_d": "x", "b_hole": "o"}, {"d_hole": "x", "c_hole": "tr", "thumb_b\u266d": "x", "a_hole": "o", "g_key": "o", "e_hole": "x", "c\u266f_key": "x", "whisper": "x", "bottom_d": "x", "b_hole": "o"}, {"d_hole": "x", "c_hole": "x", "a_hole": "o", "g_key": "o", "trill_c\u266f": "x", "e_hole": "tr", "c\u266f_key": "x", "whisper": "x", "bottom_d": "x", "b_hole": "o"}]}, "50": {"51": [{"d_hole": "x", "c_hole": "o", "a_hole": "o", "g_key": "o", "e_hole": "x", "c\u266f_key": "tr", "whisper": "x", "bottom_d": "tr", "b_hole": "o"}, {"g_key": "o", "c_hole": "o", "a_hole": "o", "e_hole": "tr", "whisper": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "o", "c_hole": "x", "a_hole": "o", "e_hole": "o", "c\u266f_key": "tr", "whisper": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "o", "c_hole": "o", "high_e\u266d": "tr", "a_hole": "o", "thumb_f\u266f": "x", "e_hole": "x", "whisper": "x", "d_hole": "x", "b_hole": "o"}]}, "51": {"52": [{"g_key": "o", "c_hole": "tr", "a_hole": "o", "e_hole": "x", "bottom_d": "x", "whisper": "x", "d_hole": "o", "b_hole": "o"}]}, "52": {"54": [{"g_key": "x", "c_hole": "o", "f_key": "x", "a_hole": "x", "e_hole": "x", "whisper": "x", "d_hole": "o", "b_hole": "tr"}, {"g_key": "o", "c_hole": "o", "high_e\u266d": "tr", "a_hole": "o", "e_hole": "x", "whisper": "x", "d_hole": "o", "b_hole": "o"}, {"g_key": "o", "c_hole": "o", "f_key": "x", "a_hole": "tr", "e_hole": "o", "whisper": "x", "d_hole": "x", "b_hole": "tr"}, {"g_key": "tr", "c_hole": "o", "f_key": "tr", "a_hole": "tr", "e_hole": "o", "whisper": "x", "d_hole": "x", "b_hole": "tr"}]}, "53": {"56": [{"e_hole": "o", "c_hole": "o", "a_hole": "o", "a_key": "tr", "g_key": "o", "c_key": "tr", "d_hole": "o", "b_hole": "o"}, {"g_key": "x", "c_hole": "tr", "a_hole": "x", "pinkie_a\u266d": "x", "e_hole": "tr", "whisper": "x", "d_hole": "tr", "b_hole": "x"}, {"g_key": "tr", "c_hole": "tr", "a_hole": "tr", "pinkie_a\u266d": "x", "e_hole": "tr", "whisper": "x", "d_hole": "tr", "b_hole": "tr"}], "54": [{"g_key": "o", "c_hole": "o", "high_e\u266d": "tr", "a_hole": "o", "e_hole": "o", "whisper": "x", "d_hole": "o", "b_hole": "o"}, {"g_key": "tr", "c_hole": "o", "f_key": "tr", "a_hole": "tr", "e_hole": "o", "whisper": "x", "d_hole": "o", "b_hole": "tr"}, {"g_key": "o", "pancake_key": "x", "c_hole": "o", "high_e\u266d": "tr", "a_hole": "o", "e_hole": "o", "whisper": "x", "d_hole": "o", "b_hole": "o"}, {"g_key": "tr", "c_hole": "o", "f_key": "x", "a_hole": "tr", "e_hole": "o", "whisper": "x", "d_hole": "o", "b_hole": "tr"}], "55": [{"g_key": "x", "c_hole": "tr", "a_hole": "x", "e_hole": "tr", "whisper": "x", "d_hole": "tr", "b_hole": "x"}, {"g_key": "o", "pancake_key": "tr", "c_hole": "o", "a_hole": "o", "a_key": "tr", "e_hole": "o", "d_hole": "o", "b_hole": "o"}, {"g_key": "o", "c_hole": "o", "a_hole": "o", "a_key": "tr", "e_hole": "o", "whisper": "x", "d_hole": "o", "b_hole": "o"}]}, "56": {"57": [{"g_key": "x", "c_hole": "x", "thumb_b\u266d": "tr", "a_hole": "x", "pinkie_a\u266d": "x", "e_hole": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "x", "c_hole": "tr", "a_hole": "x", "pinkie_a\u266d": "x", "e_hole": "/", "whisper": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "tr", "c_hole": "x", "a_hole": "x", "pinkie_a\u266d": "x", "e_hole": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "tr", "c_hole": "x", "a_hole": "x", "pinkie_a\u266d": "tr", "e_hole": "x", "d_hole": "x", "b_hole": "x"}]}, "58": {"60": [{"g_key": "o", "c_hole": "tr", "a_hole": "x", "thumb_b\u266d": "x", "e_hole": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "x", "a_hole": "tr", "trill_b\u266d": "tr", "e_hole": "x", "d_hole": "x", "b_hole": "tr"}, {"g_key": "o", "c_hole": "x", "a_hole": "tr", "thumb_b\u266d": "x", "e_hole": "x", "d_hole": "x", "b_hole": "tr"}, {"g_key": "o", "c_hole": "x", "a_hole": "x", "thumb_b\u266d": "x", "e_hole": "x", "c\u266f_key": "tr", "d_hole": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "x", "a_hole": "x", "trill_b\u266d": "x", "e_hole": "x", "d_hole": "x", "b_hole": "tr"}], "61": [{"g_key": "o", "c_hole": "tr", "a_hole": "tr", "thumb_b\u266d": "x", "e_hole": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "tr", "a_hole": "tr", "thumb_b\u266d": "x", "e_hole": "x", "d_hole": "x", "b_hole": "x"}], "62": [{"g_key": "o", "c_hole": "tr", "a_hole": "tr", "thumb_b\u266d": "x", "e_hole": "x", "d_hole": "x", "b_hole": "tr"}]}, "59": {"61": [{"d_hole": "x", "c_hole": "x", "f_key": "tr", "a_hole": "o", "thumb_b\u266d": "tr", "g_key": "tr", "e_hole": "x", "c\u266f_key": "x", "bottom_d": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "x", "a_hole": "o", "e_hole": "x", "c\u266f_key": "tr", "d_hole": "x", "b_hole": "x"}, {"g_key": "tr", "c_hole": "x", "f_key": "x", "a_hole": "x", "thumb_b\u266d": "x", "e_hole": "x", "c\u266f_key": "x", "d_hole": "x", "b_hole": "x"}]}, "60": {"64": [{"g_key": "o", "c_hole": "tr", "a_hole": "o", "thumb_b\u266d": "x", "e_hole": "x", "d_hole": "tr", "b_hole": "o"}], "63": [{"g_key": "o", "c_hole": "x", "a_hole": "o", "e_hole": "x", "d_hole": "tr", "b_hole": "o"}, {"g_key": "o", "c_hole": "x", "a_hole": "o", "e_hole": "x", "c\u266f_key": "x", "d_hole": "tr", "b_hole": "x"}, {"g_key": "o", "c_hole": "tr", "a_hole": "o", "e_hole": "x", "c\u266f_key": "x", "d_hole": "x", "b_hole": "o"}]}, "61": {"62": [{"g_key": "x", "c_hole": "tr", "f_key": "x", "a_hole": "x", "e_hole": "x", "c\u266f_key": "tr", "d_hole": "x", "b_hole": "o"}, {"g_key": "x", "c_hole": "tr", "a_hole": "o", "e_hole": "x", "thumb_f\u266f": "x", "bottom_b\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "x", "c_hole": "tr", "f_key": "x", "a_hole": "o", "e_hole": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "x", "c_hole": "x", "f_key": "tr", "a_hole": "x", "e_hole": "x", "c\u266f_key": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "x", "c_hole": "x", "a_hole": "x", "thumb_f\u266f": "tr", "e_hole": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "o", "c_hole": "o", "a_hole": "o", "e_hole": "x", "d_hole": "x", "b_hole": "tr"}, {"g_key": "x", "c_hole": "tr", "f_key": "x", "a_hole": "x", "e_hole": "x", "pinkie_f\u266f": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "o", "c_hole": "tr", "a_hole": "o", "thumb_b\u266d": "x", "trill_c\u266f": "x", "e_hole": "x", "d_hole": "x", "b_hole": "x"}], "63": [{"g_key": "x", "c_hole": "tr", "f_key": "x", "a_hole": "x", "e_hole": "x", "c\u266f_key": "x", "d_hole": "x", "b_hole": "o"}, {"d_hole": "x", "c_hole": "tr", "a_hole": "o", "g_key": "o", "e_hole": "x", "c\u266f_key": "x", "bottom_d": "x", "b_hole": "o"}, {"g_key": "x", "c_hole": "x", "f_key": "x", "a_hole": "x", "thumb_a\u266d": "tr", "e_hole": "x", "c\u266f_key": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "x", "c_hole": "x", "a_hole": "x", "pinkie_a\u266d": "tr", "thumb_f\u266f": "x", "e_hole": "x", "c\u266f_key": "x", "d_hole": "x", "b_hole": "x"}]}, "62": {"64": [{"g_key": "o", "c_hole": "o", "a_hole": "o", "e_hole": "x", "low_e\u266d": "x", "d_hole": "tr", "b_hole": "o"}, {"g_key": "x", "c_hole": "o", "f_key": "x", "a_hole": "x", "e_hole": "x", "low_e\u266d": "x", "d_hole": "tr", "b_hole": "o"}], "65": [{"g_key": "o", "c_hole": "o", "a_hole": "o", "thumb_b\u266d": "x", "e_hole": "tr", "d_hole": "tr", "b_hole": "o"}, {"g_key": "o", "c_hole": "o", "a_hole": "o", "thumb_b\u266d": "x", "e_hole": "tr", "d_hole": "tr", "b_hole": "o"}], "66": [{"g_key": "x", "c_hole": "o", "f_key": "x", "a_hole": "o", "thumb_a\u266d": "x", "e_hole": "tr", "d_hole": "tr", "b_hole": "o"}, {"g_key": "x", "c_hole": "o", "a_hole": "o", "pinkie_a\u266d": "x", "thumb_f\u266f": "x", "e_hole": "tr", "d_hole": "tr", "b_hole": "o"}], "63": [{"g_key": "tr", "c_hole": "o", "a_hole": "tr", "e_hole": "x", "d_hole": "x", "b_hole": "o"}, {"g_key": "o", "c_hole": "o", "a_hole": "o", "e_hole": "x", "c\u266f_key": "tr", "d_hole": "x", "b_hole": "o"}, {"g_key": "x", "c_hole": "x", "f_key": "x", "a_hole": "x", "e_hole": "x", "c\u266f_key": "tr", "d_hole": "x", "b_hole": "o"}, {"g_key": "o", "c_hole": "o", "a_hole": "o", "e_hole": "x", "c\u266f_key": "tr", "d_hole": "x", "b_hole": "o"}, {"g_key": "tr", "c_hole": "o", "a_hole": "o", "e_hole": "x", "d_hole": "x", "b_hole": "o"}]}, "63": {"64": [{"g_key": "x", "c_hole": "o", "a_hole": "x", "pinkie_a\u266d": "tr", "e_hole": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "tr", "c_hole": "x", "a_hole": "x", "e_hole": "x", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "x", "c_hole": "o", "a_hole": "x", "e_hole": "tr", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "x", "c_hole": "x", "a_hole": "x", "thumb_f\u266f": "tr", "e_hole": "x", "d_hole": "o", "b_hole": "x"}, {"g_key": "x", "c_hole": "o", "a_hole": "x", "e_hole": "x", "low_e\u266d": "x", "d_hole": "tr", "b_hole": "x"}, {"g_key": "x", "c_hole": "o", "a_hole": "x", "e_hole": "tr", "low_e\u266d": "x", "d_hole": "x", "b_hole": "x"}, {"g_key": "x", "c_hole": "o", "a_hole": "x", "thumb_b\u266d": "tr", "e_hole": "x", "d_hole": "x", "b_hole": "x"}]}}
+{
+  "64": {
+    "65": [
+      {
+        "g_key": "tr",
+        "c_hole": "x",
+        "a_hole": "x",
+        "e_hole": "x",
+        "low_e♭": "x",
+        "d_hole": "o",
+        "b_hole": "x"
+      }
+    ],
+    "66": [
+      {
+        "g_key": "tr",
+        "c_hole": "x",
+        "a_hole": "tr",
+        "e_hole": "x",
+        "low_e♭": "x",
+        "d_hole": "o",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "x",
+        "a_hole": "tr",
+        "e_hole": "x",
+        "d_hole": "o",
+        "b_hole": "x"
+      }
+    ],
+    "67": [
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "high_e♭": "tr",
+        "a_hole": "o",
+        "e_hole": "x",
+        "d_hole": "o",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "a_hole": "o",
+        "thumb_b♭": "x",
+        "e_hole": "tr",
+        "d_hole": "tr",
+        "b_hole": "o"
+      }
+    ]
+  },
+  "65": {
+    "66": [
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "tr",
+        "e_hole": "x",
+        "low_e♭": "x",
+        "d_hole": "o",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "x",
+        "thumb_b♭": "tr",
+        "e_hole": "o",
+        "d_hole": "x",
+        "b_hole": "x"
+      }
+    ],
+    "67": [
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "high_e♭": "tr",
+        "a_hole": "x",
+        "e_hole": "x",
+        "d_hole": "o",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "tr",
+        "pinkie_a♭": "x",
+        "e_hole": "o",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "high_e♭": "tr",
+        "a_hole": "x",
+        "pinkie_a♭": "x",
+        "e_hole": "x",
+        "low_e♭": "x",
+        "d_hole": "o",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "a_hole": "x",
+        "pinkie_a♭": "x",
+        "e_hole": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "tr",
+        "pinkie_a♭": "x",
+        "e_hole": "/",
+        "whisper": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "x",
+        "a_key": "tr",
+        "e_hole": "x",
+        "low_e♭": "x",
+        "d_hole": "o",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "high_e♭": "tr",
+        "a_hole": "x",
+        "e_hole": "x",
+        "d_hole": "o",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "tr",
+        "pinkie_a♭": "x",
+        "e_hole": "o",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "tr"
+      }
+    ],
+    "68": [
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "a_hole": "x",
+        "e_hole": "x",
+        "c♯_key": "tr",
+        "low_e♭": "x",
+        "d_hole": "o",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "x",
+        "a_hole": "x",
+        "a_key": "tr",
+        "e_hole": "x",
+        "low_e♭": "x",
+        "d_hole": "o",
+        "b_hole": "x"
+      }
+    ],
+    "69": [
+      {
+        "pinkie_a♭": "tr",
+        "g_key": "tr",
+        "c_hole": "x",
+        "a_hole": "x",
+        "a_key": "tr",
+        "e_hole": "x",
+        "c♯_key": "tr",
+        "d_hole": "tr",
+        "b_hole": "x"
+      }
+    ]
+  },
+  "66": {
+    "67": [
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "tr",
+        "thumb_b♭": "x",
+        "e_hole": "o",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "f_key": "tr",
+        "a_hole": "o",
+        "e_hole": "/",
+        "top_d": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "tr",
+        "thumb_b♭": "x",
+        "e_hole": "/",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "f_key": "tr",
+        "a_hole": "o",
+        "e_hole": "o",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "o",
+        "e_hole": "o",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "f_key": "x",
+        "a_hole": "tr",
+        "e_hole": "o",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "tr",
+        "thumb_b♭": "x",
+        "e_hole": "/",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "tr",
+        "e_hole": "o",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      }
+    ],
+    "68": [
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "tr",
+        "thumb_b♭": "x",
+        "e_hole": "o",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "f_key": "tr",
+        "a_hole": "tr",
+        "thumb_b♭": "x",
+        "e_hole": "o",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "tr",
+        "e_hole": "o",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "tr",
+        "thumb_b♭": "x",
+        "e_hole": "o",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "tr",
+        "e_hole": "o",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "tr"
+      }
+    ]
+  },
+  "67": {
+    "68": [
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "o",
+        "e_hole": "o",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "o",
+        "thumb_f♯": "tr",
+        "e_hole": "o",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "o",
+        "a_key": "tr",
+        "e_hole": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "o",
+        "a_key": "tr",
+        "e_hole": "x",
+        "c♯_key": "tr",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      }
+    ],
+    "69": [
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "o",
+        "a_key": "tr",
+        "e_hole": "o",
+        "c♯_key": "tr",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "e_hole": "o",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "o",
+        "a_key": "tr",
+        "g_key": "o",
+        "c_key": "tr",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "pinkie_a♭": "x",
+        "g_key": "tr",
+        "c_hole": "x",
+        "a_hole": "o",
+        "a_key": "tr",
+        "e_hole": "o",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "x",
+        "a_hole": "o",
+        "thumb_a♭": "x",
+        "e_hole": "o",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "o",
+        "a_key": "tr",
+        "e_hole": "/",
+        "c♯_key": "tr",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "x",
+        "a_hole": "o",
+        "pinkie_a♭": "x",
+        "trill_c♯": "tr",
+        "e_hole": "/",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "x",
+        "a_hole": "o",
+        "pinkie_a♭": "x",
+        "e_hole": "/",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "o",
+        "thumb_b♭": "tr",
+        "a_key": "tr",
+        "e_hole": "/",
+        "c♯_key": "tr",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "tr",
+        "a_hole": "o",
+        "a_key": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "low_e♭": "x",
+        "d_hole": "tr",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "x",
+        "a_hole": "o",
+        "pinkie_a♭": "x",
+        "trill_c♯": "tr",
+        "e_hole": "/",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      }
+    ]
+  },
+  "68": {
+    "69": [
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "a_hole": "o",
+        "a_key": "x",
+        "e_hole": "/",
+        "c♯_key": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "o",
+        "a_key": "x",
+        "e_hole": "/",
+        "c♯_key": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "o",
+        "pinkie_a♭": "tr",
+        "e_hole": "/",
+        "d_hole": "x",
+        "b_hole": "o"
+      }
+    ]
+  },
+  "69": {
+    "60": [
+      {
+        "e_hole": "x",
+        "c_hole": "x",
+        "a_hole": "o",
+        "a_key": "x",
+        "g_key": "o",
+        "c_key": "tr",
+        "c♯_key": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      }
+    ],
+    "70": [
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "tr",
+        "a_key": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "tr",
+        "a_key": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "tr",
+        "a_hole": "o",
+        "a_key": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "f_key": "tr",
+        "a_hole": "o",
+        "a_key": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      }
+    ],
+    "71": [
+      {
+        "g_key": "x",
+        "c_hole": "tr",
+        "a_hole": "tr",
+        "a_key": "x",
+        "thumb_f♯": "x",
+        "e_hole": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "tr",
+        "f_key": "x",
+        "a_hole": "o",
+        "a_key": "x",
+        "e_hole": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "pinkie_a♭": "x",
+        "g_key": "tr",
+        "c_hole": "tr",
+        "thumb_b♭": "x",
+        "a_hole": "x",
+        "a_key": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "o",
+        "pinkie_a♭": "x",
+        "e_hole": "/",
+        "whisper": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "tr",
+        "pancake_key": "x",
+        "c_hole": "tr",
+        "a_hole": "x",
+        "e_hole": "x",
+        "c_key": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "e_hole": "x",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "tr",
+        "a_key": "x",
+        "g_key": "o",
+        "c_key": "x",
+        "c♯_key": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "tr",
+        "thumb_b♭": "x",
+        "a_key": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "pinkie_a♭": "x",
+        "g_key": "x",
+        "c_hole": "tr",
+        "thumb_b♭": "x",
+        "a_hole": "o",
+        "a_key": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "low_e♭": "x",
+        "d_hole": "tr",
+        "b_hole": "o"
+      },
+      {
+        "pinkie_a♭": "x",
+        "g_key": "x",
+        "c_hole": "o",
+        "thumb_b♭": "x",
+        "a_hole": "tr",
+        "e_hole": "x",
+        "c_key": "x",
+        "low_e♭": "x",
+        "d_hole": "o",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "tr",
+        "thumb_b♭": "x",
+        "a_key": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "f_key": "x",
+        "a_hole": "tr",
+        "thumb_b♭": "x",
+        "a_key": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "tr",
+        "thumb_b♭": "x",
+        "a_hole": "tr",
+        "a_key": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "tr",
+        "thumb_b♭": "x",
+        "a_key": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "tr",
+        "a_hole": "x",
+        "a_key": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "tr",
+        "thumb_b♭": "x",
+        "a_key": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "tr",
+        "pancake_key": "tr",
+        "c_hole": "tr",
+        "f_key": "x",
+        "a_hole": "x",
+        "a_key": "x",
+        "e_hole": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "tr",
+        "f_key": "x",
+        "a_hole": "tr",
+        "a_key": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "tr",
+        "f_key": "x",
+        "a_hole": "tr",
+        "a_key": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      }
+    ]
+  },
+  "70": {
+    "72": [
+      {
+        "g_key": "tr",
+        "c_hole": "tr",
+        "f_key": "x",
+        "a_hole": "tr",
+        "a_key": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "low_e♭": "x",
+        "d_hole": "tr",
+        "b_hole": "tr"
+      }
+    ]
+  },
+  "71": {
+    "72": [
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "f_key": "x",
+        "a_hole": "o",
+        "e_hole": "x",
+        "c_key": "x",
+        "d_hole": "tr",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "f_key": "x",
+        "a_hole": "x",
+        "e_hole": "x",
+        "c_key": "x",
+        "low_e♭": "x",
+        "d_hole": "tr",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "a_hole": "o",
+        "a_key": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "d_hole": "tr",
+        "b_hole": "o"
+      }
+    ],
+    "73": [
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "f_key": "x",
+        "a_hole": "tr",
+        "trill_b♭": "tr",
+        "e_hole": "tr",
+        "c_key": "x",
+        "d_hole": "tr",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "f_key": "x",
+        "a_hole": "tr",
+        "e_hole": "tr",
+        "c_key": "x",
+        "d_hole": "tr",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "f_key": "x",
+        "a_hole": "tr",
+        "trill_b♭": "tr",
+        "e_hole": "tr",
+        "c_key": "x",
+        "d_hole": "tr",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "o",
+        "f_key": "x",
+        "a_hole": "x",
+        "e_hole": "x",
+        "c_key": "x",
+        "d_hole": "tr",
+        "b_hole": "x"
+      }
+    ]
+  },
+  "72": {
+    "73": [
+      {
+        "g_key": "tr",
+        "c_hole": "o",
+        "a_hole": "o",
+        "e_hole": "x",
+        "c_key": "x",
+        "low_e♭": "x",
+        "d_hole": "o",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "o",
+        "a_hole": "o",
+        "e_hole": "x",
+        "c_key": "x",
+        "low_e♭": "x",
+        "d_hole": "o",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "thumb_b♭": "tr",
+        "a_hole": "o",
+        "e_hole": "x",
+        "c_key": "x",
+        "low_e♭": "x",
+        "d_hole": "o",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "a_hole": "tr",
+        "e_hole": "x",
+        "c_key": "x",
+        "low_e♭": "x",
+        "d_hole": "tr",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "thumb_b♭": "tr",
+        "a_hole": "o",
+        "e_hole": "x",
+        "c_key": "x",
+        "low_e♭": "x",
+        "d_hole": "o",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "tr",
+        "a_hole": "o",
+        "e_hole": "x",
+        "c_key": "x",
+        "low_e♭": "x",
+        "d_hole": "o",
+        "b_hole": "o"
+      }
+    ]
+  },
+  "73": {
+    "74": [
+      {
+        "pinkie_a♭": "tr",
+        "g_key": "x",
+        "c_hole": "x",
+        "a_hole": "o",
+        "e_hole": "tr",
+        "c_key": "x",
+        "low_e♭": "x",
+        "d_hole": "o",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "o",
+        "high_e♭": "tr",
+        "a_hole": "o",
+        "e_hole": "x",
+        "c_key": "x",
+        "low_e♭": "x",
+        "d_hole": "o",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "a_hole": "o",
+        "e_hole": "tr",
+        "c_key": "x",
+        "low_e♭": "x",
+        "d_hole": "o",
+        "b_hole": "tr"
+      }
+    ],
+    "75": [
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "high_e♭": "tr",
+        "a_hole": "o",
+        "pinkie_a♭": "tr",
+        "trill_c♯": "tr",
+        "e_hole": "x",
+        "low_e♭": "x",
+        "d_hole": "o",
+        "b_hole": "o"
+      }
+    ]
+  },
+  "74": {
+    "75": [
+      {
+        "pinkie_a♭": "x",
+        "g_key": "x",
+        "c_hole": "o",
+        "high_e♭": "tr",
+        "a_hole": "o",
+        "e_hole": "o",
+        "c_key": "x",
+        "d_hole": "o",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "o",
+        "a_hole": "tr",
+        "pinkie_a♭": "x",
+        "trill_c♯": "x",
+        "e_hole": "o",
+        "top_d": "x",
+        "low_e♭": "x",
+        "d_hole": "o",
+        "b_hole": "o"
+      }
+    ]
+  },
+  "76": {
+    "77": [
+      {
+        "g_key": "x",
+        "c_hole": "tr",
+        "a_hole": "x",
+        "pinkie_a♭": "tr",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "a_hole": "x",
+        "pinkie_a♭": "tr",
+        "e_hole": "/",
+        "c♯_key": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      }
+    ]
+  },
+  "34": {
+    "48": [
+      {
+        "pancake_key": "x",
+        "c_hole": "x",
+        "f_key": "tr",
+        "a_hole": "tr",
+        "g_key": "tr",
+        "bottom_d": "x",
+        "d_hole": "x",
+        "b_hole": "tr",
+        "bottom_b": "x",
+        "bottom_c": "x",
+        "bottom_b♭": "x",
+        "e_hole": "x"
+      }
+    ],
+    "43": [
+      {
+        "pancake_key": "x",
+        "c_hole": "x",
+        "f_key": "tr",
+        "a_hole": "x",
+        "g_key": "x",
+        "bottom_d": "x",
+        "d_hole": "x",
+        "b_hole": "x",
+        "bottom_b": "x",
+        "bottom_c": "x",
+        "bottom_b♭": "x",
+        "e_hole": "x"
+      }
+    ],
+    "45": [
+      {
+        "pancake_key": "x",
+        "c_hole": "x",
+        "f_key": "tr",
+        "a_hole": "x",
+        "g_key": "tr",
+        "bottom_d": "x",
+        "d_hole": "x",
+        "b_hole": "x",
+        "bottom_b": "x",
+        "bottom_c": "x",
+        "bottom_b♭": "x",
+        "e_hole": "x"
+      }
+    ],
+    "46": [
+      {
+        "pancake_key": "x",
+        "c_hole": "x",
+        "f_key": "tr",
+        "a_hole": "tr",
+        "g_key": "tr",
+        "bottom_d": "x",
+        "d_hole": "x",
+        "b_hole": "x",
+        "bottom_b": "x",
+        "bottom_c": "x",
+        "bottom_b♭": "x",
+        "e_hole": "x"
+      }
+    ]
+  },
+  "38": {
+    "45": [
+      {
+        "g_key": "tr",
+        "pancake_key": "x",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "x",
+        "e_hole": "x",
+        "bottom_d": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      }
+    ]
+  },
+  "39": {
+    "40": [
+      {
+        "g_key": "x",
+        "pancake_key": "x",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "x",
+        "e_hole": "x",
+        "bottom_d": "tr",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      }
+    ]
+  },
+  "40": {
+    "42": [
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "x",
+        "thumb_f♯": "tr",
+        "e_hole": "x",
+        "bottom_d": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      }
+    ]
+  },
+  "41": {
+    "44": [
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "x",
+        "thumb_a♭": "tr",
+        "thumb_f♯": "tr",
+        "e_hole": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "x",
+        "thumb_a♭": "tr",
+        "e_hole": "x",
+        "whisper": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      }
+    ]
+  },
+  "42": {
+    "44": [
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "a_hole": "x",
+        "pinkie_a♭": "tr",
+        "thumb_f♯": "x",
+        "e_hole": "x",
+        "whisper": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "x",
+        "thumb_a♭": "tr",
+        "e_hole": "x",
+        "pinkie_f♯": "x",
+        "whisper": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      }
+    ]
+  },
+  "44": {
+    "45": [
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "thumb_b♭": "tr",
+        "a_hole": "x",
+        "pinkie_a♭": "x",
+        "e_hole": "x",
+        "whisper": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "x",
+        "a_hole": "x",
+        "pinkie_a♭": "x",
+        "e_hole": "x",
+        "whisper": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      }
+    ]
+  },
+  "46": {
+    "48": [
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "tr",
+        "trill_b♭": "tr",
+        "e_hole": "x",
+        "whisper": "x",
+        "d_hole": "x",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "x",
+        "e_hole": "x",
+        "whisper": "x",
+        "d_hole": "x",
+        "b_hole": "tr"
+      }
+    ],
+    "49": [
+      {
+        "g_key": "o",
+        "pancake_key": "x",
+        "c_hole": "tr",
+        "a_hole": "x",
+        "thumb_b♭": "x",
+        "e_hole": "x",
+        "whisper": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      }
+    ]
+  },
+  "47": {
+    "49": [
+      {
+        "g_key": "o",
+        "pancake_key": "x",
+        "c_hole": "tr",
+        "a_hole": "o",
+        "thumb_b♭": "x",
+        "e_hole": "x",
+        "whisper": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "pancake_key": "x",
+        "c_hole": "tr",
+        "a_hole": "o",
+        "e_hole": "x",
+        "bottom_d": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "tr",
+        "a_hole": "o",
+        "e_hole": "x",
+        "bottom_d": "x",
+        "whisper": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "o",
+        "thumb_b♭": "x",
+        "trill_c♯": "tr",
+        "e_hole": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      }
+    ]
+  },
+  "49": {
+    "50": [
+      {
+        "g_key": "o",
+        "c_hole": "tr",
+        "a_hole": "o",
+        "thumb_b♭": "x",
+        "trill_c♯": "x",
+        "e_hole": "x",
+        "whisper": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "tr",
+        "f_key": "x",
+        "a_hole": "o",
+        "trill_c♯": "x",
+        "e_hole": "x",
+        "whisper": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "tr",
+        "a_hole": "o",
+        "thumb_f♯": "x",
+        "e_hole": "x",
+        "whisper": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "tr",
+        "a_hole": "o",
+        "trill_c♯": "x",
+        "e_hole": "x",
+        "whisper": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      }
+    ],
+    "51": [
+      {
+        "d_hole": "x",
+        "c_hole": "x",
+        "a_hole": "o",
+        "g_key": "o",
+        "e_hole": "tr",
+        "c♯_key": "x",
+        "whisper": "x",
+        "bottom_d": "x",
+        "b_hole": "o"
+      },
+      {
+        "d_hole": "x",
+        "pancake_key": "x",
+        "c_hole": "tr",
+        "f_key": "x",
+        "a_hole": "o",
+        "g_key": "o",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "whisper": "x",
+        "bottom_d": "x",
+        "b_hole": "o"
+      },
+      {
+        "d_hole": "x",
+        "c_hole": "tr",
+        "thumb_b♭": "x",
+        "a_hole": "o",
+        "g_key": "o",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "whisper": "x",
+        "bottom_d": "x",
+        "b_hole": "o"
+      },
+      {
+        "d_hole": "x",
+        "c_hole": "x",
+        "a_hole": "o",
+        "g_key": "o",
+        "trill_c♯": "x",
+        "e_hole": "tr",
+        "c♯_key": "x",
+        "whisper": "x",
+        "bottom_d": "x",
+        "b_hole": "o"
+      }
+    ]
+  },
+  "50": {
+    "51": [
+      {
+        "d_hole": "x",
+        "c_hole": "o",
+        "a_hole": "o",
+        "g_key": "o",
+        "e_hole": "x",
+        "c♯_key": "tr",
+        "whisper": "x",
+        "bottom_d": "tr",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "a_hole": "o",
+        "e_hole": "tr",
+        "whisper": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "o",
+        "e_hole": "o",
+        "c♯_key": "tr",
+        "whisper": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "high_e♭": "tr",
+        "a_hole": "o",
+        "thumb_f♯": "x",
+        "e_hole": "x",
+        "whisper": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      }
+    ]
+  },
+  "51": {
+    "52": [
+      {
+        "g_key": "o",
+        "c_hole": "tr",
+        "a_hole": "o",
+        "e_hole": "x",
+        "bottom_d": "x",
+        "whisper": "x",
+        "d_hole": "o",
+        "b_hole": "o"
+      }
+    ]
+  },
+  "52": {
+    "54": [
+      {
+        "g_key": "x",
+        "c_hole": "o",
+        "f_key": "x",
+        "a_hole": "x",
+        "e_hole": "x",
+        "whisper": "x",
+        "d_hole": "o",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "high_e♭": "tr",
+        "a_hole": "o",
+        "e_hole": "x",
+        "whisper": "x",
+        "d_hole": "o",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "f_key": "x",
+        "a_hole": "tr",
+        "e_hole": "o",
+        "whisper": "x",
+        "d_hole": "x",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "o",
+        "f_key": "tr",
+        "a_hole": "tr",
+        "e_hole": "o",
+        "whisper": "x",
+        "d_hole": "x",
+        "b_hole": "tr"
+      }
+    ]
+  },
+  "53": {
+    "56": [
+      {
+        "e_hole": "o",
+        "c_hole": "o",
+        "a_hole": "o",
+        "a_key": "tr",
+        "g_key": "o",
+        "c_key": "tr",
+        "d_hole": "o",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "tr",
+        "a_hole": "x",
+        "pinkie_a♭": "x",
+        "e_hole": "tr",
+        "whisper": "x",
+        "d_hole": "tr",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "tr",
+        "a_hole": "tr",
+        "pinkie_a♭": "x",
+        "e_hole": "tr",
+        "whisper": "x",
+        "d_hole": "tr",
+        "b_hole": "tr"
+      }
+    ],
+    "54": [
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "high_e♭": "tr",
+        "a_hole": "o",
+        "e_hole": "o",
+        "whisper": "x",
+        "d_hole": "o",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "o",
+        "f_key": "tr",
+        "a_hole": "tr",
+        "e_hole": "o",
+        "whisper": "x",
+        "d_hole": "o",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "o",
+        "pancake_key": "x",
+        "c_hole": "o",
+        "high_e♭": "tr",
+        "a_hole": "o",
+        "e_hole": "o",
+        "whisper": "x",
+        "d_hole": "o",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "o",
+        "f_key": "x",
+        "a_hole": "tr",
+        "e_hole": "o",
+        "whisper": "x",
+        "d_hole": "o",
+        "b_hole": "tr"
+      }
+    ],
+    "55": [
+      {
+        "g_key": "x",
+        "c_hole": "tr",
+        "a_hole": "x",
+        "e_hole": "tr",
+        "whisper": "x",
+        "d_hole": "tr",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "pancake_key": "tr",
+        "c_hole": "o",
+        "a_hole": "o",
+        "a_key": "tr",
+        "e_hole": "o",
+        "d_hole": "o",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "a_hole": "o",
+        "a_key": "tr",
+        "e_hole": "o",
+        "whisper": "x",
+        "d_hole": "o",
+        "b_hole": "o"
+      }
+    ]
+  },
+  "56": {
+    "57": [
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "thumb_b♭": "tr",
+        "a_hole": "x",
+        "pinkie_a♭": "x",
+        "e_hole": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "tr",
+        "a_hole": "x",
+        "pinkie_a♭": "x",
+        "e_hole": "/",
+        "whisper": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "x",
+        "a_hole": "x",
+        "pinkie_a♭": "x",
+        "e_hole": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "x",
+        "a_hole": "x",
+        "pinkie_a♭": "tr",
+        "e_hole": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      }
+    ]
+  },
+  "58": {
+    "60": [
+      {
+        "g_key": "o",
+        "c_hole": "tr",
+        "a_hole": "x",
+        "thumb_b♭": "x",
+        "e_hole": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "tr",
+        "trill_b♭": "tr",
+        "e_hole": "x",
+        "d_hole": "x",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "tr",
+        "thumb_b♭": "x",
+        "e_hole": "x",
+        "d_hole": "x",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "x",
+        "thumb_b♭": "x",
+        "e_hole": "x",
+        "c♯_key": "tr",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "x",
+        "trill_b♭": "x",
+        "e_hole": "x",
+        "d_hole": "x",
+        "b_hole": "tr"
+      }
+    ],
+    "61": [
+      {
+        "g_key": "o",
+        "c_hole": "tr",
+        "a_hole": "tr",
+        "thumb_b♭": "x",
+        "e_hole": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "tr",
+        "a_hole": "tr",
+        "thumb_b♭": "x",
+        "e_hole": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      }
+    ],
+    "62": [
+      {
+        "g_key": "o",
+        "c_hole": "tr",
+        "a_hole": "tr",
+        "thumb_b♭": "x",
+        "e_hole": "x",
+        "d_hole": "x",
+        "b_hole": "tr"
+      }
+    ]
+  },
+  "59": {
+    "61": [
+      {
+        "d_hole": "x",
+        "c_hole": "x",
+        "f_key": "tr",
+        "a_hole": "o",
+        "thumb_b♭": "tr",
+        "g_key": "tr",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "bottom_d": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "o",
+        "e_hole": "x",
+        "c♯_key": "tr",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "x",
+        "thumb_b♭": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      }
+    ]
+  },
+  "60": {
+    "64": [
+      {
+        "g_key": "o",
+        "c_hole": "tr",
+        "a_hole": "o",
+        "thumb_b♭": "x",
+        "e_hole": "x",
+        "d_hole": "tr",
+        "b_hole": "o"
+      }
+    ],
+    "63": [
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "o",
+        "e_hole": "x",
+        "d_hole": "tr",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "x",
+        "a_hole": "o",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "d_hole": "tr",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "tr",
+        "a_hole": "o",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      }
+    ]
+  },
+  "61": {
+    "62": [
+      {
+        "g_key": "x",
+        "c_hole": "tr",
+        "f_key": "x",
+        "a_hole": "x",
+        "e_hole": "x",
+        "c♯_key": "tr",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "tr",
+        "a_hole": "o",
+        "e_hole": "x",
+        "thumb_f♯": "x",
+        "bottom_b♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "tr",
+        "f_key": "x",
+        "a_hole": "o",
+        "e_hole": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "f_key": "tr",
+        "a_hole": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "a_hole": "x",
+        "thumb_f♯": "tr",
+        "e_hole": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "a_hole": "o",
+        "e_hole": "x",
+        "d_hole": "x",
+        "b_hole": "tr"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "tr",
+        "f_key": "x",
+        "a_hole": "x",
+        "e_hole": "x",
+        "pinkie_f♯": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "tr",
+        "a_hole": "o",
+        "thumb_b♭": "x",
+        "trill_c♯": "x",
+        "e_hole": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      }
+    ],
+    "63": [
+      {
+        "g_key": "x",
+        "c_hole": "tr",
+        "f_key": "x",
+        "a_hole": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "d_hole": "x",
+        "c_hole": "tr",
+        "a_hole": "o",
+        "g_key": "o",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "bottom_d": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "x",
+        "thumb_a♭": "tr",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "a_hole": "x",
+        "pinkie_a♭": "tr",
+        "thumb_f♯": "x",
+        "e_hole": "x",
+        "c♯_key": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      }
+    ]
+  },
+  "62": {
+    "64": [
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "a_hole": "o",
+        "e_hole": "x",
+        "low_e♭": "x",
+        "d_hole": "tr",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "o",
+        "f_key": "x",
+        "a_hole": "x",
+        "e_hole": "x",
+        "low_e♭": "x",
+        "d_hole": "tr",
+        "b_hole": "o"
+      }
+    ],
+    "65": [
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "a_hole": "o",
+        "thumb_b♭": "x",
+        "e_hole": "tr",
+        "d_hole": "tr",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "a_hole": "o",
+        "thumb_b♭": "x",
+        "e_hole": "tr",
+        "d_hole": "tr",
+        "b_hole": "o"
+      }
+    ],
+    "66": [
+      {
+        "g_key": "x",
+        "c_hole": "o",
+        "f_key": "x",
+        "a_hole": "o",
+        "thumb_a♭": "x",
+        "e_hole": "tr",
+        "d_hole": "tr",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "o",
+        "a_hole": "o",
+        "pinkie_a♭": "x",
+        "thumb_f♯": "x",
+        "e_hole": "tr",
+        "d_hole": "tr",
+        "b_hole": "o"
+      }
+    ],
+    "63": [
+      {
+        "g_key": "tr",
+        "c_hole": "o",
+        "a_hole": "tr",
+        "e_hole": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "a_hole": "o",
+        "e_hole": "x",
+        "c♯_key": "tr",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "f_key": "x",
+        "a_hole": "x",
+        "e_hole": "x",
+        "c♯_key": "tr",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "o",
+        "c_hole": "o",
+        "a_hole": "o",
+        "e_hole": "x",
+        "c♯_key": "tr",
+        "d_hole": "x",
+        "b_hole": "o"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "o",
+        "a_hole": "o",
+        "e_hole": "x",
+        "d_hole": "x",
+        "b_hole": "o"
+      }
+    ]
+  },
+  "63": {
+    "64": [
+      {
+        "g_key": "x",
+        "c_hole": "o",
+        "a_hole": "x",
+        "pinkie_a♭": "tr",
+        "e_hole": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "tr",
+        "c_hole": "x",
+        "a_hole": "x",
+        "e_hole": "x",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "o",
+        "a_hole": "x",
+        "e_hole": "tr",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "x",
+        "a_hole": "x",
+        "thumb_f♯": "tr",
+        "e_hole": "x",
+        "d_hole": "o",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "o",
+        "a_hole": "x",
+        "e_hole": "x",
+        "low_e♭": "x",
+        "d_hole": "tr",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "o",
+        "a_hole": "x",
+        "e_hole": "tr",
+        "low_e♭": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      },
+      {
+        "g_key": "x",
+        "c_hole": "o",
+        "a_hole": "x",
+        "thumb_b♭": "tr",
+        "e_hole": "x",
+        "d_hole": "x",
+        "b_hole": "x"
+      }
+    ]
+  }
+}
