@@ -174,6 +174,7 @@ export default class VexFlow extends React.Component {
           }}
           onSwiped={this.onSwipedLower}
           onSwiping={this.onSwipingLower}
+          preventDefaultTouchmoveEvent={true}
           trackMouse
         />
         <Swipeable
@@ -186,6 +187,7 @@ export default class VexFlow extends React.Component {
           }}
           onSwiped={this.onSwipedUpper}
           onSwiping={this.onSwipingUpper}
+          preventDefaultTouchmoveEvent={true}
           trackMouse
         />
       </div>
