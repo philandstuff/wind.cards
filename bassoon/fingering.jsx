@@ -14,7 +14,7 @@ function fillForCode(code) {
 export default function (props) {
   const fillForKey = (key) => fillForCode(props.fingering[key]);
   return (
-    <svg className="fingering" xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 323.000000 544.000000">
+    <svg className="fingering" style={{ height: props.height }} xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 323.000000 544.000000">
       <defs>
         <linearGradient id="half-hole" x1="0" y1="1" x2="1" y2="0">
           <stop offset="0%" stopColor="#fff" />

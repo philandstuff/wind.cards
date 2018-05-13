@@ -153,6 +153,7 @@ export default class VexFlow extends React.Component {
         style={{
           margin: '0 auto',
           position: 'relative',
+          height: this.props.height,
           width: this.props.width,
         }}
       >

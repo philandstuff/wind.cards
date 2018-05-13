@@ -7,6 +7,12 @@ import VexFlow from './stave';
 import TwitterImage from '../twitter.svg';
 import FeedbackModal from './feedback';
 
+const fingeringHeight = 64;
+const noteHeight = 24;
+const feedbackHeight = 4;
+const footerHeight = 8;
+const viewportHeightPx = document.documentElement.clientHeight;
+
 
 function FingeringNav(props) {
   const navStyle = {
@@ -16,15 +22,15 @@ function FingeringNav(props) {
   return (<div style={{ display: 'flex' }}>
     <nav style={navStyle}>
       <button
-        style={{ height: 350 }}
+        style={{ height: fingeringHeight + 'vh' }}
         onClick={props.onPrevFingering}
         disabled={props.disablePrevFingering}
       >←</button>
     </nav>
-    <Fingering fingering={props.fingering} />
+    <Fingering fingering={props.fingering} height={fingeringHeight + 'vh'} />
     <nav style={navStyle}>
       <button
-        style={{ height: 350 }}
+        style={{ height: fingeringHeight + 'vh' }}
         onClick={props.onNextFingering}
         disabled={props.disableNextFingering}
       >→</button>
@@ -38,6 +44,7 @@ function NoteNav(props) {
     <div style={{ display: 'flex' }}>
       <div className="note">
         <VexFlow
+          height={ noteHeight * viewportHeightPx / 100 }
           lowerIndex={props.fingeringState.lower}
           lowers={props.lowerNotes}
           upperIndex={props.fingeringState.upper}
@@ -120,6 +127,7 @@ class Site extends React.Component {
               color: '#ccc',
               background: 'none',
               border: 'none',
+              height: feedbackHeight + 'vh',
             }}
           >
             not working?
@@ -132,16 +140,17 @@ class Site extends React.Component {
           />
         </main>
         <footer style={{
-          margin: 0,
-          padding: 10,
           fontSize: 12,
           textAlign: 'center',
+          height: footerHeight + 'vh',
         }}
         >
-          wind.cards is built by <a href="http://www.philandstuff.com">Philip Potter</a>.
-          <a href="https://twitter.com/philandstuff">
-            <img alt="twitter profile" width="14" height="14" src={TwitterImage} />
-          </a>
+          <div style={{ padding: 10 }}>
+            wind.cards is built by <a href="http://www.philandstuff.com">Philip Potter</a>.
+            <a href="https://twitter.com/philandstuff">
+              <img alt="twitter profile" width="14" height="14" src={TwitterImage} />
+            </a>
+          </div>
         </footer>
       </div>
     );
