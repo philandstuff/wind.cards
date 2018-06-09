@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
+import { lowerNote, upperNote } from './model';
 
 
 /* convert midi note to scientific notation */
@@ -30,7 +31,7 @@ export default class FeedbackModal extends React.Component {
   sendFeedback() {
     const fingering = this.props.state.fingering;
     const toSend = {
-      name: `${midi2sci(fingering.lower)}-${midi2sci(fingering.upper)}.${fingering.index}`,
+      name: `${midi2sci(lowerNote(fingering))}-${midi2sci(upperNote(fingering))}.${fingering.index}`,
       data: this.props.state,
       message: this.feedbackTextarea.value,
     };
