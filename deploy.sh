@@ -20,10 +20,11 @@ aws s3 sync assets $PREFIX --exclude '*' --include '*.css.map' --cache-control $
 # these can be far-future cached
 # for all `aws s3 sync` commands, we deliberately avoid the `--delete`
 # flag, to preserve older fingerprinted assets
-aws s3 sync assets $PREFIX --exclude '*' --include '*.svg' --cache-control ${CACHE_FOREVER} --content-type 'image/svg+xml'
+# we also specify --size-only to avoid reuploading existing assets
+aws s3 sync assets $PREFIX --size-only --exclude '*' --include '*.svg' --cache-control ${CACHE_FOREVER} --content-type 'image/svg+xml'
 # need to exclude sw.js, not fingerprinted
-aws s3 sync assets $PREFIX --exclude '*' --include 'main.*.js' --cache-control ${CACHE_FOREVER} --content-type 'application/javascript'
-aws s3 sync assets $PREFIX --exclude '*' --include 'main.*.js.map' --cache-control ${CACHE_FOREVER}
+aws s3 sync assets $PREFIX --size-only --exclude '*' --include 'main.*.js' --cache-control ${CACHE_FOREVER} --content-type 'application/javascript'
+aws s3 sync assets $PREFIX --size-only --exclude '*' --include 'main.*.js.map' --cache-control ${CACHE_FOREVER}
 
 # appcache files
 aws s3 sync assets $PREFIX --exclude '*' --include 'sw.js' --cache-control ${CACHE_SHORT} --content-type 'application/javascript'
