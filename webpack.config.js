@@ -1,13 +1,9 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const OfflinePlugin = require('offline-plugin')
 const path = require('path')
 const webpack = require('webpack')
 
-const copy = new CopyWebpackPlugin([
-  {from: './netlify.toml', to: './'}
-])
 const html = new HtmlWebpackPlugin({
   template: 'bassoon/bassoon.html',
   filename: 'bassoon.html'
@@ -71,5 +67,5 @@ module.exports = {
     filename: '[name].[hash].js',
     path: path.resolve(__dirname, 'assets/'),
   },
-  plugins: [copy, html, extractText, uglify, offline ], // apparently it's better if offline is last
+  plugins: [html, extractText, uglify, offline ], // apparently it's better if offline is last
 }
